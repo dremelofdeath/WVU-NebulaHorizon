@@ -35,7 +35,16 @@ void RenderQueue::dequeue(Sprite& spr) {
 }
 
 void RenderQueue::render() {
+    vector<Sprite&>::iterator vector_it = _sprites.begin();
+    while(vector_it != _sprites.end()) {
+        vector_it->render();
+    }
 }
 
 void RenderQueue::clear() {
+    _sprites.clear();
+}
+
+vector<Sprite&>::size_type RenderQueue::size() {
+    return _sprites.size();
 }

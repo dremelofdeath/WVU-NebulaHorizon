@@ -18,6 +18,7 @@ class RenderQueue {
         void dequeue(Sprite& spr);
         void render();
         void clear();
+        vector<Sprite&>::size_type size();
     protected:
         RenderQueue();
     private:
