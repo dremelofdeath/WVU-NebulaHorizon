@@ -307,8 +307,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -326,12 +324,12 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B0F0B0A410B0011D00E25FA3</string>
+										<string>B0F0B0B610B0057500E25FA3</string>
 										<key>history</key>
 										<array>
 											<string>B0F0B0A110B0011D00E25FA3</string>
 											<string>B0F0B0A210B0011D00E25FA3</string>
-											<string>B0F0B0A310B0011D00E25FA3</string>
+											<string>B0F0B0B510B0057500E25FA3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -343,16 +341,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {580, 269}}</string>
+								<string>{{0, 0}, {580, 260}}</string>
 								<key>RubberWindowFrame</key>
 								<string>566 541 788 504 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>269pt</string>
+							<string>260pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -363,14 +363,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 274}, {580, 189}}</string>
+								<string>{{0, 265}, {580, 198}}</string>
 								<key>RubberWindowFrame</key>
 								<string>566 541 788 504 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>189pt</string>
+							<string>198pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -389,9 +389,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B0F0B08310AFC1BD00E25FA3</string>
+				<string>B0F0B0B010B002C200E25FA3</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B0F0B08410AFC1BD00E25FA3</string>
+				<string>B0F0B0B110B002C200E25FA3</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -529,9 +529,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>B0EFE6FD10AFBAF9001D94BF</string>
 		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
+		<string>B0EFE6FD10AFBAF9001D94BF</string>
 	</array>
 	<key>WindowString</key>
 	<string>566 541 788 504 0 0 1920 1178 </string>
@@ -613,7 +612,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B0EFE6FD10AFBAF9001D94BF</string>
-				<string>B0F0B08510AFC1BD00E25FA3</string>
+				<string>B0F0B0B210B002C200E25FA3</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -626,7 +625,7 @@
 			<key>WindowToolGUID</key>
 			<string>B0EFE6FD10AFBAF9001D94BF</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
