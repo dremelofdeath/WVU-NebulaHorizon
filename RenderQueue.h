@@ -14,16 +14,15 @@
 class RenderQueue {
     public:
         static RenderQueue* getInstance();
-        void enqueue(Sprite& spr, ...);
-        void dequeue(Sprite& spr, ...);
+        void enqueue(Sprite& spr);
+        void dequeue(Sprite& spr);
         void render();
         void clear();
     protected:
         RenderQueue();
-        void initialize();
     private:
         static RenderQueue* _singleton;
         vector<Sprite&> _sprites;
-}
+};
 
 #endif
