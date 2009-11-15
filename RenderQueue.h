@@ -6,10 +6,11 @@
  *
  */
 
+#include <vector>
+#include "Sprite.h"
+
 #ifndef NHZ_RENDERQUEUE_H
 #define NHZ_RENDERQUEUE_H
-
-#include <vector>
 
 class RenderQueue {
     public:
@@ -18,12 +19,12 @@ class RenderQueue {
         void dequeue(Sprite& spr);
         void render();
         void clear();
-        vector<Sprite&>::size_type size();
+        std::vector<Sprite*>::size_type size();
     protected:
         RenderQueue();
     private:
         static RenderQueue* _singleton;
-        vector<Sprite&> _sprites;
+        std::vector<Sprite*> _sprites;
 };
 
 #endif

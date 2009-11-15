@@ -272,7 +272,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -312,7 +311,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RenderQueue.h</string>
+								<string>Sprite.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,16 +319,17 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RenderQueue.h</string>
+										<string>Sprite.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B0F0B0B610B0057500E25FA3</string>
+										<string>B0F0B10F10B0A30B00E25FA3</string>
 										<key>history</key>
 										<array>
 											<string>B0F0B0A110B0011D00E25FA3</string>
 											<string>B0F0B0A210B0011D00E25FA3</string>
-											<string>B0F0B0B510B0057500E25FA3</string>
+											<string>B0F0B0CF10B094C500E25FA3</string>
+											<string>B0F0B0D010B094C500E25FA3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -529,8 +529,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
+		<string>B0F0B10C10B09FC100E25FA3</string>
+		<string>B0F0B10D10B09FC100E25FA3</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B0EFE6FD10AFBAF9001D94BF</string>
+		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>566 541 788 504 0 0 1920 1178 </string>
@@ -554,7 +558,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RenderQueue.h</string>
+								<string>RenderQueue.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -625,7 +629,7 @@
 			<key>WindowToolGUID</key>
 			<string>B0EFE6FD10AFBAF9001D94BF</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -656,8 +660,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 194}}</string>
-											<string>{{316, 0}, {378, 194}}</string>
+											<string>{{0, 0}, {316, 198}}</string>
+											<string>{{316, 0}, {378, 198}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -672,8 +676,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 194}}</string>
-											<string>{{0, 194}, {694, 187}}</string>
+											<string>{{0, 0}, {694, 198}}</string>
+											<string>{{0, 198}, {694, 183}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -706,7 +710,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 194}}</string>
+									<string>{{316, 0}, {378, 198}}</string>
 									<key>RubberWindowFrame</key>
 									<string>587 600 694 422 0 0 1920 1178 </string>
 								</dict>
@@ -734,13 +738,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>B0F0B08610AFC1BD00E25FA3</string>
+				<string>B0F0B0D210B094C500E25FA3</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>B0F0B08710AFC1BD00E25FA3</string>
-				<string>B0F0B08810AFC1BD00E25FA3</string>
-				<string>B0F0B08910AFC1BD00E25FA3</string>
-				<string>B0F0B08A10AFC1BD00E25FA3</string>
-				<string>B0F0B08B10AFC1BD00E25FA3</string>
+				<string>B0F0B0D310B094C500E25FA3</string>
+				<string>B0F0B0D410B094C500E25FA3</string>
+				<string>B0F0B0D510B094C500E25FA3</string>
+				<string>B0F0B0D610B094C500E25FA3</string>
+				<string>B0F0B0D710B094C500E25FA3</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -902,7 +906,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>B0EFE72710AFC197001D94BF</string>
+				<string>B0F0B10A10B09FA600E25FA3</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
