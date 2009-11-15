@@ -13,7 +13,6 @@
 
 class RenderQueue {
     public:
-        ~RenderQueue();
         static RenderQueue* getInstance();
         void enqueue(Sprite& spr, ...);
         void dequeue(Sprite& spr, ...);
