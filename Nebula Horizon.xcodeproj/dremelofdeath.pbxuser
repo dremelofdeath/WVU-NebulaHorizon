@@ -4,6 +4,9 @@
 		activeBuildConfigurationName = Debug;
 		activeExecutable = B0EFE6F610AFBAE5001D94BF /* Nebula Horizon */;
 		activeTarget = 8DD76F620486A84900D96B5E /* Nebula Horizon */;
+		addToTargets = (
+			8DD76F620486A84900D96B5E /* Nebula Horizon */,
+		);
 		codeSenseManager = B0EFE70010AFBAF9001D94BF /* Code sense */;
 		executables = (
 			B0EFE6F610AFBAE5001D94BF /* Nebula Horizon */,
@@ -205,5 +208,12 @@
 		rType = 0;
 		vrLen = 143;
 		vrLoc = 0;
+	};
+	B0F0B09310AFDBDD00E25FA3 /* RenderQueue.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 364}}";
+			sepNavSelRange = "{485, 0}";
+			sepNavVisRange = "{0, 345}";
+		};
 	};
 }
