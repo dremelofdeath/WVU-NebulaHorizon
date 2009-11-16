@@ -6,7 +6,6 @@
  *
  */
 
-#include <cstdarg>
 #include "RenderQueue.h"
 
 RenderQueue* RenderQueue::_singleton = 0;
@@ -15,7 +14,7 @@ RenderQueue::RenderQueue() {
 }
 
 RenderQueue* RenderQueue::getInstance() {
-    if(_singleton == 0x0) {
+    if(_singleton == 0) {
         _singleton = new RenderQueue;
     }
     return _singleton;
