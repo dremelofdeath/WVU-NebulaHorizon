@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -274,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -326,14 +324,13 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B0F0B13210B1105E00E25FA3</string>
+										<string>B0F0B17610B1484200E25FA3</string>
 										<key>history</key>
 										<array>
-											<string>B0F0B12110B10F8E00E25FA3</string>
 											<string>B0F0B12B10B10FA200E25FA3</string>
 											<string>B0F0B13010B1105E00E25FA3</string>
 											<string>B0F0B13110B1105E00E25FA3</string>
-											<string>B0F0B12C10B10FA200E25FA3</string>
+											<string>B0F0B13A10B12C3000E25FA3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -345,16 +342,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {580, 260}}</string>
+								<string>{{0, 0}, {580, 251}}</string>
 								<key>RubberWindowFrame</key>
 								<string>566 541 788 504 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>260pt</string>
+							<string>251pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -365,14 +364,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 265}, {580, 198}}</string>
+								<string>{{0, 256}, {580, 207}}</string>
 								<key>RubberWindowFrame</key>
 								<string>566 541 788 504 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>198pt</string>
+							<string>207pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -391,9 +390,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B0F0B0B010B002C200E25FA3</string>
+				<string>B0F0B17710B1484200E25FA3</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B0F0B0B110B002C200E25FA3</string>
+				<string>B0F0B17810B1484200E25FA3</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -531,10 +530,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B0F0B10C10B09FC100E25FA3</string>
-		<string>B0F0B10D10B09FC100E25FA3</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B0EFE6FD10AFBAF9001D94BF</string>
 		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
 	</array>
@@ -560,7 +555,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RenderQueue.cpp</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -577,8 +572,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -618,7 +611,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B0EFE6FD10AFBAF9001D94BF</string>
-				<string>B0F0B0B210B002C200E25FA3</string>
+				<string>B0F0B17910B1484200E25FA3</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
