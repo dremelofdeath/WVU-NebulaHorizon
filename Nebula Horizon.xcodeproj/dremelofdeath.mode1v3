@@ -265,14 +265,17 @@
 							<array>
 								<string>08FB7794FE84155DC02AAC07</string>
 								<string>08FB7795FE84155DC02AAC07</string>
+								<string>1AB674ADFE9D54B511CA2CBB</string>
+								<string>B0F0B17510B1482D00E25FA3</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>B0F0B22510B28CB800E25FA3</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -307,12 +310,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Sprite.h</string>
+								<string>main.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -320,17 +325,18 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Sprite.h</string>
+										<string>main.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B0F0B17610B1484200E25FA3</string>
+										<string>B0F0B22F10B28CCB00E25FA3</string>
 										<key>history</key>
 										<array>
 											<string>B0F0B12B10B10FA200E25FA3</string>
-											<string>B0F0B13010B1105E00E25FA3</string>
 											<string>B0F0B13110B1105E00E25FA3</string>
-											<string>B0F0B13A10B12C3000E25FA3</string>
+											<string>B0F0B22610B28CB800E25FA3</string>
+											<string>B0F0B22710B28CB800E25FA3</string>
+											<string>B0F0B22910B28CB800E25FA3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -352,8 +358,6 @@
 							<string>251pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -530,6 +534,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>B0F0B23010B28CCB00E25FA3</string>
+		<string>B0F0B22B10B28CB800E25FA3</string>
+		<string>B0F0B22C10B28CB800E25FA3</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B0EFE6FD10AFBAF9001D94BF</string>
 		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
 	</array>
@@ -555,7 +564,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>main.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -572,6 +581,8 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -655,8 +666,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 198}}</string>
-											<string>{{316, 0}, {378, 198}}</string>
+											<string>{{0, 0}, {316, 201}}</string>
+											<string>{{316, 0}, {378, 201}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -671,8 +682,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 198}}</string>
-											<string>{{0, 198}, {694, 183}}</string>
+											<string>{{0, 0}, {694, 201}}</string>
+											<string>{{0, 201}, {694, 180}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -705,7 +716,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 198}}</string>
+									<string>{{316, 0}, {378, 201}}</string>
 									<key>RubberWindowFrame</key>
 									<string>587 600 694 422 0 0 1920 1178 </string>
 								</dict>
@@ -733,13 +744,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>B0F0B0D210B094C500E25FA3</string>
+				<string>B0F0B21E10B28CB700E25FA3</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>B0F0B0D310B094C500E25FA3</string>
-				<string>B0F0B0D410B094C500E25FA3</string>
-				<string>B0F0B0D510B094C500E25FA3</string>
-				<string>B0F0B0D610B094C500E25FA3</string>
-				<string>B0F0B0D710B094C500E25FA3</string>
+				<string>B0F0B21F10B28CB700E25FA3</string>
+				<string>B0F0B22010B28CB700E25FA3</string>
+				<string>B0F0B22110B28CB700E25FA3</string>
+				<string>B0F0B22210B28CB700E25FA3</string>
+				<string>B0F0B22310B28CB700E25FA3</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -901,7 +912,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>B0F0B10A10B09FA600E25FA3</string>
+				<string>B0F0B22410B28CB700E25FA3</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
