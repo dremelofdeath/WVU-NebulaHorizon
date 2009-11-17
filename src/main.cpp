@@ -19,7 +19,7 @@
 
 #include "RenderQueue.h"
 
-static GLsizei winWidth = 500, winHeight = 500;
+static GLsizei winWidth = 800, winHeight = 600;
 static int window_id_main = 0;
 
 void display() {
@@ -71,7 +71,7 @@ void init_opengl() {
 
 int main(int argc, char *argv[]) {
     glutInit(&argc, argv);
-    const char *title = "Murray, Zachary C.";
+    const char *title = "Nebula Horizon";
     window_id_main = create_window(title, 40, 40, winWidth, winHeight);
     atexit(&exit_callback);
     create_callbacks();

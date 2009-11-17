@@ -12,16 +12,15 @@
 #ifndef NHZ_RENDERQUEUE_H
 #define NHZ_RENDERQUEUE_H
 
-class RenderQueue {
+class RenderQueue : public Sprite {
     public:
+        RenderQueue();
         static RenderQueue* getInstance();
         void enqueue(Sprite& spr);
         void dequeue(Sprite& spr);
         void render();
         void clear();
         std::vector<Sprite*>::size_type size();
-    protected:
-        RenderQueue();
     private:
         static RenderQueue* _singleton;
         std::vector<Sprite*> _sprites;
