@@ -7,7 +7,7 @@
  */
 
 #include <vector>
-#include "Sprite.h"
+#include "Renderable.h"
 
 #ifndef NHZ_RENDERQUEUE_H
 #define NHZ_RENDERQUEUE_H
@@ -16,8 +16,8 @@ class RenderQueue : public Renderable {
     public:
         RenderQueue();
         static RenderQueue* getInstance();
-        void enqueue(Sprite& spr);
-        void dequeue(Sprite& spr);
+        void enqueue(Renderable& spr);
+        void dequeue(Renderable& spr);
         void render();
         void clear();
         std::vector<Renderable*>::size_type size();
