@@ -17,6 +17,7 @@
 		B0F0B1A610B148B500E25FA3 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F0B1A510B148B500E25FA3 /* SDL_mixer.framework */; };
 		B0F0B1C210B1490800E25FA3 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B0F0B17A10B1488900E25FA3 /* SDL.framework */; };
 		B0F0B1C310B1490B00E25FA3 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B0F0B1A510B148B500E25FA3 /* SDL_mixer.framework */; };
+		B0F0B23B10B4FF4600E25FA3 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F0B23A10B4FF4600E25FA3 /* MeshLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,10 +61,12 @@
 		B0EFE70510AFBDA8001D94BF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		B0F0B09310AFDBDD00E25FA3 /* RenderQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderQueue.h; sourceTree = "<group>"; };
 		B0F0B09710AFE20700E25FA3 /* RenderQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderQueue.cpp; sourceTree = "<group>"; };
-		B0F0B0B810B093D500E25FA3 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		B0F0B0B810B093D500E25FA3 /* Renderable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderable.h; sourceTree = "<group>"; };
 		B0F0B11110B10E4000E25FA3 /* Viper.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = Viper.blend; sourceTree = "<group>"; };
 		B0F0B17A10B1488900E25FA3 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
 		B0F0B1A510B148B500E25FA3 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
+		B0F0B23910B4FF4600E25FA3 /* MeshLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshLoader.h; sourceTree = "<group>"; };
+		B0F0B23A10B4FF4600E25FA3 /* MeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshLoader.cpp; sourceTree = "<group>"; };
 		C6859E8B029090EE04C91782 /* Nebula Horizon.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = "Nebula Horizon.1"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +108,9 @@
 				08FB7796FE84155DC02AAC07 /* main.cpp */,
 				B0F0B09310AFDBDD00E25FA3 /* RenderQueue.h */,
 				B0F0B09710AFE20700E25FA3 /* RenderQueue.cpp */,
-				B0F0B0B810B093D500E25FA3 /* Sprite.h */,
+				B0F0B0B810B093D500E25FA3 /* Renderable.h */,
+				B0F0B23910B4FF4600E25FA3 /* MeshLoader.h */,
+				B0F0B23A10B4FF4600E25FA3 /* MeshLoader.cpp */,
 			);
 			name = Source;
 			path = src;
@@ -201,6 +206,7 @@
 			files = (
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
 				B0F0B09810AFE20700E25FA3 /* RenderQueue.cpp in Sources */,
+				B0F0B23B10B4FF4600E25FA3 /* MeshLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

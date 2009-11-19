@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -275,6 +277,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>7</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -310,14 +313,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>main.cpp</string>
+								<string>Renderable.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,18 +326,20 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>main.cpp</string>
+										<string>Renderable.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B0F0B22F10B28CCB00E25FA3</string>
+										<string>B0F0B24610B5C8EB00E25FA3</string>
 										<key>history</key>
 										<array>
 											<string>B0F0B12B10B10FA200E25FA3</string>
 											<string>B0F0B13110B1105E00E25FA3</string>
-											<string>B0F0B22610B28CB800E25FA3</string>
 											<string>B0F0B22710B28CB800E25FA3</string>
-											<string>B0F0B22910B28CB800E25FA3</string>
+											<string>B0F0B23C10B5066700E25FA3</string>
+											<string>B0F0B24410B5C8EB00E25FA3</string>
+											<string>B0F0B24510B5C8EB00E25FA3</string>
+											<string>B0F0B24110B5074900E25FA3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -534,7 +537,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B0F0B23010B28CCB00E25FA3</string>
 		<string>B0F0B22B10B28CB800E25FA3</string>
 		<string>B0F0B22C10B28CB800E25FA3</string>
 		<string>1C78EAAD065D492600B07095</string>

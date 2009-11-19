@@ -7,10 +7,10 @@
  *
  */
 
-#ifndef NHZ_SPRITE_H
-#define NHZ_SPRITE_H
+#ifndef NHZ_RENDERABLE_H
+#define NHZ_RENDERABLE_H
 
-class Sprite {
+class Renderable {
 	public:
         virtual void render() = 0;
 };

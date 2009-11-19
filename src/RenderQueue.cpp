@@ -20,12 +20,12 @@ RenderQueue* RenderQueue::getInstance() {
     return _singleton;
 }
 
-void RenderQueue::enqueue(Sprite& spr) {
+void RenderQueue::enqueue(Renderable& spr) {
     _sprites.push_back(&spr);
 }
 
-void RenderQueue::dequeue(Sprite& spr) {
-    std::vector<Sprite*>::reverse_iterator vector_it = _sprites.rbegin();
+void RenderQueue::dequeue(Renderable& spr) {
+    std::vector<Renderable*>::reverse_iterator vector_it = _sprites.rbegin();
     bool found_it = false;
     while(vector_it != _sprites.rend() && !found_it) {
         if(&spr == *vector_it) {
@@ -38,7 +38,7 @@ void RenderQueue::dequeue(Sprite& spr) {
 }
 
 void RenderQueue::render() {
-    std::vector<Sprite*>::iterator vector_it = _sprites.begin();
+    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->render();
     }
@@ -48,6 +48,6 @@ void RenderQueue::clear() {
     _sprites.clear();
 }
 
-std::vector<Sprite*>::size_type RenderQueue::size() {
+std::vector<Renderable*>::size_type RenderQueue::size() {
     return _sprites.size();
 }
