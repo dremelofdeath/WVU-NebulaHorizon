@@ -12,7 +12,7 @@ GLMeshLoader::GLMeshLoader() : MeshLoader() {
     initialize();
 }
 
-void GLMeshLoader::processPoint(const std::vector<int>* vertices) {
+void GLMeshLoader::processPoint(std::vector<int>* const vertices) {
     MeshLoader::processPoint(vertices);
     std::vector<int>::const_iterator vector_it = vertices->begin();
     glPrimitivePreamble(GL_POINTS);
@@ -23,8 +23,12 @@ void GLMeshLoader::processPoint(const std::vector<int>* vertices) {
     }
 }
 
-void GLMeshLoader::processLine(const std::vector<int>* v,
-                               const std::vector<int>* vt) {
+void GLMeshLoader::processLine(std::vector<int>* const vertices) {
+    processLine(vertices, 0);
+}
+
+void GLMeshLoader::processLine(std::vector<int>* const v,
+                               std::vector<int>* const vt) {
     MeshLoader::processLine(v, vt);
     std::vector<int>::const_iterator vertex_it = v->begin();
     std::vector<int>::const_iterator texture_it;
@@ -44,9 +48,18 @@ void GLMeshLoader::processLine(const std::vector<int>* v,
     }
 }
 
-void GLMeshLoader::processFace(const std::vector<int>* v,
-                               const std::vector<int>* vt,
-                               const std::vector<int>* vn) {
+void GLMeshLoader::processFace(std::vector<int>* const vertices) {
+    processFace(vertices, 0);
+}
+
+void GLMeshLoader::processFace(std::vector<int>* const v,
+                               std::vector<int>* const vt) {
+    processFace(v, vt, 0);
+}
+
+void GLMeshLoader::processFace(std::vector<int>* const v,
+                               std::vector<int>* const vt,
+                               std::vector<int>* const vn) {
     MeshLoader::processFace(v, vt, vn);
     std::vector<int>::const_iterator vertex_it = v->begin();
     std::vector<int>::const_iterator texture_it;

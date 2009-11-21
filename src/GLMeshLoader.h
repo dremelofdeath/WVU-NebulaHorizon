@@ -23,14 +23,17 @@
 class GLMeshLoader : public MeshLoader {
     public:
         GLMeshLoader();
-        virtual Renderable& loadMesh(std::istream& input) = 0;
+        virtual Renderable* loadMesh(std::istream& input) = 0;
     protected:
-        void processPoint(const std::vector<int>* vertices);
-        void processLine(const std::vector<int>* v,
-                         const std::vector<int>* vt);
-        void processFace(const std::vector<int>* v,
-                         const std::vector<int>* vt,
-                         const std::vector<int>* vn);
+        void processPoint(std::vector<int>* const vertices);
+        void processLine(std::vector<int>* const vertices);
+        void processLine(std::vector<int>* const v,
+                         std::vector<int>* const vt);
+        void processFace(std::vector<int>* const vertices);
+        void processFace(std::vector<int>* const v, std::vector<int>* const vt);
+        void processFace(std::vector<int>* const v,
+                         std::vector<int>* const vt,
+                         std::vector<int>* const vn);
         void glPrimitivePreamble(GLenum mode);
         void glPrimitiveEpilogue();
         void initialize();
