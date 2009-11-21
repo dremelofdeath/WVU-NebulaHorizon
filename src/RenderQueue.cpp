@@ -44,6 +44,13 @@ void RenderQueue::render() {
     }
 }
 
+void RenderQueue::idle() {
+    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
+    while(vector_it != _sprites.end()) {
+        (*vector_it)->idle();
+    }
+}
+
 void RenderQueue::clear() {
     _sprites.clear();
 }
