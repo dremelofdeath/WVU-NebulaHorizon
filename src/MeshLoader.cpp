@@ -36,7 +36,7 @@ void MeshLoader::processVertexNormal(double i, double j, double k) {
     addVertexNormalToList(i, j, k);
 }
 
-void MeshLoader::processPoint(const std::vector<int>* vertices) {
+void MeshLoader::processPoint(std::vector<int>* const vertices) {
     // default implementation does nothing but check for errors
     if(vertices == 0) {
         throw std::invalid_argument("vertices");
@@ -45,12 +45,12 @@ void MeshLoader::processPoint(const std::vector<int>* vertices) {
     }
 }
 
-void MeshLoader::processLine(const std::vector<int>* vertices) {
+void MeshLoader::processLine(std::vector<int>* const vertices) {
     processLine(vertices, 0);
 }
 
-void MeshLoader::processLine(const std::vector<int>* v,
-                             const std::vector<int>* vt) {
+void MeshLoader::processLine(std::vector<int>* const v,
+                             std::vector<int>* const vt) {
     // default implementation does nothing but check for errors
     if(v == 0) {
         throw std::invalid_argument("v");
@@ -62,18 +62,18 @@ void MeshLoader::processLine(const std::vector<int>* v,
     }
 }
 
-void MeshLoader::processFace(const std::vector<int>* vertices) {
+void MeshLoader::processFace(std::vector<int>* const vertices) {
     processFace(vertices, 0);
 }
 
-void MeshLoader::processFace(const std::vector<int>* v,
-                             const std::vector<int>* vt) {
+void MeshLoader::processFace(std::vector<int>* const v,
+                             std::vector<int>* const vt) {
     processFace(v, vt, 0);
 }
 
-void MeshLoader::processFace(const std::vector<int>* v,
-                             const std::vector<int>* vt,
-                             const std::vector<int>* vn) {
+void MeshLoader::processFace(std::vector<int>* const v,
+                             std::vector<int>* const vt,
+                             std::vector<int>* const vn) {
     // default implementation does nothing but check for errors
     if(v == 0) {
         throw std::invalid_argument("v");

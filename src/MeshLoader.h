@@ -19,7 +19,7 @@
 
 class MeshLoader {
     public:
-        virtual Renderable& loadMesh(std::istream& input) = 0;
+        virtual Renderable* loadMesh(std::istream& input) = 0;
     protected:
         void processVertex(double x, double y, double z);
         virtual void processVertex(double x, double y, double z, double w);
@@ -27,15 +27,15 @@ class MeshLoader {
         void processTextureVertex(double u, double v);
         virtual void processTextureVertex(double u, double v, double w);
         virtual void processVertexNormal(double i, double j, double k);
-        virtual void processPoint(const std::vector<int>* vertices);
-        void processLine(const std::vector<int>* vertices);
-        virtual void processLine(const std::vector<int>* v,
-                                 const std::vector<int>* vt);
-        void processFace(const std::vector<int>* vertices);
-        void processFace(const std::vector<int>* v, const std::vector<int>* vt);
-        virtual void processFace(const std::vector<int>* v,
-                                 const std::vector<int>* vt,
-                                 const std::vector<int>* vn);
+        virtual void processPoint(std::vector<int>* const vertices);
+        void processLine(std::vector<int>* const vertices);
+        virtual void processLine(std::vector<int>* const v,
+                                 std::vector<int>* const vt);
+        void processFace(std::vector<int>* const vertices);
+        void processFace(std::vector<int>* const v, std::vector<int>* const vt);
+        virtual void processFace(std::vector<int>* const v,
+                                 std::vector<int>* const vt,
+                                 std::vector<int>* const vn);
         void addVertexToList(double x, double y, double z, double w);
         void addTextureVertexToList(double u, double v, double w);
         void addVertexNormalToList(double i, double j, double k);
