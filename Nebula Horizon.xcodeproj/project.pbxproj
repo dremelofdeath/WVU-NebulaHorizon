@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* Nebula Horizon.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Nebula Horizon.1 */; };
+		B0E73A1D10B787FE00462062 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E73A1C10B787FE00462062 /* GLMeshLoader.cpp */; };
 		B0EFE70210AFBDA8001D94BF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFE70110AFBDA7001D94BF /* Cocoa.framework */; };
 		B0EFE70410AFBDA8001D94BF /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFE70310AFBDA8001D94BF /* GLUT.framework */; };
 		B0EFE70610AFBDA8001D94BF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFE70510AFBDA8001D94BF /* OpenGL.framework */; };
@@ -56,6 +57,11 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* Nebula Horizon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Nebula Horizon"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B03D5F7B10B7B8CB0064CF36 /* Triple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triple.h; sourceTree = "<group>"; };
+		B03D5F8510B7BB810064CF36 /* Quadruple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadruple.h; sourceTree = "<group>"; };
+		B0E73A1B10B787FE00462062 /* GLMeshLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMeshLoader.h; sourceTree = "<group>"; };
+		B0E73A1C10B787FE00462062 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
+		B0E73A2710B7ADAC00462062 /* Tuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tuple.h; sourceTree = "<group>"; };
 		B0EFE70110AFBDA7001D94BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		B0EFE70310AFBDA8001D94BF /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
 		B0EFE70510AFBDA8001D94BF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
@@ -111,6 +117,11 @@
 				B0F0B0B810B093D500E25FA3 /* Renderable.h */,
 				B0F0B23910B4FF4600E25FA3 /* MeshLoader.h */,
 				B0F0B23A10B4FF4600E25FA3 /* MeshLoader.cpp */,
+				B0E73A1B10B787FE00462062 /* GLMeshLoader.h */,
+				B0E73A1C10B787FE00462062 /* GLMeshLoader.cpp */,
+				B0E73A2710B7ADAC00462062 /* Tuple.h */,
+				B03D5F7B10B7B8CB0064CF36 /* Triple.h */,
+				B03D5F8510B7BB810064CF36 /* Quadruple.h */,
 			);
 			name = Source;
 			path = src;
@@ -207,6 +218,7 @@
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
 				B0F0B09810AFE20700E25FA3 /* RenderQueue.cpp in Sources */,
 				B0F0B23B10B4FF4600E25FA3 /* MeshLoader.cpp in Sources */,
+				B0E73A1D10B787FE00462062 /* GLMeshLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
