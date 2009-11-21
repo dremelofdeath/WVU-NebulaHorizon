@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 #include "Renderable.h"
+#include "Triple.h"
+#include "Quadruple.h"
 
 #ifndef NHZ_MESHLOADER_H
 #define NHZ_MESHLOADER_H
@@ -34,6 +36,16 @@ class MeshLoader {
         virtual void processFace(const std::vector<int>* v,
                                  const std::vector<int>* vt,
                                  const std::vector<int>* vn);
+        void addVertexToList(double x, double y, double z, double w);
+        void addTextureVertexToList(double u, double v, double w);
+        void addVertexNormalToList(double i, double j, double k);
+        Quadruple<double>* getVertex(size_t i);
+        Triple<double>* getTextureVertex(size_t i);
+        Triple<double>* getVertexNormal(size_t i);
+    private:
+        std::vector<Quadruple<double>*> _vertexList;
+        std::vector<Triple<double>*> _textureVertexList;
+        std::vector<Triple<double>*> _vertexNormalList;
 };
 
 #endif
