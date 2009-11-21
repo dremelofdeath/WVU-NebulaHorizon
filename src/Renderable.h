@@ -13,7 +13,7 @@
 class Renderable {
 	public:
         virtual void render() = 0;
-        virtual void idle() = 0;
+        virtual void idle();
 };
 
 #endif
