@@ -19,6 +19,7 @@ class RenderQueue : public Renderable {
         void enqueue(Renderable& spr);
         void dequeue(Renderable& spr);
         void render();
+        void idle();
         void clear();
         std::vector<Renderable*>::size_type size();
     private:
