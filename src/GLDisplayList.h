@@ -21,6 +21,7 @@ class GLDisplayList : public Renderable {
     public:
         GLDisplayList();
         GLDisplayList(GLuint list);
+        ~GLDisplayList();
         void render();
         GLuint getList();
     protected:

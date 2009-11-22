@@ -16,6 +16,10 @@ GLDisplayList::GLDisplayList(GLuint list) {
     initialize(list);
 }
 
+GLDisplayList::~GLDisplayList() {
+    glDeleteLists(_list, 1);
+}
+
 void GLDisplayList::render() {
     glCallList(_list);
 }
