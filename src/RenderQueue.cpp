@@ -41,6 +41,7 @@ void RenderQueue::render() {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->render();
+        vector_it++;
     }
 }
 
@@ -48,6 +49,7 @@ void RenderQueue::idle() {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->idle();
+        vector_it++;
     }
 }
 
