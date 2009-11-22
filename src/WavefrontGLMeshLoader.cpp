@@ -21,23 +21,31 @@ Renderable* WavefrontGLMeshLoader::loadMesh(std::istream& input) {
 
 void WavefrontGLMeshLoader::parseFile(std::istream& input) {
     while(input.good()) {
-        std::string cmd;
-        input >> cmd;
+        char s[12];
+        input.get(s, 12, ' ');
+        input.get();
+        std::string cmd(s);
         if(cmd == "#") {
             processFileComment(input);
         } else if(cmd == "v" || cmd == "vt" || cmd == "vn") {
+            char temp[24];
             double x[4];
             int n = 0;
             while(n < 4) {
-                input >> x[n];
-                if(input.bad()) {
-                    break;
-                }
+                input >> temp;
+                x[n] = strtod(temp, 0);
                 if(input.fail()) {
                     input.clear();
                     break;
                 }
+                if(input.bad()) {
+                    break;
+                }
                 n++;
+                if(input.peek() == '\n') {
+                    input.get();
+                    break;
+                }
             }
             if(cmd == "v") {
                 switch(n) {
@@ -85,31 +93,40 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
             while(input.good()) {
                 int i;
                 input >> i;
-                if(input.bad()) {
-                    break;
-                }
                 if(input.fail()) {
                     input.clear();
                     break;
                 }
+                if(input.bad()) {
+                    break;
+                }
                 vertices.push_back(i);
+                if(input.peek() == '\n') {
+                    input.get();
+                    break;
+                }
             }
             processPoint(&vertices);
         } else if(cmd == "l") {
             std::vector<int> v;
             std::vector<int> vt;
             while(input.good()) {
-                std::string param;
-                input >> param;
-                if(input.bad()) {
-                    break;
-                }
+                char temp[256];
+                input >> temp;
+                std::string param(temp);
                 if(input.fail()) {
                     input.clear();
                     break;
                 }
+                if(input.bad()) {
+                    break;
+                }
                 std::istringstream iss(param);
                 parseParam(iss, v, vt);
+                if(input.peek() == '\n') {
+                    input.get();
+                    break;
+                }
             }
             if(vt.size() == 0) {
                 processLine(&v);
@@ -121,17 +138,22 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
             std::vector<int> vt;
             std::vector<int> vn;
             while(input.good()) {
-                std::string param;
-                input >> param;
-                if(input.bad()) {
-                    break;
-                }
+                char temp[256];
+                input >> temp;
+                std::string param(temp);
                 if(input.fail()) {
                     input.clear();
                     break;
                 }
+                if(input.bad()) {
+                    break;
+                }
                 std::istringstream iss(param);
                 parseParam(iss, v, vt, vn);
+                if(input.peek() == '\n') {
+                    input.get();
+                    break;
+                }
             }
             if(vn.size() == 0) {
                 if(vt.size() == 0) {
@@ -146,6 +168,9 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
                     processFace(&v, &vt, &vn);
                 }
             }
+        } else {
+            // it's a command we don't care about, ignore it
+            processFileComment(input);
         }
     }
     if(input.bad()) {
@@ -161,7 +186,9 @@ void WavefrontGLMeshLoader::parseParam(std::istringstream& param,
     int n = 0;
     char sep = '/';
     while(param.good() && n < 2 && sep == '/') {
-        param >> x[n];
+        char temp[128];
+        param >> temp;
+        x[n] = atoi(temp)-1;
         if(param.bad() || param.fail()) {
             break;
         }
@@ -198,6 +225,7 @@ void WavefrontGLMeshLoader::parseParam(std::istringstream& param,
     parseParam(param, v, vt);
     if(param.good()) {
         param >> x;
+        x--;
         if(param.bad()) {
             std::cerr << "stream went bad; dropping final attribute";
             std::cerr << std::endl;
@@ -212,4 +240,18 @@ void WavefrontGLMeshLoader::parseParam(std::istringstream& param,
 void WavefrontGLMeshLoader::processFileComment(std::istream& input) {
     char s[256];
     input.getline(s, 256);
+    if(input.fail()) {
+        if(!input.eof()) {
+            input.clear();
+            input.get();
+            if(input.fail()) {
+                std::cerr << "unstoppable failure in processFileComment()";
+                std::cerr << std::endl;
+            }
+        }
+    }
+    if(input.bad()) {
+        std::cerr << "getline() caused bad stream in processFileComment()";
+        std::cerr << std::endl;
+    }
 }
