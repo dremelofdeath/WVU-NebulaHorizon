@@ -45,10 +45,50 @@ void RenderQueue::render() {
     }
 }
 
-void RenderQueue::idle() {
+void RenderQueue::idle(int elapsed) {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
-        (*vector_it)->idle();
+        (*vector_it)->idle(elapsed);
+        vector_it++;
+    }
+}
+
+void RenderQueue::handleKeyboard(unsigned char key, int x, int y) {
+    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
+    while(vector_it != _sprites.end()) {
+        (*vector_it)->handleKeyboard(key, x, y);
+        vector_it++;
+    }
+}
+
+void RenderQueue::handleSpecialKey(int key, int x, int y) {
+    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
+    while(vector_it != _sprites.end()) {
+        (*vector_it)->handleKeyboard(key, x, y);
+        vector_it++;
+    }
+}
+
+void RenderQueue::handleMouseEvent(int button, int state, int x, int y) {
+    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
+    while(vector_it != _sprites.end()) {
+        (*vector_it)->handleMouseEvent(button, state, x, y);
+        vector_it++;
+    }
+}
+
+void RenderQueue::handleMouseDrag(int x, int y) {
+    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
+    while(vector_it != _sprites.end()) {
+        (*vector_it)->handleMouseDrag(x, y);
+        vector_it++;
+    }
+}
+
+void RenderQueue::handleMouseMotion(int x, int y) {
+    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
+    while(vector_it != _sprites.end()) {
+        (*vector_it)->handleMouseMotion(x, y);
         vector_it++;
     }
 }

@@ -13,7 +13,12 @@
 class Renderable {
 	public:
         virtual void render() = 0;
-        virtual void idle();
+        virtual void idle(int elapsed);
+        virtual void handleKeyboard(unsigned char key, int x, int y);
+        virtual void handleSpecialKey(int key, int x, int y);
+        virtual void handleMouseEvent(int button, int state, int x, int y);
+        virtual void handleMouseDrag(int x, int y);
+        virtual void handleMouseMotion(int x, int y);
 };
 
 #endif

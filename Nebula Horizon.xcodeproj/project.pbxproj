@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* Nebula Horizon.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Nebula Horizon.1 */; };
+		B03D60FF10B889C20064CF36 /* WavefrontGLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D60FE10B889C20064CF36 /* WavefrontGLMeshLoader.cpp */; };
+		B03D610410B88D310064CF36 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D610310B88D310064CF36 /* GLDisplayList.cpp */; };
+		B03D610710B88E0A0064CF36 /* Renderable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03D610610B88E0A0064CF36 /* Renderable.cpp */; };
+		B03D620410B8B7E30064CF36 /* viper.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = B03D620310B8B7C00064CF36 /* viper.obj */; };
+		B03D620510B8B7E80064CF36 /* viper.mtl in CopyFiles */ = {isa = PBXBuildFile; fileRef = B03D620210B8B7C00064CF36 /* viper.mtl */; };
 		B0E73A1D10B787FE00462062 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E73A1C10B787FE00462062 /* GLMeshLoader.cpp */; };
 		B0EFE70210AFBDA8001D94BF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFE70110AFBDA7001D94BF /* Cocoa.framework */; };
 		B0EFE70410AFBDA8001D94BF /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFE70310AFBDA8001D94BF /* GLUT.framework */; };
@@ -38,6 +43,8 @@
 			dstPath = meshes;
 			dstSubfolderSpec = 7;
 			files = (
+				B03D620510B8B7E80064CF36 /* viper.mtl in CopyFiles */,
+				B03D620410B8B7E30064CF36 /* viper.obj in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,13 @@
 		8DD76F6C0486A84900D96B5E /* Nebula Horizon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Nebula Horizon"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03D5F7B10B7B8CB0064CF36 /* Triple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triple.h; sourceTree = "<group>"; };
 		B03D5F8510B7BB810064CF36 /* Quadruple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadruple.h; sourceTree = "<group>"; };
+		B03D60FD10B889C20064CF36 /* WavefrontGLMeshLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WavefrontGLMeshLoader.h; sourceTree = "<group>"; };
+		B03D60FE10B889C20064CF36 /* WavefrontGLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WavefrontGLMeshLoader.cpp; sourceTree = "<group>"; };
+		B03D610210B88D310064CF36 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
+		B03D610310B88D310064CF36 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
+		B03D610610B88E0A0064CF36 /* Renderable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Renderable.cpp; sourceTree = "<group>"; };
+		B03D620210B8B7C00064CF36 /* viper.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = viper.mtl; sourceTree = "<group>"; };
+		B03D620310B8B7C00064CF36 /* viper.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = viper.obj; sourceTree = "<group>"; };
 		B0E73A1B10B787FE00462062 /* GLMeshLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMeshLoader.h; sourceTree = "<group>"; };
 		B0E73A1C10B787FE00462062 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
 		B0E73A2710B7ADAC00462062 /* Tuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tuple.h; sourceTree = "<group>"; };
@@ -115,6 +129,7 @@
 				B0F0B09310AFDBDD00E25FA3 /* RenderQueue.h */,
 				B0F0B09710AFE20700E25FA3 /* RenderQueue.cpp */,
 				B0F0B0B810B093D500E25FA3 /* Renderable.h */,
+				B03D610610B88E0A0064CF36 /* Renderable.cpp */,
 				B0F0B23910B4FF4600E25FA3 /* MeshLoader.h */,
 				B0F0B23A10B4FF4600E25FA3 /* MeshLoader.cpp */,
 				B0E73A1B10B787FE00462062 /* GLMeshLoader.h */,
@@ -122,6 +137,10 @@
 				B0E73A2710B7ADAC00462062 /* Tuple.h */,
 				B03D5F7B10B7B8CB0064CF36 /* Triple.h */,
 				B03D5F8510B7BB810064CF36 /* Quadruple.h */,
+				B03D60FD10B889C20064CF36 /* WavefrontGLMeshLoader.h */,
+				B03D60FE10B889C20064CF36 /* WavefrontGLMeshLoader.cpp */,
+				B03D610210B88D310064CF36 /* GLDisplayList.h */,
+				B03D610310B88D310064CF36 /* GLDisplayList.cpp */,
 			);
 			name = Source;
 			path = src;
@@ -147,6 +166,8 @@
 		B0F0B11810B10EE400E25FA3 /* Meshes */ = {
 			isa = PBXGroup;
 			children = (
+				B03D620210B8B7C00064CF36 /* viper.mtl */,
+				B03D620310B8B7C00064CF36 /* viper.obj */,
 			);
 			name = Meshes;
 			path = meshes;
@@ -219,6 +240,9 @@
 				B0F0B09810AFE20700E25FA3 /* RenderQueue.cpp in Sources */,
 				B0F0B23B10B4FF4600E25FA3 /* MeshLoader.cpp in Sources */,
 				B0E73A1D10B787FE00462062 /* GLMeshLoader.cpp in Sources */,
+				B03D60FF10B889C20064CF36 /* WavefrontGLMeshLoader.cpp in Sources */,
+				B03D610410B88D310064CF36 /* GLDisplayList.cpp in Sources */,
+				B03D610710B88E0A0064CF36 /* Renderable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
