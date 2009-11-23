@@ -39,10 +39,33 @@ void display() {
 }
 
 void idle() {
+	static int last_time = 0;
+	int time = glutGet(GLUT_ELAPSED_TIME);
+    // if we overflow, last_time will be greater than time
+	int elapsed = last_time <= time ? time-last_time : time+last_time;
+	last_time = time;
+    RenderQueue::getInstance()->idle(elapsed);
     glutPostRedisplay();
 }
 
-void handle_special_keys(int key, int x, int y) {
+void handle_keyboard(unsigned char key, int x, int y) {
+    RenderQueue::getInstance()->handleKeyboard(key, x, y);
+}
+
+void handle_special_key(int key, int x, int y) {
+    RenderQueue::getInstance()->handleSpecialKey(key, x, y);
+}
+
+void handle_mouse_event(int button, int state, int x, int y) {
+    RenderQueue::getInstance()->handleMouseEvent(button, state, x, y);
+}
+
+void handle_mouse_drag(int x, int y) {
+    RenderQueue::getInstance()->handleMouseDrag(x, y);
+}
+
+void handle_mouse_motion(int x, int y) {
+    RenderQueue::getInstance()->handleMouseMotion(x, y);
 }
 
 void update_projection(GLsizei w, GLsizei h) {
@@ -63,7 +86,11 @@ void create_callbacks() {
     glutDisplayFunc(&display);
     glutIdleFunc(&idle);
     glutReshapeFunc(&reshape);
-    glutSpecialFunc(&handle_special_keys);
+    glutKeyboardFunc(&handle_keyboard);
+    glutSpecialFunc(&handle_special_key);
+    glutMouseFunc(&handle_mouse_event);
+    glutMotionFunc(&handle_mouse_drag);
+    glutPassiveMotionFunc(&handle_mouse_motion);
 }
 
 void exit_callback() {
