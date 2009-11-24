@@ -19,11 +19,8 @@
 		B0EFE70410AFBDA8001D94BF /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFE70310AFBDA8001D94BF /* GLUT.framework */; };
 		B0EFE70610AFBDA8001D94BF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFE70510AFBDA8001D94BF /* OpenGL.framework */; };
 		B0F0B09810AFE20700E25FA3 /* RenderQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F0B09710AFE20700E25FA3 /* RenderQueue.cpp */; };
-		B0F0B17B10B1488900E25FA3 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F0B17A10B1488900E25FA3 /* SDL.framework */; };
-		B0F0B1A610B148B500E25FA3 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F0B1A510B148B500E25FA3 /* SDL_mixer.framework */; };
-		B0F0B1C210B1490800E25FA3 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B0F0B17A10B1488900E25FA3 /* SDL.framework */; };
-		B0F0B1C310B1490B00E25FA3 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B0F0B1A510B148B500E25FA3 /* SDL_mixer.framework */; };
 		B0F0B23B10B4FF4600E25FA3 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F0B23A10B4FF4600E25FA3 /* MeshLoader.cpp */; };
+		B0FA704810BB434600FF64DB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FA704710BB434600FF64DB /* OpenAL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,17 +42,6 @@
 			files = (
 				B03D620510B8B7E80064CF36 /* viper.mtl in CopyFiles */,
 				B03D620410B8B7E30064CF36 /* viper.obj in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0F0B1C410B1492F00E25FA3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B0F0B1C210B1490800E25FA3 /* SDL.framework in CopyFiles */,
-				B0F0B1C310B1490B00E25FA3 /* SDL_mixer.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +69,9 @@
 		B0F0B09710AFE20700E25FA3 /* RenderQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderQueue.cpp; sourceTree = "<group>"; };
 		B0F0B0B810B093D500E25FA3 /* Renderable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderable.h; sourceTree = "<group>"; };
 		B0F0B11110B10E4000E25FA3 /* Viper.blend */ = {isa = PBXFileReference; lastKnownFileType = file; path = Viper.blend; sourceTree = "<group>"; };
-		B0F0B17A10B1488900E25FA3 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
-		B0F0B1A510B148B500E25FA3 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
 		B0F0B23910B4FF4600E25FA3 /* MeshLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshLoader.h; sourceTree = "<group>"; };
 		B0F0B23A10B4FF4600E25FA3 /* MeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshLoader.cpp; sourceTree = "<group>"; };
+		B0FA704710BB434600FF64DB /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = /System/Library/Frameworks/OpenAL.framework; sourceTree = "<absolute>"; };
 		C6859E8B029090EE04C91782 /* Nebula Horizon.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = "Nebula Horizon.1"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,8 +83,7 @@
 				B0EFE70210AFBDA8001D94BF /* Cocoa.framework in Frameworks */,
 				B0EFE70410AFBDA8001D94BF /* GLUT.framework in Frameworks */,
 				B0EFE70610AFBDA8001D94BF /* OpenGL.framework in Frameworks */,
-				B0F0B17B10B1488900E25FA3 /* SDL.framework in Frameworks */,
-				B0F0B1A610B148B500E25FA3 /* SDL_mixer.framework in Frameworks */,
+				B0FA704810BB434600FF64DB /* OpenAL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,10 +98,10 @@
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
-				B0F0B17510B1482D00E25FA3 /* Static Frameworks */,
 				B0EFE70110AFBDA7001D94BF /* Cocoa.framework */,
 				B0EFE70310AFBDA8001D94BF /* GLUT.framework */,
 				B0EFE70510AFBDA8001D94BF /* OpenGL.framework */,
+				B0FA704710BB434600FF64DB /* OpenAL.framework */,
 			);
 			name = "Nebula Horizon";
 			sourceTree = "<group>";
@@ -173,16 +157,6 @@
 			path = meshes;
 			sourceTree = "<group>";
 		};
-		B0F0B17510B1482D00E25FA3 /* Static Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B0F0B17A10B1488900E25FA3 /* SDL.framework */,
-				B0F0B1A510B148B500E25FA3 /* SDL_mixer.framework */,
-			);
-			name = "Static Frameworks";
-			path = frameworks;
-			sourceTree = "<group>";
-		};
 		C6859E8C029090F304C91782 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +176,6 @@
 				8DD76F660486A84900D96B5E /* Frameworks */,
 				8DD76F690486A84900D96B5E /* CopyFiles */,
 				B0F0B13410B1143400E25FA3 /* CopyFiles */,
-				B0F0B1C410B1492F00E25FA3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
