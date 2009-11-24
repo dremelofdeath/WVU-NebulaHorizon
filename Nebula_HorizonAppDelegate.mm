@@ -23,7 +23,7 @@
     atexit(&exit_callback);
     create_callbacks();
     init_opengl();
-    Player player;
+    Player player(5.0f, 5.0f);
 	RenderQueue::getInstance()->enqueue(player);
     glutMainLoop();
 }
