@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Nebula Horizon' target in the 'Nebula Horizon' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
