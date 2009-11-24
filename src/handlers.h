@@ -32,7 +32,6 @@ void create_callbacks();
 void exit_callback();
 int create_window(const char *title, int xpos, int ypos, int ww, int wh);
 void init_opengl();
-void load_viper();
 void set_window_id(int id);
 
 #ifdef __cplusplus
