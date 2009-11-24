@@ -9,6 +9,8 @@
 #import <GLUT/glut.h>
 #import "Nebula_HorizonAppDelegate.h"
 #import "src/handlers.h"
+#import "src/RenderQueue.h"
+#import "src/Player.h"
 
 @implementation Nebula_HorizonAppDelegate
 
@@ -21,7 +23,8 @@
     atexit(&exit_callback);
     create_callbacks();
     init_opengl();
-    load_viper();
+    Player player;
+	RenderQueue::getInstance()->enqueue(player);
     glutMainLoop();
 }
 
