@@ -6,6 +6,12 @@
  *
  */
 
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#else
+#include <GL/gl.h>
+#endif
+
 #include "RenderQueue.h"
 
 RenderQueue* RenderQueue::_singleton = 0;
@@ -40,7 +46,11 @@ void RenderQueue::dequeue(Renderable& spr) {
 void RenderQueue::render() {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
+        glPushMatrix();
+        glPushAttrib(GL_ALL_ATTRIB_BITS);
         (*vector_it)->render();
+        glPopAttrib();
+        glPopMatrix();
         vector_it++;
     }
 }
