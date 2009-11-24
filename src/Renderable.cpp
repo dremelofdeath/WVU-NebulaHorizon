@@ -12,14 +12,6 @@ void Renderable::idle(int elapsed) {
     // default implementation does nothing
 }
 
-void Renderable::handleKeyboard(unsigned char key, int x, int y) {
-    // default implementation does nothing
-}
-
-void Renderable::handleSpecialKey(int key, int x, int y) {
-    // default implementation does nothing
-}
-
 void Renderable::handleMouseEvent(int button, int state, int x, int y) {
     // default implementation does nothing
 }

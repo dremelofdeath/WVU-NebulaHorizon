@@ -54,7 +54,7 @@ void handle_keyboard_up(unsigned char key, int x, int y) {
 }
 
 void handle_special_key(int key, int x, int y) {
-    RenderQueue::getInstance()->handleSpecialKey(key, x, y);
+    //RenderQueue::getInstance()->handleSpecialKey(key, x, y);
 }
 
 void handle_mouse_event(int button, int state, int x, int y) {

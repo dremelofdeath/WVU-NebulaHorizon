@@ -63,22 +63,6 @@ void RenderQueue::idle(int elapsed) {
     }
 }
 
-void RenderQueue::handleKeyboard(unsigned char key, int x, int y) {
-    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
-    while(vector_it != _sprites.end()) {
-        (*vector_it)->handleKeyboard(key, x, y);
-        vector_it++;
-    }
-}
-
-void RenderQueue::handleSpecialKey(int key, int x, int y) {
-    std::vector<Renderable*>::iterator vector_it = _sprites.begin();
-    while(vector_it != _sprites.end()) {
-        (*vector_it)->handleKeyboard(key, x, y);
-        vector_it++;
-    }
-}
-
 void RenderQueue::handleMouseEvent(int button, int state, int x, int y) {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
