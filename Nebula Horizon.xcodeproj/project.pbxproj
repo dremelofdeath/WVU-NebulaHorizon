@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		256AC3DA0F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.m */; };
+		256AC3DA0F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.mm */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.mm */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -25,6 +25,8 @@
 		B0E7514110BBB3C3003CA104 /* Nebula Horizon.icns in Resources */ = {isa = PBXBuildFile; fileRef = B0E7514010BBB3C3003CA104 /* Nebula Horizon.icns */; };
 		B0E7514D10BBB3FF003CA104 /* viper.mtl in Resources */ = {isa = PBXBuildFile; fileRef = B0E7514B10BBB3FF003CA104 /* viper.mtl */; };
 		B0E7514E10BBB3FF003CA104 /* viper.obj in Resources */ = {isa = PBXBuildFile; fileRef = B0E7514C10BBB3FF003CA104 /* viper.obj */; };
+		B0E7519310BBBCAE003CA104 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7519210BBBCAE003CA104 /* Player.cpp */; };
+		B0E7526110BBD243003CA104 /* KeyboardManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7526010BBD243003CA104 /* KeyboardManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +35,7 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nebula_HorizonAppDelegate.h; sourceTree = "<group>"; };
-		256AC3D90F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nebula_HorizonAppDelegate.m; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Nebula_HorizonAppDelegate.mm; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* Nebula_Horizon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nebula_Horizon_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -63,6 +65,10 @@
 		B0E7514010BBB3C3003CA104 /* Nebula Horizon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Nebula Horizon.icns"; sourceTree = "<group>"; };
 		B0E7514B10BBB3FF003CA104 /* viper.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = viper.mtl; sourceTree = "<group>"; };
 		B0E7514C10BBB3FF003CA104 /* viper.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = viper.obj; sourceTree = "<group>"; };
+		B0E7519110BBBCAE003CA104 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		B0E7519210BBBCAE003CA104 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		B0E7525F10BBD243003CA104 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
+		B0E7526010BBD243003CA104 /* KeyboardManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyboardManager.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				256AC3D80F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.h */,
-				256AC3D90F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.m */,
+				256AC3D90F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -164,14 +170,16 @@
 		B0E7504610BB9467003CA104 /* Codebase */ = {
 			isa = PBXGroup;
 			children = (
-				B0E750B110BBA75A003CA104 /* handlers.h */,
-				B0E750AF10BBA740003CA104 /* handlers.cpp */,
 				B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */,
 				B0E7506310BB94E7003CA104 /* GLDisplayList.h */,
 				B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */,
 				B0E7506510BB94E7003CA104 /* GLMeshLoader.h */,
+				B0E7526010BBD243003CA104 /* KeyboardManager.cpp */,
+				B0E7525F10BBD243003CA104 /* KeyboardManager.h */,
 				B0E7506710BB94E7003CA104 /* MeshLoader.cpp */,
 				B0E7506810BB94E7003CA104 /* MeshLoader.h */,
+				B0E7519210BBBCAE003CA104 /* Player.cpp */,
+				B0E7519110BBBCAE003CA104 /* Player.h */,
 				B0E7506910BB94E7003CA104 /* Quadruple.h */,
 				B0E7506A10BB94E7003CA104 /* Renderable.cpp */,
 				B0E7506B10BB94E7003CA104 /* Renderable.h */,
@@ -181,6 +189,8 @@
 				B0E7506F10BB94E7003CA104 /* Tuple.h */,
 				B0E7507010BB94E7003CA104 /* WavefrontGLMeshLoader.cpp */,
 				B0E7507110BB94E7003CA104 /* WavefrontGLMeshLoader.h */,
+				B0E750AF10BBA740003CA104 /* handlers.cpp */,
+				B0E750B110BBA75A003CA104 /* handlers.h */,
 			);
 			name = Codebase;
 			path = src;
@@ -254,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.mm in Sources */,
-				256AC3DA0F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.mm in Sources */,
 				B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */,
 				B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */,
 				B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */,
@@ -262,6 +272,8 @@
 				B0E7507710BB94E7003CA104 /* RenderQueue.cpp in Sources */,
 				B0E7507810BB94E7003CA104 /* WavefrontGLMeshLoader.cpp in Sources */,
 				B0E750B010BBA740003CA104 /* handlers.cpp in Sources */,
+				B0E7519310BBBCAE003CA104 /* Player.cpp in Sources */,
+				B0E7526110BBD243003CA104 /* KeyboardManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
