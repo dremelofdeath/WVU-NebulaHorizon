@@ -32,5 +32,8 @@ void KeyboardManager::updateKeyState(unsigned char key, bool isDown) {
 }
 
 void KeyboardManager::initialize() {
-    // do nothing at the moment
+    int i = 0;
+    for(i = 0; i <= UCHAR_MAX; i++) {
+        _keys[i] = false;
+    }
 }
