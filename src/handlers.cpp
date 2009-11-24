@@ -9,14 +9,13 @@
 
 #ifdef __APPLE__
 #include <GLUT/glut.h>
-#include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #else
 #include <GL/glut.h>
 #include <GL/glu.h>
-#include <GL/gl.h>
 #endif
 
+#include "handlers.h"
 #include "RenderQueue.h"
 #include "MeshLoader.h"
 #include "WavefrontGLMeshLoader.h"
@@ -122,4 +121,8 @@ void load_viper() {
     Renderable* viper_model = loader->loadMesh(viper_file);
     RenderQueue::getInstance()->enqueue(*viper_model);
     delete loader;
+}
+
+void set_window_id(int id) {
+    window_id_main = id;
 }
