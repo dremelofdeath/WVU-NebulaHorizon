@@ -20,8 +20,6 @@ class RenderQueue : public Renderable {
         void dequeue(Renderable& spr);
         void render();
         void idle(int elapsed);
-        void handleKeyboard(unsigned char key, int x, int y);
-        void handleSpecialKey(int key, int x, int y);
         void handleMouseEvent(int button, int state, int x, int y);
         void handleMouseDrag(int x, int y);
         void handleMouseMotion(int x, int y);
