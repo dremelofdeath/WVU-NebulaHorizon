@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -273,13 +275,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>19</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 445}}</string>
+							<string>{{0, 2}, {186, 445}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -309,14 +311,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>handlers.cpp</string>
+								<string>WavefrontGLMeshLoader.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,14 +324,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>handlers.cpp</string>
+										<string>WavefrontGLMeshLoader.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B0E7517810BBB695003CA104</string>
+										<string>B0E7532E10BBE379003CA104</string>
 										<key>history</key>
 										<array>
-											<string>B0E750C110BBA9A3003CA104</string>
 											<string>B0E750CB10BBA9EC003CA104</string>
 											<string>B0E750CC10BBA9EC003CA104</string>
 											<string>B0E7514510BBB3DF003CA104</string>
@@ -339,12 +338,26 @@
 											<string>B0E7515110BBB414003CA104</string>
 											<string>B0E7517010BBB695003CA104</string>
 											<string>B0E7517110BBB695003CA104</string>
-											<string>B0E7517210BBB695003CA104</string>
-											<string>B0E7517310BBB695003CA104</string>
 											<string>B0E7517410BBB695003CA104</string>
-											<string>B0E7517510BBB695003CA104</string>
-											<string>B0E7517610BBB695003CA104</string>
-											<string>B0E7517710BBB695003CA104</string>
+											<string>B0E7517E10BBB9AA003CA104</string>
+											<string>B0E7517F10BBB9AA003CA104</string>
+											<string>B0E7526510BBD25F003CA104</string>
+											<string>B0E7526610BBD25F003CA104</string>
+											<string>B0E752A510BBDA70003CA104</string>
+											<string>B0E752B610BBDB51003CA104</string>
+											<string>B0E752BE10BBDB71003CA104</string>
+											<string>B0E752BF10BBDB71003CA104</string>
+											<string>B0E752C810BBDBEB003CA104</string>
+											<string>B0E752E010BBDDEE003CA104</string>
+											<string>B0E752F010BBDFF8003CA104</string>
+											<string>B0E752F110BBDFF8003CA104</string>
+											<string>B0E752F910BBE029003CA104</string>
+											<string>B0E752FF10BBE05F003CA104</string>
+											<string>B0E7530010BBE05F003CA104</string>
+											<string>B0E7530110BBE05F003CA104</string>
+											<string>B0E7532910BBE280003CA104</string>
+											<string>B0E7532D10BBE379003CA104</string>
+											<string>B0E7524810BBCB46003CA104</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -542,13 +555,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B0E7517910BBB695003CA104</string>
 		<string>B0E750AD10BBA624003CA104</string>
 		<string>B0E750AE10BBA624003CA104</string>
 		<string>B0E7507B10BB9553003CA104</string>
-		<string>B0E7503010BB9232003CA104</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>B0E7503010BB9232003CA104</string>
 		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -568,30 +580,30 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Nebula_HorizonAppDelegate.m</string>
+								<string>KeyboardManager.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {500, 218}}</string>
+								<string>{{0, 0}, {500, 190}}</string>
 								<key>RubberWindowFrame</key>
-								<string>587 522 500 500 0 0 1920 1178 </string>
+								<string>802 706 500 472 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>218pt</string>
+							<string>190pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -606,9 +618,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 223}, {500, 236}}</string>
+								<string>{{0, 195}, {500, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>587 522 500 500 0 0 1920 1178 </string>
+								<string>802 706 500 472 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -617,7 +629,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>459pt</string>
+					<string>431pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -640,11 +652,11 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>587 522 500 500 0 0 1920 1178 </string>
+			<string>802 706 500 472 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>B0E7503010BB9232003CA104</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
