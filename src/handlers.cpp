@@ -87,7 +87,9 @@ void create_callbacks() {
     glutDisplayFunc(&display);
     glutIdleFunc(&idle);
     glutReshapeFunc(&reshape);
+    glutIgnoreKeyRepeat(1);
     glutKeyboardFunc(&handle_keyboard);
+    glutKeyboardUpFunc(&handle_keyboard_up);
     glutSpecialFunc(&handle_special_key);
     glutMouseFunc(&handle_mouse_event);
     glutMotionFunc(&handle_mouse_drag);
