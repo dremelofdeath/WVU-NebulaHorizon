@@ -123,15 +123,3 @@ void load_viper() {
     RenderQueue::getInstance()->enqueue(*viper_model);
     delete loader;
 }
-
-int main(int argc, char *argv[]) {
-    glutInit(&argc, argv);
-    const char *title = "Nebula Horizon";
-    window_id_main = create_window(title, 40, 40, winWidth, winHeight);
-    atexit(&exit_callback);
-    create_callbacks();
-    init_opengl();
-    load_viper();
-    glutMainLoop();
-    return 0;
-}
