@@ -17,7 +17,7 @@
 
 #include "handlers.h"
 #include "RenderQueue.h"
-#include "MeshLoader.h"
+#include "KeyboardManager.h"
 #include "WavefrontGLMeshLoader.h"
 
 static GLsizei winWidth = 800, winHeight = 600;
@@ -27,8 +27,6 @@ void display() {
     static double angle = 0.0;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
-    glTranslated(0.0, -1.0, -13.0);
-    glRotated(angle, 0.0, 1.0, 0.0);
     angle += 0.25;
     glScalef(0.75, 0.75, 0.75);
     glTranslated(0.0, 0.0, 1.0);
@@ -48,7 +46,11 @@ void idle() {
 }
 
 void handle_keyboard(unsigned char key, int x, int y) {
-    RenderQueue::getInstance()->handleKeyboard(key, x, y);
+    KeyboardManager::getInstance().updateKeyState(key, true);
+}
+
+void handle_keyboard_up(unsigned char key, int x, int y) {
+    KeyboardManager::getInstance().updateKeyState(key, false);
 }
 
 void handle_special_key(int key, int x, int y) {
@@ -113,14 +115,6 @@ void init_opengl() {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(0.0, 0.75, 2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-}
-
-void load_viper() {
-    std::ifstream viper_file("viper.obj");
-    MeshLoader* loader = new WavefrontGLMeshLoader;
-    Renderable* viper_model = loader->loadMesh(viper_file);
-    RenderQueue::getInstance()->enqueue(*viper_model);
-    delete loader;
 }
 
 void set_window_id(int id) {
