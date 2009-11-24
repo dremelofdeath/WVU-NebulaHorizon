@@ -116,7 +116,7 @@ void init_opengl() {
 }
 
 void load_viper() {
-    std::ifstream viper_file("meshes/viper.obj");
+    std::ifstream viper_file("viper.obj");
     MeshLoader* loader = new WavefrontGLMeshLoader;
     Renderable* viper_model = loader->loadMesh(viper_file);
     RenderQueue::getInstance()->enqueue(*viper_model);
