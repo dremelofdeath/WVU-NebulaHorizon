@@ -8,6 +8,7 @@
  */
 
 #include <stdexcept>
+#include <iostream>
 
 #ifdef __APPLE__
 #include <OpenGL/glu.h>
@@ -23,8 +24,19 @@ GLuint RawTextureLoader::loadTexture(std::istream& input) {
 }
 
 GLuint RawTextureLoader::loadTexture(std::istream& input, int w, int h) {
+    static int x = 0;
     GLuint texture;
-    char data[w*h*3];
+    char *data = (char *)malloc(sizeof(char)*w*h*3);
+    ++x;
+    if(input.bad()) {
+        std::cerr << "bad input" << std::endl;
+    };
+    if(input.fail()) {
+        std::cerr << "fail input: " << x << std::endl;
+    };
+    if(input.eof()) {
+        std::cerr << "eof input" << std::endl;
+    };
     input.read(data, w*h*3);
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -35,5 +47,6 @@ GLuint RawTextureLoader::loadTexture(std::istream& input, int w, int h) {
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
+    free(data);
     return texture;
 }
