@@ -35,7 +35,6 @@ void Skycube::setSize(double size) {
 }
 
 void Skycube::render() {
-    glScaled(_size, _size, _size);
     renderOneSide(_northTexture, 0.0, 0.0);
     renderOneSide(_southTexture, 0.0, 180.0);
     renderOneSide(_eastTexture, 0.0, 90.0);
@@ -75,7 +74,7 @@ void Skycube::initialize(std::istream& north, std::istream& south,
                          std::istream& up, std::istream& down,
                          TextureLoader* loader) {
     // TODO: wake up and make this happen
-    setSize(100.0);
+    setSize(10.0);
     _northTexture = loader->loadTexture(north, 2048, 2048);
     _southTexture = loader->loadTexture(south, 2048, 2048);
     _eastTexture = loader->loadTexture(east, 2048, 2048);
@@ -100,21 +99,19 @@ TextureLoader* Skycube::getDefaultTextureLoader() {
 void Skycube::renderOneSide(GLuint texture, double xAngle, double yAngle) const {
     glPushMatrix();
     glBindTexture(GL_TEXTURE_2D, texture);
-    glRotated(xAngle, 1.0, 0.0, 0.0);
-    glRotated(yAngle, 0.0, 1.0, 0.0);
     renderOneFace();
     glPopMatrix();
 }
 
 void Skycube::renderOneFace() const {
     glBegin(GL_QUADS);
-    glTexCoord2d(0.0, 0.0);
-    glVertex3d(-0.5, -0.5, 0.5);
-    glTexCoord2d(1.0, 0.0);
-    glVertex3d(0.5, -0.5, 0.5);
     glTexCoord2d(1.0, 1.0);
-    glVertex3d(0.5, 0.5, 0.5);
+    glVertex3d(-0.5, -0.5, 0.5);
     glTexCoord2d(0.0, 1.0);
+    glVertex3d(0.5, -0.5, 0.5);
+    glTexCoord2d(0.0, 0.0);
+    glVertex3d(0.5, 0.5, 0.5);
+    glTexCoord2d(1.0, 0.0);
     glVertex3d(-0.5, 0.5, 0.5);
     glEnd();
 }

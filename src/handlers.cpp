@@ -24,12 +24,20 @@ static GLsizei winWidth = 800, winHeight = 600;
 static int window_id_main = 0;
 
 void display() {
-    static double angle = 0.0;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    if(KeyboardManager::getInstance().isKeyDown('j')) {
+        glRotated(0.05, 0.0, 1.0, 0.0);
+    }
+    if(KeyboardManager::getInstance().isKeyDown('l')) {
+        glRotated(-0.05, 0.0, 1.0, 0.0);
+    }
+    if(KeyboardManager::getInstance().isKeyDown('i')) {
+        glRotated(0.05, 1.0, 0.0, 0.0);
+    }
+    if(KeyboardManager::getInstance().isKeyDown('k')) {
+        glRotated(-0.05, 1.0, 0.0, 0.0);
+    }
     glPushMatrix();
-    angle += 0.25;
-    glScalef(0.75, 0.75, 0.75);
-    glTranslated(0.0, 0.0, 1.0);
     RenderQueue::getInstance()->render();
     glPopMatrix();
     glutSwapBuffers();
@@ -72,7 +80,7 @@ void handle_mouse_motion(int x, int y) {
 void update_projection(GLsizei w, GLsizei h) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(45.0, (double)w/(double)h, 0.1, 100);
+    gluPerspective(60.0, (double)w/(double)h, 0.1, 100);
 }
 
 static void reshape(GLsizei w, GLsizei h) {
@@ -108,6 +116,7 @@ int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
     glutInitWindowSize(ww, wh);
     ret = glutCreateWindow(title);
     glEnable(GL_DEPTH_TEST);
+	glEnable(GL_TEXTURE_2D);
     return ret;
 }
 

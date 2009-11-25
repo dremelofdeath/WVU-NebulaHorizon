@@ -15,6 +15,12 @@
 		B02CBB1810BD1AA500A6AEA0 /* Skycube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB1710BD1AA500A6AEA0 /* Skycube.cpp */; };
 		B02CBB2C10BD1E7400A6AEA0 /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */; };
 		B02CBB3C10BD241100A6AEA0 /* RawTextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */; };
+		B0787F0D10BDE545000B3586 /* down.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0710BDE544000B3586 /* down.raw */; };
+		B0787F0E10BDE545000B3586 /* up.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0810BDE544000B3586 /* up.raw */; };
+		B0787F0F10BDE545000B3586 /* east.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0910BDE544000B3586 /* east.raw */; };
+		B0787F1010BDE545000B3586 /* south.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0A10BDE545000B3586 /* south.raw */; };
+		B0787F1110BDE545000B3586 /* north.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0B10BDE545000B3586 /* north.raw */; };
+		B0787F1210BDE545000B3586 /* west.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0C10BDE545000B3586 /* west.raw */; };
 		B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */; };
 		B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */; };
 		B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506710BB94E7003CA104 /* MeshLoader.cpp */; };
@@ -51,6 +57,12 @@
 		B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureLoader.cpp; sourceTree = "<group>"; };
 		B02CBB3A10BD241100A6AEA0 /* RawTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawTextureLoader.h; sourceTree = "<group>"; };
 		B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RawTextureLoader.cpp; sourceTree = "<group>"; };
+		B0787F0710BDE544000B3586 /* down.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = down.raw; sourceTree = "<group>"; };
+		B0787F0810BDE544000B3586 /* up.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = up.raw; sourceTree = "<group>"; };
+		B0787F0910BDE544000B3586 /* east.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = east.raw; sourceTree = "<group>"; };
+		B0787F0A10BDE545000B3586 /* south.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = south.raw; sourceTree = "<group>"; };
+		B0787F0B10BDE545000B3586 /* north.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = north.raw; sourceTree = "<group>"; };
+		B0787F0C10BDE545000B3586 /* west.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = west.raw; sourceTree = "<group>"; };
 		B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
 		B0E7506310BB94E7003CA104 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
 		B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
@@ -158,6 +170,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0A6807210BDE5A500917529 /* skycube */,
 				B0E7514A10BBB3FF003CA104 /* meshes */,
 				B0E7514010BBB3C3003CA104 /* Nebula Horizon.icns */,
 				8D1107310486CEB800E47090 /* Nebula_Horizon-Info.plist */,
@@ -174,6 +187,19 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0A6807210BDE5A500917529 /* skycube */ = {
+			isa = PBXGroup;
+			children = (
+				B0787F0710BDE544000B3586 /* down.raw */,
+				B0787F0810BDE544000B3586 /* up.raw */,
+				B0787F0910BDE544000B3586 /* east.raw */,
+				B0787F0A10BDE545000B3586 /* south.raw */,
+				B0787F0B10BDE545000B3586 /* north.raw */,
+				B0787F0C10BDE545000B3586 /* west.raw */,
+			);
+			name = skycube;
 			sourceTree = "<group>";
 		};
 		B0E7504610BB9467003CA104 /* Codebase */ = {
@@ -268,6 +294,12 @@
 				B0E7514110BBB3C3003CA104 /* Nebula Horizon.icns in Resources */,
 				B0E7514D10BBB3FF003CA104 /* viper.mtl in Resources */,
 				B0E7514E10BBB3FF003CA104 /* viper.obj in Resources */,
+				B0787F0D10BDE545000B3586 /* down.raw in Resources */,
+				B0787F0E10BDE545000B3586 /* up.raw in Resources */,
+				B0787F0F10BDE545000B3586 /* east.raw in Resources */,
+				B0787F1010BDE545000B3586 /* south.raw in Resources */,
+				B0787F1110BDE545000B3586 /* north.raw in Resources */,
+				B0787F1210BDE545000B3586 /* west.raw in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
