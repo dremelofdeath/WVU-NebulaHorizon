@@ -12,6 +12,9 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.mm */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B02CBB1810BD1AA500A6AEA0 /* Skycube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB1710BD1AA500A6AEA0 /* Skycube.cpp */; };
+		B02CBB2C10BD1E7400A6AEA0 /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */; };
+		B02CBB3C10BD241100A6AEA0 /* RawTextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */; };
 		B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */; };
 		B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */; };
 		B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506710BB94E7003CA104 /* MeshLoader.cpp */; };
@@ -42,6 +45,12 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Nebula_Horizon-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Nebula_Horizon-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Nebula Horizon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nebula Horizon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02CBB1610BD1AA500A6AEA0 /* Skycube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skycube.h; sourceTree = "<group>"; };
+		B02CBB1710BD1AA500A6AEA0 /* Skycube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skycube.cpp; sourceTree = "<group>"; };
+		B02CBB2A10BD1E7400A6AEA0 /* TextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureLoader.h; sourceTree = "<group>"; };
+		B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureLoader.cpp; sourceTree = "<group>"; };
+		B02CBB3A10BD241100A6AEA0 /* RawTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawTextureLoader.h; sourceTree = "<group>"; };
+		B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RawTextureLoader.cpp; sourceTree = "<group>"; };
 		B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
 		B0E7506310BB94E7003CA104 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
 		B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
@@ -181,10 +190,16 @@
 				B0E7519210BBBCAE003CA104 /* Player.cpp */,
 				B0E7519110BBBCAE003CA104 /* Player.h */,
 				B0E7506910BB94E7003CA104 /* Quadruple.h */,
+				B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */,
+				B02CBB3A10BD241100A6AEA0 /* RawTextureLoader.h */,
 				B0E7506A10BB94E7003CA104 /* Renderable.cpp */,
 				B0E7506B10BB94E7003CA104 /* Renderable.h */,
 				B0E7506C10BB94E7003CA104 /* RenderQueue.cpp */,
 				B0E7506D10BB94E7003CA104 /* RenderQueue.h */,
+				B02CBB1710BD1AA500A6AEA0 /* Skycube.cpp */,
+				B02CBB1610BD1AA500A6AEA0 /* Skycube.h */,
+				B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */,
+				B02CBB2A10BD1E7400A6AEA0 /* TextureLoader.h */,
 				B0E7506E10BB94E7003CA104 /* Triple.h */,
 				B0E7506F10BB94E7003CA104 /* Tuple.h */,
 				B0E7507010BB94E7003CA104 /* WavefrontGLMeshLoader.cpp */,
@@ -274,6 +289,9 @@
 				B0E750B010BBA740003CA104 /* handlers.cpp in Sources */,
 				B0E7519310BBBCAE003CA104 /* Player.cpp in Sources */,
 				B0E7526110BBD243003CA104 /* KeyboardManager.cpp in Sources */,
+				B02CBB1810BD1AA500A6AEA0 /* Skycube.cpp in Sources */,
+				B02CBB2C10BD1E7400A6AEA0 /* TextureLoader.cpp in Sources */,
+				B02CBB3C10BD241100A6AEA0 /* RawTextureLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

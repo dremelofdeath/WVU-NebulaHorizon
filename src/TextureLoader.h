@@ -1,0 +1,26 @@
+/*
+ *  TextureLoader.h
+ *  Nebula Horizon
+ *
+ *  Created by Zachary Murray on 11/25/09.
+ *
+ */
+
+#ifndef NHZ_TEXTURELOADER_H
+#define NHZ_TEXTURELOADER_H
+
+#include <istream>
+
+#ifdef __APPLE__
+#include <OpenGL/gl.h>
+#else
+#include <GL/gl.h>
+#endif
+
+class TextureLoader {
+    public:
+        virtual GLuint loadTexture(std::istream& input) = 0;
+        virtual GLuint loadTexture(std::istream& input, int w, int h) = 0;
+};
+
+#endif
