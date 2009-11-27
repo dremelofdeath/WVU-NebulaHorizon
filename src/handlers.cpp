@@ -80,7 +80,7 @@ void handle_mouse_motion(int x, int y) {
 void update_projection(GLsizei w, GLsizei h) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, (double)w/(double)h, 0.1, 100);
+    gluPerspective(60.0, (double)w/(double)h, 0.1, 1000);
 }
 
 static void reshape(GLsizei w, GLsizei h) {
@@ -125,7 +125,7 @@ void init_opengl() {
     update_projection(winWidth, winHeight);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(0.0, 0.75, 2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    gluLookAt(0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 }
 
 void set_window_id(int id) {

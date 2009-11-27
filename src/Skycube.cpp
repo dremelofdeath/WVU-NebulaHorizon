@@ -35,12 +35,19 @@ void Skycube::setSize(double size) {
 }
 
 void Skycube::render() {
-    renderOneSide(_northTexture, 0.0, 0.0);
-    renderOneSide(_southTexture, 0.0, 180.0);
-    renderOneSide(_eastTexture, 0.0, 90.0);
-    renderOneSide(_westTexture, 0.0, 270.0);
-    renderOneSide(_upTexture, 90.0, 0.0);
-    renderOneSide(_downTexture, 180.0, 0.0);
+    glScaled(_size, _size, _size);
+    renderOneSide(_northTexture);
+    glRotated(90.0, 0.0, 1.0, 0.0);
+    renderOneSide(_eastTexture);
+    glRotated(90.0, 0.0, 1.0, 0.0);
+    renderOneSide(_southTexture);
+    glRotated(90.0, 0.0, 1.0, 0.0);
+    renderOneSide(_westTexture);
+    glRotated(90.0, 0.0, 1.0, 0.0);
+    glRotated(90.0, 1.0, 0.0, 0.0);
+    renderOneSide(_upTexture);
+    glRotated(180.0, 1.0, 0.0, 0.0);
+    renderOneSide(_downTexture);
 }
 
 void Skycube::initialize(char* north, char* south, char* east, char* west,
@@ -73,8 +80,7 @@ void Skycube::initialize(std::istream& north, std::istream& south,
                          std::istream& east, std::istream& west,
                          std::istream& up, std::istream& down,
                          TextureLoader* loader) {
-    // TODO: wake up and make this happen
-    setSize(10.0);
+    setSize(500.0);
     _northTexture = loader->loadTexture(north, 2048, 2048);
     _southTexture = loader->loadTexture(south, 2048, 2048);
     _eastTexture = loader->loadTexture(east, 2048, 2048);
@@ -96,22 +102,20 @@ TextureLoader* Skycube::getDefaultTextureLoader() {
     return new RawTextureLoader;
 }
 
-void Skycube::renderOneSide(GLuint texture, double xAngle, double yAngle) const {
-    glPushMatrix();
+void Skycube::renderOneSide(GLuint texture) const {
     glBindTexture(GL_TEXTURE_2D, texture);
     renderOneFace();
-    glPopMatrix();
 }
 
 void Skycube::renderOneFace() const {
     glBegin(GL_QUADS);
     glTexCoord2d(1.0, 1.0);
-    glVertex3d(-0.5, -0.5, 0.5);
+    glVertex3d(-1.0, -1.0, 1.0);
     glTexCoord2d(0.0, 1.0);
-    glVertex3d(0.5, -0.5, 0.5);
+    glVertex3d(1.0, -1.0, 1.0);
     glTexCoord2d(0.0, 0.0);
-    glVertex3d(0.5, 0.5, 0.5);
+    glVertex3d(1.0, 1.0, 1.0);
     glTexCoord2d(1.0, 0.0);
-    glVertex3d(-0.5, 0.5, 0.5);
+    glVertex3d(-1.0, 1.0, 1.0);
     glEnd();
 }

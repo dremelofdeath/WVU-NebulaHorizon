@@ -25,7 +25,10 @@ class Player : public Renderable {
     private:
         static Renderable* _mesh;
         float _x, _y;
+        float _lastX, _lastY;
         float _xVelocity, _yVelocity;
+        float _xAngle, _zAngle;
+        float _lastXAngle, _lastZAngle;
 };
 
 #endif
