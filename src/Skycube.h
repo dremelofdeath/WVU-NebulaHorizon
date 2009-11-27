@@ -53,7 +53,7 @@ class Skycube : public Renderable {
         GLuint _eastTexture, _westTexture;
         GLuint _upTexture, _downTexture;
         double _size;
-        void renderOneSide(GLuint texture, double xAngle, double yAngle) const;
+        void renderOneSide(GLuint texture) const;
         void renderOneFace() const;
 };
 
