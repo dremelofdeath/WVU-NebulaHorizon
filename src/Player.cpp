@@ -68,7 +68,6 @@ void Player::idle(int elapsed) {
         }
         if(!keyboard.isKeyDown('a') && !keyboard.isKeyDown('d')) {
             if(_zAngle != 0.0) {
-                std::cerr << "_zAngle: " << _zAngle << " ";
                 _zAngle += (_zAngle > 0 ? -0.9 : 0.9)*time;
             }
             if((_lastZAngle < 0.0 && _zAngle > 0.0) ||
@@ -78,7 +77,6 @@ void Player::idle(int elapsed) {
         }
         if(!keyboard.isKeyDown('w') && !keyboard.isKeyDown('s')) {
             if(_xAngle != 0.0) {
-                std::cerr << "_xAngle: " << _xAngle << std::endl << std::endl;
                 _xAngle += (_xAngle > 0 ? -0.4 : 0.4)*time;
             }
             if((_lastXAngle < 0.0 && _xAngle > 0.0) ||
