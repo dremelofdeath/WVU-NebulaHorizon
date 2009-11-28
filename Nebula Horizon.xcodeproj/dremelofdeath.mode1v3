@@ -324,7 +324,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B082B74610C0328A00E81C4A</string>
+										<string>B082B75210C1E6C900E81C4A</string>
 										<key>history</key>
 										<array>
 											<string>B0E750CB10BBA9EC003CA104</string>
@@ -559,13 +559,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B082B74710C0328A00E81C4A</string>
 		<string>B082B6CB10BF8E7300E81C4A</string>
 		<string>B082B6CC10BF8E7300E81C4A</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
 		<string>B0E7503010BB9232003CA104</string>
+		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>802 143 788 504 0 0 1920 1178 </string>
