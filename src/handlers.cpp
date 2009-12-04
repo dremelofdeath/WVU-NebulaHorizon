@@ -115,6 +115,10 @@ void exit_callback() {
 }
 
 int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
+    static const GLfloat light0_pos[4] = {-1.0, 0.0, 0.0, 1.0};
+    static const GLfloat ambient0[4] = {0.85, 0.85, 0.95, 1.0};
+    static const GLfloat diffuse0[4] = {0.9, 0.9, 0.9, 1.0};
+    static const GLfloat specular0[4] = {1.0, 1.0, 1.0, 1.0};
     int ret = 0;
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
     glutInitWindowPosition(xpos, ypos);
@@ -122,6 +126,13 @@ int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
     ret = glutCreateWindow(title);
     glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
+    glEnable(GL_NORMALIZE);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+    glLightfv(GL_LIGHT0, GL_POSITION, light0_pos);
+    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient0);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse0);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, specular0);
     return ret;
 }
 

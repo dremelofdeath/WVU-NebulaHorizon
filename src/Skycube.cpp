@@ -35,6 +35,7 @@ void Skycube::setSize(double size) {
 }
 
 void Skycube::render() {
+    glDisable(GL_LIGHTING);
     glScaled(_size, _size, _size);
     renderOneSide(_northTexture);
     glRotated(90.0, 0.0, 1.0, 0.0);
@@ -108,14 +109,15 @@ void Skycube::renderOneSide(GLuint texture) const {
 }
 
 void Skycube::renderOneFace() const {
+    static const GLdouble vlen = 1.0;
     glBegin(GL_QUADS);
-    glTexCoord2d(1.0, 1.0);
-    glVertex3d(-1.0, -1.0, 1.0);
-    glTexCoord2d(0.0, 1.0);
-    glVertex3d(1.0, -1.0, 1.0);
+    glTexCoord2d(vlen, vlen);
+    glVertex3d(-vlen, -vlen, vlen);
+    glTexCoord2d(0.0, vlen);
+    glVertex3d(vlen, -vlen, vlen);
     glTexCoord2d(0.0, 0.0);
-    glVertex3d(1.0, 1.0, 1.0);
-    glTexCoord2d(1.0, 0.0);
-    glVertex3d(-1.0, 1.0, 1.0);
+    glVertex3d(vlen, vlen, vlen);
+    glTexCoord2d(vlen, 0.0);
+    glVertex3d(-vlen, vlen, vlen);
     glEnd();
 }
