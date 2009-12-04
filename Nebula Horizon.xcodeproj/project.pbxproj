@@ -23,6 +23,8 @@
 		B0662E0410C8AF5B002E2E14 /* south.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0662DFE10C8AF5B002E2E14 /* south.raw */; };
 		B0662E0510C8AF5B002E2E14 /* up.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0662DFF10C8AF5B002E2E14 /* up.raw */; };
 		B0662E0610C8AF5B002E2E14 /* west.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0662E0010C8AF5B002E2E14 /* west.raw */; };
+		B0662E1110C8B2A3002E2E14 /* ProcessorEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662E1010C8B2A3002E2E14 /* ProcessorEntity.cpp */; };
+		B0662E4310C8BAA1002E2E14 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662E4210C8BAA1002E2E14 /* Material.cpp */; };
 		B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */; };
 		B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */; };
 		B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506710BB94E7003CA104 /* MeshLoader.cpp */; };
@@ -67,6 +69,10 @@
 		B0662DFE10C8AF5B002E2E14 /* south.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = south.raw; sourceTree = "<group>"; };
 		B0662DFF10C8AF5B002E2E14 /* up.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = up.raw; sourceTree = "<group>"; };
 		B0662E0010C8AF5B002E2E14 /* west.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = west.raw; sourceTree = "<group>"; };
+		B0662E0F10C8B2A3002E2E14 /* ProcessorEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorEntity.h; sourceTree = "<group>"; };
+		B0662E1010C8B2A3002E2E14 /* ProcessorEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProcessorEntity.cpp; sourceTree = "<group>"; };
+		B0662E4110C8BAA1002E2E14 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		B0662E4210C8BAA1002E2E14 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
 		B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
 		B0E7506310BB94E7003CA104 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
 		B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
@@ -223,10 +229,14 @@
 				B0E7506510BB94E7003CA104 /* GLMeshLoader.h */,
 				B0E7526010BBD243003CA104 /* KeyboardManager.cpp */,
 				B0E7525F10BBD243003CA104 /* KeyboardManager.h */,
+				B0662E4210C8BAA1002E2E14 /* Material.cpp */,
+				B0662E4110C8BAA1002E2E14 /* Material.h */,
 				B0E7506710BB94E7003CA104 /* MeshLoader.cpp */,
 				B0E7506810BB94E7003CA104 /* MeshLoader.h */,
 				B0E7519210BBBCAE003CA104 /* Player.cpp */,
 				B0E7519110BBBCAE003CA104 /* Player.h */,
+				B0662E1010C8B2A3002E2E14 /* ProcessorEntity.cpp */,
+				B0662E0F10C8B2A3002E2E14 /* ProcessorEntity.h */,
 				B0E7506910BB94E7003CA104 /* Quadruple.h */,
 				B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */,
 				B02CBB3A10BD241100A6AEA0 /* RawTextureLoader.h */,
@@ -340,6 +350,8 @@
 				B02CBB1810BD1AA500A6AEA0 /* Skycube.cpp in Sources */,
 				B02CBB2C10BD1E7400A6AEA0 /* TextureLoader.cpp in Sources */,
 				B02CBB3C10BD241100A6AEA0 /* RawTextureLoader.cpp in Sources */,
+				B0662E1110C8B2A3002E2E14 /* ProcessorEntity.cpp in Sources */,
+				B0662E4310C8BAA1002E2E14 /* Material.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
