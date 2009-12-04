@@ -8,6 +8,10 @@
 
 #include "Renderable.h"
 
+void Renderable::render() {
+    // default implementation does nothing
+}
+
 void Renderable::idle(int elapsed) {
     // default implementation does nothing
 }
