@@ -22,10 +22,10 @@ Player::Player(float xVelocity, float yVelocity) {
     initialize(xVelocity, yVelocity);
 }
 
-void Player::render() {
+void Player::render() const {
     Renderable::render();
     useMaterial();
-    glTranslatef(_x, _y, -10.0f);
+    doTranslation();
     glRotatef(_xAngle, 1.0, 0.0, 0.0);
     glRotatef(_zAngle, 0.0, 0.0, 1.0);
     glScaled(0.35, 0.35, 0.35);
@@ -110,8 +110,7 @@ void Player::initialize(float xVelocity, float yVelocity) {
     static const float diffuse[4] = {0.8, 0.8, 1.0, 1.0};
     static const float specular[4] = {1.0, 1.0, 1.0, 1.0};
     Material::initialize();
-    _x = 0.0f;
-    _y = 0.0f;
+    Movable::initialize(0.0, 0.0, -10.0);
     _lastX = 0.0f;
     _lastY = 0.0f;
     _xVelocity = xVelocity;

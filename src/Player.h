@@ -3,7 +3,6 @@
  *  Nebula Horizon
  *
  *  Created by Zachary Murray on 11/24/09.
- *  Copyright 2009 West Virginia University. All rights reserved.
  *
  */
 
@@ -12,12 +11,13 @@
 
 #include "Renderable.h"
 #include "Material.h"
+#include "Movable.h"
 
-class Player : public Renderable, public Material {
+class Player : public Renderable, public Material, public Movable {
     public:
         Player();
         Player(float xVelocity, float yVelocity);
-        void render();
+        void render() const;
         void idle(int elapsed);
     protected:
         static Renderable& getMesh();
@@ -25,7 +25,6 @@ class Player : public Renderable, public Material {
         void initialize(float xVelocity, float yVelocity);
     private:
         static Renderable* _mesh;
-        float _x, _y;
         float _lastX, _lastY;
         float _xVelocity, _yVelocity;
         float _xAngle, _zAngle;
