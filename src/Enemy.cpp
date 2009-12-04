@@ -16,6 +16,10 @@ Enemy::Enemy() {
     initialize();
 }
 
+Enemy::Enemy(Movable* const target) {
+    initialize(target);
+}
+
 void Enemy::render() const {
     Renderable::render();
     useMaterial();
@@ -59,4 +63,9 @@ void Enemy::initialize() {
     setSpecularMaterial(specular);
     setShininess(27.8f);
     _target = 0;
+}
+
+void Enemy::initialize(Movable* const target) {
+    initialize();
+    setTarget(target);
 }
