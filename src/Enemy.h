@@ -11,20 +11,21 @@
 
 #include "Renderable.h"
 #include "Material.h"
-#include "Movable.h"
+#include "Positionable.h"
 
-class Enemy : public Renderable, public Material, public Movable {
+class Enemy : public Renderable, public Material, public Positionable {
     public:
         Enemy();
         void render() const;
         void idle(int elapsed);
+        void setTarget(Movable* const target);
     protected:
         static Renderable& getMesh();
         void initialize();
     private:
         static Renderable* _mesh;
         float _xVelocity, _yVelocity;
-        float _xAngle, _yAngle, _zAngle;
+        Movable* _target;
 };
 
 #endif

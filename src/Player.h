@@ -11,9 +11,9 @@
 
 #include "Renderable.h"
 #include "Material.h"
-#include "Movable.h"
+#include "Positionable.h"
 
-class Player : public Renderable, public Material, public Movable {
+class Player : public Renderable, public Material, public Positionable {
     public:
         Player();
         Player(float xVelocity, float yVelocity);
@@ -27,7 +27,6 @@ class Player : public Renderable, public Material, public Movable {
         static Renderable* _mesh;
         float _lastX, _lastY;
         float _xVelocity, _yVelocity;
-        float _xAngle, _zAngle;
         float _lastXAngle, _lastZAngle;
 };
 
