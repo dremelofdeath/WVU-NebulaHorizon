@@ -274,13 +274,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
+									<integer>20</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 2}, {186, 445}}</string>
+							<string>{{0, 46}, {186, 445}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -327,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B066311210C902A7002E2E14</string>
+										<string>B066324410C91679002E2E14</string>
 										<key>history</key>
 										<array>
 											<string>B0E750CB10BBA9EC003CA104</string>
@@ -339,9 +339,7 @@
 											<string>B02CBB7910BD491100A6AEA0</string>
 											<string>B0A6809510BDE73C00917529</string>
 											<string>B0A680EF10BE530900917529</string>
-											<string>B0A680FE10BE53B900917529</string>
 											<string>B0A6812E10BE55F800917529</string>
-											<string>B0662DE710C8AB0E002E2E14</string>
 											<string>B0662DF410C8AC76002E2E14</string>
 											<string>B0662DF510C8AC76002E2E14</string>
 											<string>B0662DF610C8AC76002E2E14</string>
@@ -350,18 +348,12 @@
 											<string>B0662E4B10C8BC44002E2E14</string>
 											<string>B0662E7910C8BDCC002E2E14</string>
 											<string>B0662EE010C8C208002E2E14</string>
-											<string>B0662F7910C8D688002E2E14</string>
 											<string>B0662F8410C8D6CB002E2E14</string>
 											<string>B0662F8B10C8D6D8002E2E14</string>
-											<string>B0662F9110C8D6F5002E2E14</string>
 											<string>B0662F9210C8D6F5002E2E14</string>
 											<string>B0662F9610C8D6FA002E2E14</string>
-											<string>B0662FA910C8D762002E2E14</string>
-											<string>B0662FAA10C8D762002E2E14</string>
 											<string>B0662FC210C8D8BE002E2E14</string>
 											<string>B0662FC310C8D8BE002E2E14</string>
-											<string>B0662FC410C8D8BE002E2E14</string>
-											<string>B0662FD210C8D996002E2E14</string>
 											<string>B066300110C8F183002E2E14</string>
 											<string>B066300310C8F183002E2E14</string>
 											<string>B066300410C8F183002E2E14</string>
@@ -371,14 +363,25 @@
 											<string>B066303510C8F52B002E2E14</string>
 											<string>B066305E10C8F651002E2E14</string>
 											<string>B066305F10C8F651002E2E14</string>
-											<string>B066306D10C8FA60002E2E14</string>
-											<string>B066306E10C8FA60002E2E14</string>
-											<string>B066307B10C8FD8F002E2E14</string>
-											<string>B066308610C8FDC9002E2E14</string>
-											<string>B06630D210C9008B002E2E14</string>
-											<string>B06630D310C9008B002E2E14</string>
-											<string>B06630D410C9008B002E2E14</string>
-											<string>B06630D510C9008B002E2E14</string>
+											<string>B066311A10C903BA002E2E14</string>
+											<string>B066313310C9094A002E2E14</string>
+											<string>B066313410C9094A002E2E14</string>
+											<string>B066313510C9094A002E2E14</string>
+											<string>B066316210C90B7D002E2E14</string>
+											<string>B066316310C90B7D002E2E14</string>
+											<string>B066316410C90B7D002E2E14</string>
+											<string>B066316510C90B7D002E2E14</string>
+											<string>B066316610C90B7D002E2E14</string>
+											<string>B066316D10C90BBA002E2E14</string>
+											<string>B066319110C90D75002E2E14</string>
+											<string>B066319A10C90E32002E2E14</string>
+											<string>B066319E10C90E3E002E2E14</string>
+											<string>B06631C810C910CE002E2E14</string>
+											<string>B06631FA10C9130C002E2E14</string>
+											<string>B066320110C91334002E2E14</string>
+											<string>B066320210C91334002E2E14</string>
+											<string>B066320810C913A0002E2E14</string>
+											<string>B066311810C903BA002E2E14</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -576,12 +579,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B066311310C902A7002E2E14</string>
+		<string>B066324510C91679002E2E14</string>
 		<string>B0662CFD10C88A18002E2E14</string>
 		<string>B0662CFE10C88A18002E2E14</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>B0E7503010BB9232003CA104</string>
 	</array>
 	<key>WindowString</key>

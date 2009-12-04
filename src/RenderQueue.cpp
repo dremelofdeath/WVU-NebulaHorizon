@@ -17,6 +17,7 @@
 RenderQueue* RenderQueue::_singleton = 0;
 
 RenderQueue::RenderQueue() {
+    _isClobbered = false;
 }
 
 RenderQueue* RenderQueue::getInstance() {
@@ -60,6 +61,10 @@ void RenderQueue::idle(int elapsed) {
     while(vector_it != _sprites.end()) {
         (*vector_it)->idle(elapsed);
         vector_it++;
+        if(_isClobbered) {
+            _isClobbered = false;
+            break;
+        }
     }
 }
 
@@ -68,6 +73,10 @@ void RenderQueue::handleMouseEvent(int button, int state, int x, int y) {
     while(vector_it != _sprites.end()) {
         (*vector_it)->handleMouseEvent(button, state, x, y);
         vector_it++;
+        if(_isClobbered) {
+            _isClobbered = false;
+            break;
+        }
     }
 }
 
@@ -76,6 +85,10 @@ void RenderQueue::handleMouseDrag(int x, int y) {
     while(vector_it != _sprites.end()) {
         (*vector_it)->handleMouseDrag(x, y);
         vector_it++;
+        if(_isClobbered) {
+            _isClobbered = false;
+            break;
+        }
     }
 }
 
@@ -84,11 +97,20 @@ void RenderQueue::handleMouseMotion(int x, int y) {
     while(vector_it != _sprites.end()) {
         (*vector_it)->handleMouseMotion(x, y);
         vector_it++;
+        if(_isClobbered) {
+            _isClobbered = false;
+            break;
+        }
     }
 }
 
 void RenderQueue::clear() {
     _sprites.clear();
+}
+
+void RenderQueue::postQueueClobbered() {
+    // should be used when something in the queue modifies it during execution
+    _isClobbered = true;
 }
 
 std::vector<Renderable*>::size_type RenderQueue::size() {

@@ -29,6 +29,7 @@
 		B0662F0210C8C9E6002E2E14 /* Movable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662F0110C8C9E6002E2E14 /* Movable.cpp */; };
 		B0662FF210C8DD3E002E2E14 /* Rotatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662FF110C8DD3E002E2E14 /* Rotatable.cpp */; };
 		B0662FFE10C8F16A002E2E14 /* Positionable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662FFD10C8F16A002E2E14 /* Positionable.cpp */; };
+		B066311610C903A4002E2E14 /* EnemySpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B066311510C903A4002E2E14 /* EnemySpawner.cpp */; };
 		B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */; };
 		B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */; };
 		B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506710BB94E7003CA104 /* MeshLoader.cpp */; };
@@ -85,6 +86,8 @@
 		B0662FF110C8DD3E002E2E14 /* Rotatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rotatable.cpp; sourceTree = "<group>"; };
 		B0662FFC10C8F16A002E2E14 /* Positionable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Positionable.h; sourceTree = "<group>"; };
 		B0662FFD10C8F16A002E2E14 /* Positionable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Positionable.cpp; sourceTree = "<group>"; };
+		B066311410C903A4002E2E14 /* EnemySpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemySpawner.h; sourceTree = "<group>"; };
+		B066311510C903A4002E2E14 /* EnemySpawner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemySpawner.cpp; sourceTree = "<group>"; };
 		B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
 		B0E7506310BB94E7003CA104 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
 		B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 			children = (
 				B0662EDC10C8C1E3002E2E14 /* Enemy.cpp */,
 				B0662EDB10C8C1E3002E2E14 /* Enemy.h */,
+				B066311510C903A4002E2E14 /* EnemySpawner.cpp */,
+				B066311410C903A4002E2E14 /* EnemySpawner.h */,
 				B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */,
 				B0E7506310BB94E7003CA104 /* GLDisplayList.h */,
 				B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */,
@@ -376,6 +381,7 @@
 				B0662F0210C8C9E6002E2E14 /* Movable.cpp in Sources */,
 				B0662FF210C8DD3E002E2E14 /* Rotatable.cpp in Sources */,
 				B0662FFE10C8F16A002E2E14 /* Positionable.cpp in Sources */,
+				B066311610C903A4002E2E14 /* EnemySpawner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
