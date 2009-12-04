@@ -38,35 +38,36 @@ void Player::idle(int elapsed) {
         _lastXAngle = _xAngle;
         _lastZAngle = _zAngle;
         KeyboardManager& keyboard = KeyboardManager::getInstance();
-        if(keyboard.isKeyDown('w')) {
+        if(keyboard.isKeyDown('w') && !keyboard.isKeyDown('s')) {
             _y += _yVelocity*time/1000;
             _xAngle += _xAngle < 30.0 ? 0.35*time: 0.0;
             if(_xAngle > 30.0) {
                 _xAngle = 30.0;
             }
         }
-        if(keyboard.isKeyDown('a')) {
+        if(keyboard.isKeyDown('a') && !keyboard.isKeyDown('d')) {
             _x -= _xVelocity*time/1000;
             _zAngle += _zAngle < 45.0 ? 1.0*time: 0.0;
             if(_zAngle > 45.0) {
                 _zAngle = 45.0;
             }
         }
-        if(keyboard.isKeyDown('s')) {
+        if(keyboard.isKeyDown('s') && !keyboard.isKeyDown('w')) {
             _y -= _yVelocity*time/1000;
             _xAngle -= _xAngle > -30.0 ? 0.35*time: 0.0;
             if(_xAngle < -30.0) {
                 _xAngle = -30.0;
             }
         }
-        if(keyboard.isKeyDown('d')) {
+        if(keyboard.isKeyDown('d') && !keyboard.isKeyDown('a')) {
             _x += _xVelocity*time/1000;
             _zAngle -= _zAngle > -45.0 ? 1.0*time: 0.0;
             if(_zAngle < -45.0) {
                 _zAngle = -45.0;
             }
         }
-        if(!keyboard.isKeyDown('a') && !keyboard.isKeyDown('d')) {
+        if(!keyboard.isKeyDown('a') && !keyboard.isKeyDown('d') ||
+           (keyboard.isKeyDown('a') && keyboard.isKeyDown('d'))) {
             if(_zAngle != 0.0) {
                 _zAngle += (_zAngle > 0 ? -0.9 : 0.9)*time;
             }
@@ -75,7 +76,8 @@ void Player::idle(int elapsed) {
                 _zAngle = 0.0;
             }
         }
-        if(!keyboard.isKeyDown('w') && !keyboard.isKeyDown('s')) {
+        if(!keyboard.isKeyDown('w') && !keyboard.isKeyDown('s') ||
+           (keyboard.isKeyDown('w') && keyboard.isKeyDown('s'))) {
             if(_xAngle != 0.0) {
                 _xAngle += (_xAngle > 0 ? -0.4 : 0.4)*time;
             }

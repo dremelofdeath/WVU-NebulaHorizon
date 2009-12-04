@@ -62,7 +62,11 @@ void handle_keyboard_up(unsigned char key, int x, int y) {
 }
 
 void handle_special_key(int key, int x, int y) {
-    //RenderQueue::getInstance()->handleSpecialKey(key, x, y);
+    KeyboardManager::getInstance().updateSpecialKeyState(key, true);
+}
+
+void handle_special_key_up(int key, int x, int y) {
+    KeyboardManager::getInstance().updateSpecialKeyState(key, false);
 }
 
 void handle_mouse_event(int button, int state, int x, int y) {
@@ -99,6 +103,7 @@ void create_callbacks() {
     glutKeyboardFunc(&handle_keyboard);
     glutKeyboardUpFunc(&handle_keyboard_up);
     glutSpecialFunc(&handle_special_key);
+    glutSpecialFunc(&handle_special_key_up);
     glutMouseFunc(&handle_mouse_event);
     glutMotionFunc(&handle_mouse_drag);
     glutPassiveMotionFunc(&handle_mouse_motion);
