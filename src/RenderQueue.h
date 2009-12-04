@@ -6,11 +6,11 @@
  *
  */
 
-#include <vector>
-#include "Renderable.h"
-
 #ifndef NHZ_RENDERQUEUE_H
 #define NHZ_RENDERQUEUE_H
+
+#include <vector>
+#include "Renderable.h"
 
 class RenderQueue : public Renderable {
     public:
