@@ -11,16 +11,14 @@
 #define NHZ_PLAYER_H
 
 #include "Renderable.h"
+#include "Material.h"
 
-class Player : public Renderable {
+class Player : public Renderable, public Material {
     public:
         Player();
         Player(float xVelocity, float yVelocity);
         void render();
         void idle(int elapsed);
-        void setAmbientMaterial(const float (&material)[4]);
-        void setDiffuseMaterial(const float (&material)[4]);
-        void setSpecularMaterial(const float (&material)[4]);
     protected:
         static Renderable& getMesh();
         void initialize();
@@ -32,7 +30,6 @@ class Player : public Renderable {
         float _xVelocity, _yVelocity;
         float _xAngle, _zAngle;
         float _lastXAngle, _lastZAngle;
-        float _ambient[4], _diffuse[4], _specular[4];
 };
 
 #endif

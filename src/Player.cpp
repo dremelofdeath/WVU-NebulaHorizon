@@ -23,10 +23,8 @@ Player::Player(float xVelocity, float yVelocity) {
 }
 
 void Player::render() {
-    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, _ambient);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, _diffuse);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, _specular);
-    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 50.0);
+    Renderable::render();
+    useMaterial();
     glTranslatef(_x, _y, -10.0f);
     glRotatef(_xAngle, 1.0, 0.0, 0.0);
     glRotatef(_zAngle, 0.0, 0.0, 1.0);
@@ -93,27 +91,6 @@ void Player::idle(int elapsed) {
     }
 }
 
-void Player::setAmbientMaterial(const float (& material)[4]) {
-    int i = 0;
-    for(i = 0; i < 4; i++) {
-        _ambient[i] = material[i];
-    }
-}
-
-void Player::setDiffuseMaterial(const float (& material)[4]) {
-    int i = 0;
-    for(i = 0; i < 4; i++) {
-        _diffuse[i] = material[i];
-    }
-}
-
-void Player::setSpecularMaterial(const float (& material)[4]) {
-    int i = 0;
-    for(i = 0; i < 4; i++) {
-        _specular[i] = material[i];
-    }
-}
-
 Renderable& Player::getMesh() {
     if(_mesh == 0) {
         std::ifstream viper_file("viper.obj");
@@ -129,9 +106,10 @@ void Player::initialize() {
 }
 
 void Player::initialize(float xVelocity, float yVelocity) {
-    static const float ambient[4] = {0.3, 0.3, 0.3, 1.0};
-    static const float diffuse[4] = {0.8, 0.8, 0.8, 1.0};
+    static const float ambient[4] = {0.4, 0.4, 0.45, 1.0};
+    static const float diffuse[4] = {0.8, 0.8, 1.0, 1.0};
     static const float specular[4] = {1.0, 1.0, 1.0, 1.0};
+    Material::initialize();
     _x = 0.0f;
     _y = 0.0f;
     _lastX = 0.0f;
@@ -145,4 +123,5 @@ void Player::initialize(float xVelocity, float yVelocity) {
     setAmbientMaterial(ambient);
     setDiffuseMaterial(diffuse);
     setSpecularMaterial(specular);
+    setShininess(27.8f);
 }
