@@ -25,6 +25,8 @@
 		B0662E0610C8AF5B002E2E14 /* west.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0662E0010C8AF5B002E2E14 /* west.raw */; };
 		B0662E1110C8B2A3002E2E14 /* ProcessorEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662E1010C8B2A3002E2E14 /* ProcessorEntity.cpp */; };
 		B0662E4310C8BAA1002E2E14 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662E4210C8BAA1002E2E14 /* Material.cpp */; };
+		B0662EDD10C8C1E3002E2E14 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662EDC10C8C1E3002E2E14 /* Enemy.cpp */; };
+		B0662F0210C8C9E6002E2E14 /* Movable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662F0110C8C9E6002E2E14 /* Movable.cpp */; };
 		B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */; };
 		B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */; };
 		B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506710BB94E7003CA104 /* MeshLoader.cpp */; };
@@ -73,6 +75,10 @@
 		B0662E1010C8B2A3002E2E14 /* ProcessorEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProcessorEntity.cpp; sourceTree = "<group>"; };
 		B0662E4110C8BAA1002E2E14 /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
 		B0662E4210C8BAA1002E2E14 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
+		B0662EDB10C8C1E3002E2E14 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		B0662EDC10C8C1E3002E2E14 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		B0662F0010C8C9E6002E2E14 /* Movable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movable.h; sourceTree = "<group>"; };
+		B0662F0110C8C9E6002E2E14 /* Movable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Movable.cpp; sourceTree = "<group>"; };
 		B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
 		B0E7506310BB94E7003CA104 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
 		B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
@@ -223,6 +229,8 @@
 		B0E7504610BB9467003CA104 /* Codebase */ = {
 			isa = PBXGroup;
 			children = (
+				B0662EDC10C8C1E3002E2E14 /* Enemy.cpp */,
+				B0662EDB10C8C1E3002E2E14 /* Enemy.h */,
 				B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */,
 				B0E7506310BB94E7003CA104 /* GLDisplayList.h */,
 				B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */,
@@ -233,6 +241,8 @@
 				B0662E4110C8BAA1002E2E14 /* Material.h */,
 				B0E7506710BB94E7003CA104 /* MeshLoader.cpp */,
 				B0E7506810BB94E7003CA104 /* MeshLoader.h */,
+				B0662F0110C8C9E6002E2E14 /* Movable.cpp */,
+				B0662F0010C8C9E6002E2E14 /* Movable.h */,
 				B0E7519210BBBCAE003CA104 /* Player.cpp */,
 				B0E7519110BBBCAE003CA104 /* Player.h */,
 				B0662E1010C8B2A3002E2E14 /* ProcessorEntity.cpp */,
@@ -352,6 +362,8 @@
 				B02CBB3C10BD241100A6AEA0 /* RawTextureLoader.cpp in Sources */,
 				B0662E1110C8B2A3002E2E14 /* ProcessorEntity.cpp in Sources */,
 				B0662E4310C8BAA1002E2E14 /* Material.cpp in Sources */,
+				B0662EDD10C8C1E3002E2E14 /* Enemy.cpp in Sources */,
+				B0662F0210C8C9E6002E2E14 /* Movable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
