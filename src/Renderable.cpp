@@ -8,7 +8,7 @@
 
 #include "Renderable.h"
 
-void Renderable::render() {
+void Renderable::render() const {
     // default implementation does nothing
 }
 

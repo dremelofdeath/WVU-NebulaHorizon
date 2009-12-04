@@ -34,7 +34,7 @@ class Skycube : public Renderable {
                 TextureLoader* loader);
         ~Skycube();
         void setSize(double size);
-        void render();
+        void render() const;
     protected:
         void initialize(char* north, char* south, char* east, char* west,
                         char* up, char* down);

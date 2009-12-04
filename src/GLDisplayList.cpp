@@ -20,7 +20,7 @@ GLDisplayList::~GLDisplayList() {
     glDeleteLists(_list, 1);
 }
 
-void GLDisplayList::render() {
+void GLDisplayList::render() const {
     glCallList(_list);
 }
 

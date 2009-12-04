@@ -34,7 +34,7 @@ void Skycube::setSize(double size) {
     _size = size;
 }
 
-void Skycube::render() {
+void Skycube::render() const {
     glDisable(GL_LIGHTING);
     glScaled(_size, _size, _size);
     renderOneSide(_northTexture);
