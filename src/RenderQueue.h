@@ -18,7 +18,7 @@ class RenderQueue : public Renderable {
         static RenderQueue* getInstance();
         void enqueue(Renderable& spr);
         void dequeue(Renderable& spr);
-        void render();
+        void render() const;
         void idle(int elapsed);
         void handleMouseEvent(int button, int state, int x, int y);
         void handleMouseDrag(int x, int y);

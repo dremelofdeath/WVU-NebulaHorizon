@@ -22,7 +22,7 @@ class GLDisplayList : public Renderable {
         GLDisplayList();
         GLDisplayList(GLuint list);
         ~GLDisplayList();
-        void render();
+        void render() const;
         GLuint getList();
     protected:
         void initialize();

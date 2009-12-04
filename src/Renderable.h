@@ -12,7 +12,7 @@
 
 class Renderable {
 	public:
-        virtual void render() = 0;
+        virtual void render() const = 0;
         virtual void idle(int elapsed);
         virtual void handleMouseEvent(int button, int state, int x, int y);
         virtual void handleMouseDrag(int x, int y);
