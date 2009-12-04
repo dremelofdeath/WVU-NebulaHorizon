@@ -26,7 +26,7 @@ class Enemy : public Renderable, public Material, public Positionable {
         void initialize(Movable* const target);
     private:
         static Renderable* _mesh;
-        float _xVelocity, _yVelocity;
+        float _xVelocity, _yVelocity, _zVelocity;
         Movable* _target;
 };
 

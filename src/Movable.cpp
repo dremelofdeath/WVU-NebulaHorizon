@@ -55,5 +55,5 @@ void Movable::initialize(const double x, const double y, const double z) {
 }
 
 void Movable::doTranslation() const {
-    glTranslatef(getX(), getY(), getZ());
+    glTranslated(getX(), getY(), getZ());
 }

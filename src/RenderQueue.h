@@ -24,10 +24,12 @@ class RenderQueue : public Renderable {
         void handleMouseDrag(int x, int y);
         void handleMouseMotion(int x, int y);
         void clear();
+        void postQueueClobbered();
         std::vector<Renderable*>::size_type size();
     private:
         static RenderQueue* _singleton;
         std::vector<Renderable*> _sprites;
+        bool _isClobbered;
 };
 
 #endif

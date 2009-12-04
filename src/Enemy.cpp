@@ -31,7 +31,12 @@ void Enemy::render() const {
 }
 
 void Enemy::idle(int elapsed) {
-    // nothing at the moment
+    float time = (float)elapsed;
+    _x += _xVelocity*time/1000;
+    _y += _yVelocity*time/1000;
+    _z += _zVelocity*time/1000;
+    _xVelocity -= _x/9.0*time/1000;
+    _yVelocity -= _y/40.0*time/1000;
     if(_target != 0 ) {
         lookAt(*_target);
     }
@@ -57,12 +62,15 @@ void Enemy::initialize() {
     static const float specular[4] = {1.0, 1.0, 1.0, 1.0};
     Material::initialize();
     Positionable::initialize();
-    Movable::initialize(0.0, 0.0, -20.0);
+    Movable::initialize(-16.0, 9.0, -150.0);
     setAmbientMaterial(ambient);
     setDiffuseMaterial(diffuse);
     setSpecularMaterial(specular);
     setShininess(27.8f);
     _target = 0;
+    _xVelocity = 7.0;
+    _yVelocity = 0.0;
+    _zVelocity = 12.0;
 }
 
 void Enemy::initialize(Movable* const target) {

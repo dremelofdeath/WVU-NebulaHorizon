@@ -11,7 +11,7 @@
 #import "src/handlers.h"
 #import "src/RenderQueue.h"
 #import "src/Player.h"
-#import "src/Enemy.h"
+#import "src/EnemySpawner.h"
 #import "src/Skycube.h"
 
 @implementation Nebula_HorizonAppDelegate
@@ -26,10 +26,9 @@
     create_callbacks();
     init_opengl();
     Player player(5.0f, 5.0f);
-    Enemy enemy;
-    enemy.setTarget(&player);
+    EnemySpawner spawner(&player);
 	RenderQueue::getInstance()->enqueue(player);
-	RenderQueue::getInstance()->enqueue(enemy);
+	RenderQueue::getInstance()->enqueue(spawner);
     Skycube skycube("north.raw", "south.raw", "east.raw",
                     "west.raw", "up.raw", "down.raw");
     RenderQueue::getInstance()->enqueue(skycube);
