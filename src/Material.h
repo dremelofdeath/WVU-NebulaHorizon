@@ -17,7 +17,7 @@ class Material {
         void setShininess(const float shininess);
     protected:
         void initialize();
-        void useMaterial(); // use in child classes when rendering materials
+        void useMaterial() const; // use in children when rendering materials
     private:
         float _ambient[4], _diffuse[4], _specular[4];
         float _shininess;

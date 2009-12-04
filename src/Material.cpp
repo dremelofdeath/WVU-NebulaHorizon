@@ -53,7 +53,7 @@ void Material::initialize() {
     _shininess = 1.0;
 }
 
-void Material::useMaterial() {
+void Material::useMaterial() const {
     glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, _ambient);
     glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, _diffuse);
     glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, _specular);
