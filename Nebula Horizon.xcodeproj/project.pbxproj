@@ -27,6 +27,8 @@
 		B0662E4310C8BAA1002E2E14 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662E4210C8BAA1002E2E14 /* Material.cpp */; };
 		B0662EDD10C8C1E3002E2E14 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662EDC10C8C1E3002E2E14 /* Enemy.cpp */; };
 		B0662F0210C8C9E6002E2E14 /* Movable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662F0110C8C9E6002E2E14 /* Movable.cpp */; };
+		B0662FF210C8DD3E002E2E14 /* Rotatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662FF110C8DD3E002E2E14 /* Rotatable.cpp */; };
+		B0662FFE10C8F16A002E2E14 /* Positionable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662FFD10C8F16A002E2E14 /* Positionable.cpp */; };
 		B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */; };
 		B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */; };
 		B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506710BB94E7003CA104 /* MeshLoader.cpp */; };
@@ -79,6 +81,10 @@
 		B0662EDC10C8C1E3002E2E14 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		B0662F0010C8C9E6002E2E14 /* Movable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movable.h; sourceTree = "<group>"; };
 		B0662F0110C8C9E6002E2E14 /* Movable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Movable.cpp; sourceTree = "<group>"; };
+		B0662FF010C8DD3E002E2E14 /* Rotatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rotatable.h; sourceTree = "<group>"; };
+		B0662FF110C8DD3E002E2E14 /* Rotatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rotatable.cpp; sourceTree = "<group>"; };
+		B0662FFC10C8F16A002E2E14 /* Positionable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Positionable.h; sourceTree = "<group>"; };
+		B0662FFD10C8F16A002E2E14 /* Positionable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Positionable.cpp; sourceTree = "<group>"; };
 		B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
 		B0E7506310BB94E7003CA104 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
 		B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
@@ -245,6 +251,8 @@
 				B0662F0010C8C9E6002E2E14 /* Movable.h */,
 				B0E7519210BBBCAE003CA104 /* Player.cpp */,
 				B0E7519110BBBCAE003CA104 /* Player.h */,
+				B0662FFD10C8F16A002E2E14 /* Positionable.cpp */,
+				B0662FFC10C8F16A002E2E14 /* Positionable.h */,
 				B0662E1010C8B2A3002E2E14 /* ProcessorEntity.cpp */,
 				B0662E0F10C8B2A3002E2E14 /* ProcessorEntity.h */,
 				B0E7506910BB94E7003CA104 /* Quadruple.h */,
@@ -254,6 +262,8 @@
 				B0E7506B10BB94E7003CA104 /* Renderable.h */,
 				B0E7506C10BB94E7003CA104 /* RenderQueue.cpp */,
 				B0E7506D10BB94E7003CA104 /* RenderQueue.h */,
+				B0662FF110C8DD3E002E2E14 /* Rotatable.cpp */,
+				B0662FF010C8DD3E002E2E14 /* Rotatable.h */,
 				B02CBB1710BD1AA500A6AEA0 /* Skycube.cpp */,
 				B02CBB1610BD1AA500A6AEA0 /* Skycube.h */,
 				B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */,
@@ -364,6 +374,8 @@
 				B0662E4310C8BAA1002E2E14 /* Material.cpp in Sources */,
 				B0662EDD10C8C1E3002E2E14 /* Enemy.cpp in Sources */,
 				B0662F0210C8C9E6002E2E14 /* Movable.cpp in Sources */,
+				B0662FF210C8DD3E002E2E14 /* Rotatable.cpp in Sources */,
+				B0662FFE10C8F16A002E2E14 /* Positionable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

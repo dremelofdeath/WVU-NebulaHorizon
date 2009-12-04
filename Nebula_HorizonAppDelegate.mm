@@ -27,6 +27,7 @@
     init_opengl();
     Player player(5.0f, 5.0f);
     Enemy enemy;
+    enemy.setTarget(&player);
 	RenderQueue::getInstance()->enqueue(player);
 	RenderQueue::getInstance()->enqueue(enemy);
     Skycube skycube("north.raw", "south.raw", "east.raw",
