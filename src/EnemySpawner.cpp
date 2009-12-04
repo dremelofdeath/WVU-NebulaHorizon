@@ -19,7 +19,7 @@ EnemySpawner::EnemySpawner(Movable* const target, const int period) {
 
 void EnemySpawner::idle(int elapsed) {
     _counter += elapsed;
-    if(elapsed >= _period) {
+    if(_counter >= _period) {
         spawnEnemy();
         _counter -= _period;
     }
@@ -46,4 +46,5 @@ void EnemySpawner::initialize(Movable* const target, const int period) {
 void EnemySpawner::spawnEnemy() {
     Enemy* enemy = new Enemy(_target);
     RenderQueue::getInstance()->enqueue(*enemy);
+    RenderQueue::getInstance()->postQueueClobbered();
 }
