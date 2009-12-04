@@ -12,11 +12,13 @@
 #include "Renderable.h"
 #include "Material.h"
 #include "Positionable.h"
+#include "ParticleFountain.h"
 
 class Player : public Renderable, public Material, public Positionable {
     public:
         Player();
         Player(float xVelocity, float yVelocity);
+        ~Player();
         void render() const;
         void idle(int elapsed);
     protected:
@@ -25,9 +27,11 @@ class Player : public Renderable, public Material, public Positionable {
         void initialize(float xVelocity, float yVelocity);
     private:
         static Renderable* _mesh;
+        ParticleFountain* _fountain;
         float _lastX, _lastY;
         float _xVelocity, _yVelocity;
         float _lastXAngle, _lastZAngle;
+        
 };
 
 #endif
