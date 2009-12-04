@@ -15,6 +15,8 @@
 		B02CBB1810BD1AA500A6AEA0 /* Skycube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB1710BD1AA500A6AEA0 /* Skycube.cpp */; };
 		B02CBB2C10BD1E7400A6AEA0 /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */; };
 		B02CBB3C10BD241100A6AEA0 /* RawTextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */; };
+		B0662DF010C8AC5C002E2E14 /* drone.mtl in Resources */ = {isa = PBXBuildFile; fileRef = B0662DEE10C8AC5C002E2E14 /* drone.mtl */; };
+		B0662DF110C8AC5C002E2E14 /* drone.obj in Resources */ = {isa = PBXBuildFile; fileRef = B0662DEF10C8AC5C002E2E14 /* drone.obj */; };
 		B0787F0D10BDE545000B3586 /* down.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0710BDE544000B3586 /* down.raw */; };
 		B0787F0E10BDE545000B3586 /* up.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0810BDE544000B3586 /* up.raw */; };
 		B0787F0F10BDE545000B3586 /* east.raw in Resources */ = {isa = PBXBuildFile; fileRef = B0787F0910BDE544000B3586 /* east.raw */; };
@@ -57,6 +59,8 @@
 		B02CBB2B10BD1E7400A6AEA0 /* TextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureLoader.cpp; sourceTree = "<group>"; };
 		B02CBB3A10BD241100A6AEA0 /* RawTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawTextureLoader.h; sourceTree = "<group>"; };
 		B02CBB3B10BD241100A6AEA0 /* RawTextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RawTextureLoader.cpp; sourceTree = "<group>"; };
+		B0662DEE10C8AC5C002E2E14 /* drone.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = drone.mtl; sourceTree = "<group>"; };
+		B0662DEF10C8AC5C002E2E14 /* drone.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = drone.obj; sourceTree = "<group>"; };
 		B0787F0710BDE544000B3586 /* down.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = down.raw; sourceTree = "<group>"; };
 		B0787F0810BDE544000B3586 /* up.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = up.raw; sourceTree = "<group>"; };
 		B0787F0910BDE544000B3586 /* east.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = east.raw; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 		B0E7514A10BBB3FF003CA104 /* meshes */ = {
 			isa = PBXGroup;
 			children = (
+				B0662DEE10C8AC5C002E2E14 /* drone.mtl */,
+				B0662DEF10C8AC5C002E2E14 /* drone.obj */,
 				B0E7514B10BBB3FF003CA104 /* viper.mtl */,
 				B0E7514C10BBB3FF003CA104 /* viper.obj */,
 			);
@@ -300,6 +306,8 @@
 				B0787F1010BDE545000B3586 /* south.raw in Resources */,
 				B0787F1110BDE545000B3586 /* north.raw in Resources */,
 				B0787F1210BDE545000B3586 /* west.raw in Resources */,
+				B0662DF010C8AC5C002E2E14 /* drone.mtl in Resources */,
+				B0662DF110C8AC5C002E2E14 /* drone.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
