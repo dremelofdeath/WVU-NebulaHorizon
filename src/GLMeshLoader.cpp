@@ -12,6 +12,10 @@ GLMeshLoader::GLMeshLoader() : MeshLoader() {
     initialize();
 }
 
+GLMeshLoader::~GLMeshLoader() {
+    cleanup();
+}
+
 void GLMeshLoader::processPoint(std::vector<int>* const vertices) {
     MeshLoader::processPoint(vertices);
     std::vector<int>::const_iterator vector_it = vertices->begin();

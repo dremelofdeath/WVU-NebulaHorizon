@@ -10,6 +10,10 @@
 #include "WavefrontGLMeshLoader.h"
 #include "GLDisplayList.h"
 
+WavefrontGLMeshLoader::~WavefrontGLMeshLoader() {
+    cleanup();
+}
+
 Renderable* WavefrontGLMeshLoader::loadMesh(std::istream& input) {
     GLDisplayList* mesh = new GLDisplayList;
     glNewList(mesh->getList(), GL_COMPILE);

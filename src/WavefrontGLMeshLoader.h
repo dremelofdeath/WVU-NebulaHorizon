@@ -17,6 +17,7 @@
 
 class WavefrontGLMeshLoader : public GLMeshLoader {
     public:
+        ~WavefrontGLMeshLoader();
         Renderable* loadMesh(std::istream& input);
     protected:
         void parseFile(std::istream& input);
