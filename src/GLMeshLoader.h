@@ -23,6 +23,7 @@
 class GLMeshLoader : public MeshLoader {
     public:
         GLMeshLoader();
+        ~GLMeshLoader();
         virtual Renderable* loadMesh(std::istream& input) = 0;
     protected:
         void processPoint(std::vector<int>* const vertices);

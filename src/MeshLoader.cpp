@@ -9,6 +9,10 @@
 #include <stdexcept>
 #include "MeshLoader.h"
 
+MeshLoader::~MeshLoader() {
+    cleanup();
+}
+
 void MeshLoader::processVertex(double x, double y, double z) {
     processVertex(x, y, z, 1.0);
 }
@@ -110,4 +114,25 @@ Triple<double>* MeshLoader::getTextureVertex(size_t i) {
 
 Triple<double>* MeshLoader::getVertexNormal(size_t i) {
     return _vertexNormalList[(std::vector<Triple<double>*>::size_type)i];
+}
+
+void MeshLoader::cleanup() {
+    std::vector<Quadruple<double>*>::iterator v_iter = _vertexList.begin();
+    while(v_iter != _vertexList.end()) {
+        delete (*v_iter);
+        ++v_iter;
+    }
+    _vertexList.clear();
+    std::vector<Triple<double>*>::iterator vt_iter = _textureVertexList.begin();
+    while(vt_iter != _textureVertexList.end()) {
+        delete (*vt_iter);
+        ++vt_iter;
+    }
+    _textureVertexList.clear();
+    std::vector<Triple<double>*>::iterator vn_iter = _vertexNormalList.begin();
+    while(vn_iter != _vertexNormalList.end()) {
+        delete (*vn_iter);
+        ++vn_iter;
+    }
+    _vertexNormalList.clear();
 }

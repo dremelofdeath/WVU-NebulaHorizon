@@ -3,7 +3,6 @@
  *  Nebula Horizon
  *
  *  Created by Zachary Murray on 11/25/09.
- *  Copyright 2009 West Virginia University. All rights reserved.
  *
  */
 

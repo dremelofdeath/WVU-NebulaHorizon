@@ -19,6 +19,7 @@
 
 class MeshLoader {
     public:
+        ~MeshLoader();
         virtual Renderable* loadMesh(std::istream& input) = 0;
     protected:
         void processVertex(double x, double y, double z);
@@ -42,6 +43,7 @@ class MeshLoader {
         Quadruple<double>* getVertex(size_t i);
         Triple<double>* getTextureVertex(size_t i);
         Triple<double>* getVertexNormal(size_t i);
+        void cleanup();
     private:
         std::vector<Quadruple<double>*> _vertexList;
         std::vector<Triple<double>*> _textureVertexList;
