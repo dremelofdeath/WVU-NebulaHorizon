@@ -31,6 +31,7 @@ class Player : public Renderable, public Material, public Positionable {
         float _lastX, _lastY;
         float _xVelocity, _yVelocity;
         float _lastXAngle, _lastZAngle;
+        float _fountainDistance;
         
 };
 

@@ -28,22 +28,24 @@ Player::~Player() {
 
 void Player::render() const {
     Renderable::render();
+    glPushMatrix();
+    glPushAttrib(GL_ALL_ATTRIB_BITS);
+    _fountain->render();
+    glPopAttrib();
+    glPopMatrix();
     useMaterial();
     doTranslation();
     glRotatef(_xAngle, 1.0, 0.0, 0.0);
     glRotatef(_zAngle, 0.0, 0.0, 1.0);
-    glPushMatrix();
-    glPushAttrib(GL_ALL_ATTRIB_BITS);
-    glTranslatef(0.0, 0.0, 2.05f);
-    _fountain->render();
-    glPopAttrib();
-    glPopMatrix();
     glScaled(0.35, 0.35, 0.35);
     getMesh().render();
 }
 
 void Player::idle(int elapsed) {
     float time = (float)elapsed;
+    _fountain->setX(getX());
+    _fountain->setY(getY());
+    _fountain->setZ(getZ()+_fountainDistance);
     _fountain->idle(elapsed);
     if(elapsed != 0) {
         _lastX = _x;
@@ -130,10 +132,10 @@ void Player::initialize(float xVelocity, float yVelocity) {
     _zAngle = 0.0;
     _lastXAngle = 0.0;
     _lastZAngle = 0.0;
+    _fountainDistance = 0.11;//2.05;
     setAmbientMaterial(ambient);
     setDiffuseMaterial(diffuse);
     setSpecularMaterial(specular);
     setShininess(27.8f);
-    std::ifstream input("particle_32x32.raw");
-    _fountain = new ParticleFountain(1000, input);
+    _fountain = new ParticleFountain(750);
 }

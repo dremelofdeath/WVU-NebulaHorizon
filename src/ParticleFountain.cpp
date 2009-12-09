@@ -8,8 +8,8 @@
 
 #include "ParticleFountain.h"
 
-ParticleFountain::ParticleFountain(int particles, std::istream& input) {
-    initialize(particles, input);
+ParticleFountain::ParticleFountain(int particles) {
+    initialize(particles);
 }
 
 ParticleFountain::~ParticleFountain() {
@@ -117,10 +117,8 @@ float ParticleFountain::getBlue() const {
     return _b;
 }
 
-void ParticleFountain::initialize(int particles, std::istream& input) {
-    TextureLoader* loader = new RawTextureLoader;
-    _textureID = loader->loadTexture(input, 32, 32);
-    delete loader;
+void ParticleFountain::initialize(int particles) {
+    Movable::initialize(0.0, 0.0, 0.0);
     _speedModifier = 1.0f;
     _r = 1.0f;
     _g = 1.0f;
