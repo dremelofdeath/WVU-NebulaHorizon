@@ -7,8 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <AppKit/NSApplication.h>
 
+#if (MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5)
+@interface Nebula_HorizonAppDelegate : NSObject {
+#else
 @interface Nebula_HorizonAppDelegate : NSObject <NSApplicationDelegate> {
+#endif
     NSWindow *window;
 }
 
