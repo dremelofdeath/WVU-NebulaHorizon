@@ -40,15 +40,16 @@ void Particle::idle(const int elapsed) {
     if(_life < 0.0f) {
         initialize(_parent);
     }
+    if(_particleID == 0) {
+        _particleID = glGenLists(1);
+        glNewList(_particleID, GL_COMPILE);
+        glutSolidSphere(1.0, 8, 8);
+        glEndList();
+    }
 }
 
 void Particle::renderParticle() const {
-    if(_particleID == 0) {
-        _particleID = glGenLists(1);
-        glNewList(_particleID, GL_COMPILE_AND_EXECUTE);
-        glutSolidSphere(1.0, 8, 8);
-        glEndList();
-    } else {
+    if(_particleID != 0) {
         glCallList(_particleID);
     }
 }
