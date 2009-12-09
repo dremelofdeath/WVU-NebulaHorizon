@@ -23,10 +23,11 @@
 
 class Skycube : public Renderable {
     public:
-        Skycube(char* north, char* south, char* east, char* west, char* up,
-                char* down);
-        Skycube(char* north, char* south, char* east, char* west, char* up,
-                char* down, TextureLoader* loader);
+        Skycube(const char* north, const char* south, const char* east,
+                const char* west, const char* up, const char* down);
+        Skycube(const char* north, const char* south, const char* east,
+                const char* west, const char* up, const char* down,
+                TextureLoader* loader);
         Skycube(std::istream& north, std::istream& south, std::istream& east,
                 std::istream& west, std::istream& up, std::istream& down);
         Skycube(std::istream& north, std::istream& south, std::istream& east,
@@ -36,10 +37,11 @@ class Skycube : public Renderable {
         void setSize(double size);
         void render() const;
     protected:
-        void initialize(char* north, char* south, char* east, char* west,
-                        char* up, char* down);
-        void initialize(char* north, char* south, char* east, char* west,
-                        char* up, char* down, TextureLoader* loader);
+        void initialize(const char* north, const char* south, const char* east,
+                        const char* west, const char* up, const char* down);
+        void initialize(const char* north, const char* south, const char* east,
+                        const char* west, const char* up, const char* down,
+                        TextureLoader* loader);
         void initialize(std::istream& north, std::istream& south,
                         std::istream& east, std::istream& west,
                         std::istream& up, std::istream& down);
