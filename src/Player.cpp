@@ -12,6 +12,9 @@
 #include "KeyboardManager.h"
 #include "Player.h"
 
+// TODO: I don't think this should not be here
+#include "AudioManager.h"
+
 Renderable* Player::_mesh = 0;
 
 Player::Player() {
@@ -101,6 +104,13 @@ void Player::idle(int elapsed) {
                 _xAngle = 0.0;
             }
         }
+    }
+}
+
+// TODO: sound should definitely be put somewhere else
+void Player::handleMouseEvent(int button, int state, int x, int y) {
+    if(state == 0) {
+        AudioManager::getInstance()->playSFX("raygun.wav");
     }
 }
 

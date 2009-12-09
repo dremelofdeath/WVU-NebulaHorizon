@@ -21,6 +21,7 @@ class Player : public Renderable, public Material, public Positionable {
         ~Player();
         void render() const;
         void idle(int elapsed);
+        void handleMouseEvent(int button, int state, int x, int y);
     protected:
         static Renderable& getMesh();
         void initialize();
