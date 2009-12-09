@@ -36,6 +36,7 @@ void Skycube::setSize(double size) {
 
 void Skycube::render() const {
     glDisable(GL_LIGHTING);
+    glEnable(GL_TEXTURE_2D);
     glScaled(_size, _size, _size);
     renderOneSide(_northTexture);
     glRotated(90.0, 0.0, 1.0, 0.0);
