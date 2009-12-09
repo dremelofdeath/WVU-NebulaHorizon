@@ -9,13 +9,14 @@
 #include <fstream>
 #include "Skycube.h"
 
-Skycube::Skycube(char* north, char* south, char* east, char* west, char* up,
-                 char* down) {
+Skycube::Skycube(const char* north, const char* south, const char* east,
+                 const char* west, const char* up, const char* down) {
     initialize(north, south, east, west, up, down);
 }
 
-Skycube::Skycube(char* north, char* south, char* east, char* west, char* up,
-                 char* down, TextureLoader* loader) {
+Skycube::Skycube(const char* north, const char* south, const char* east,
+                 const char* west, const char* up, const char* down,
+                 TextureLoader* loader) {
     initialize(north, south, east, west, up, down, loader);
 }
 
@@ -52,15 +53,16 @@ void Skycube::render() const {
     renderOneSide(_downTexture);
 }
 
-void Skycube::initialize(char* north, char* south, char* east, char* west,
-                         char* up, char* down) {
+void Skycube::initialize(const char* north, const char* south, const char* east,
+                         const char* west, const char* up, const char* down) {
     TextureLoader* loader = getDefaultTextureLoader();
     initialize(north, south, east, west, up, down, loader);
     delete loader;
 }
 
-void Skycube::initialize(char* north, char* south, char* east, char* west,
-                         char* up, char* down, TextureLoader* loader) {
+void Skycube::initialize(const char* north, const char* south, const char* east,
+                         const char* west, const char* up, const char* down,
+                         TextureLoader* loader) {
     std::ifstream northstr(north);
     std::ifstream southstr(south);
     std::ifstream eaststr(east);
