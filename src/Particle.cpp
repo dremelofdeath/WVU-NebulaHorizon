@@ -6,32 +6,26 @@
  *
  */
 
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <GL/glut.h>
-#endif
-
 #include "Particle.h"
+
+GLuint Particle::_particleID = 0;
 
 Particle::Particle(ParticleFountain* const parent) {
     initialize(parent);
 }
 
+Particle::~Particle() {
+    if(_particleID != 0) {
+        glDeleteLists(_particleID, 1);
+    }
+}
+
 void Particle::render() const {
-    glTranslatef(_x, _y, _z);
+    float scaleFactor = 0.04*(_life+0.2);
     glColor4f(_r, _g, _b, _life);
-    /*glBegin(GL_TRIANGLE_STRIP);
-    glTexCoord2d(1, 1);
-    glVertex3f(_x+0.5f, _y+0.5f, _z);
-    glTexCoord2d(0, 1);
-    glVertex3f(_x-0.5f, _y+0.5f, _z);
-    glTexCoord2d(1, 0);
-    glVertex3f(_x+0.5f, _y-0.5f, _z);
-    glTexCoord2d(0, 0);
-    glVertex3f(_x-0.5f, _y-0.5f, _z);*/
-    glutSolidSphere(0.04*(_life+0.2), 9, 9);
-    glEnd();
+    doTranslation();
+    glScalef(scaleFactor, scaleFactor, scaleFactor);
+    renderParticle();
 }
 
 void Particle::idle(const int elapsed) {
@@ -48,10 +42,21 @@ void Particle::idle(const int elapsed) {
     }
 }
 
+void Particle::renderParticle() const {
+    if(_particleID == 0) {
+        _particleID = glGenLists(1);
+        glNewList(_particleID, GL_COMPILE_AND_EXECUTE);
+        glutSolidSphere(1.0, 8, 8);
+        glEndList();
+    } else {
+        glCallList(_particleID);
+    }
+}
+
 void Particle::initialize(ParticleFountain* parent) {
-    Movable::initialize(rand()%100/500.0-0.1,
-                        rand()%100/500.0-0.1,
-                        rand()%100/500.0-0.1);
+    Movable::initialize(parent->getX()+rand()%100/500.0-0.1,
+                        parent->getY()+rand()%100/500.0-0.1,
+                        parent->getZ()+rand()%100/500.0-0.1);
     _parent = parent;
     _life = 1.0f;
     _fade = (float)((rand()%100)/30.5f+0.853f);

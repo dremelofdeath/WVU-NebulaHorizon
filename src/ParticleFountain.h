@@ -9,7 +9,6 @@
 #ifndef NHZ_PARTICLEFOUNTAIN_H
 #define NHZ_PARTICLEFOUNTAIN_H
 
-#include <istream>
 #include <vector>
 
 #ifdef __APPLE__
@@ -19,13 +18,13 @@
 #endif
 
 #include "RenderQueue.h"
-#include "RawTextureLoader.h"
+#include "Movable.h"
 
 class Particle;
 
-class ParticleFountain : public Renderable {
+class ParticleFountain : public Renderable, public Movable {
     public:
-        ParticleFountain(int particles, std::istream& input);
+        ParticleFountain(int particles);
         ~ParticleFountain();
         void render() const;
         void idle(const int elapsed);
@@ -50,9 +49,8 @@ class ParticleFountain : public Renderable {
         float getGreen() const;
         float getBlue() const;
     protected:
-        void initialize(int particles, std::istream& input);
+        void initialize(int particles);
     private:
-        GLuint _textureID;
         int _nParticles;
         std::vector<Particle>* _particles;
         float _speedModifier;
