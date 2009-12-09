@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -264,6 +266,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>B0E7504610BB9467003CA104</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>B0662DF910C8AF5B002E2E14</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
@@ -273,12 +276,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>41</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 445}}</string>
+							<string>{{0, 531}, {186, 445}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -313,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MeshLoader.h</string>
+								<string>Skycube.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MeshLoader.h</string>
+										<string>Skycube.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B066360310CDDE33002E2E14</string>
+										<string>B066371010CFB134002E2E14</string>
 										<key>history</key>
 										<array>
 											<string>B02CBB3110BD1E8300A6AEA0</string>
@@ -336,54 +340,58 @@
 											<string>B0662DF610C8AC76002E2E14</string>
 											<string>B0662E1310C8B2B4002E2E14</string>
 											<string>B0662E3310C8BA2F002E2E14</string>
-											<string>B0662E7910C8BDCC002E2E14</string>
 											<string>B0662F9610C8D6FA002E2E14</string>
 											<string>B0662FC210C8D8BE002E2E14</string>
-											<string>B066300110C8F183002E2E14</string>
 											<string>B066300E10C8F1AC002E2E14</string>
 											<string>B066302310C8F385002E2E14</string>
 											<string>B066305E10C8F651002E2E14</string>
 											<string>B066305F10C8F651002E2E14</string>
-											<string>B066311A10C903BA002E2E14</string>
 											<string>B066313310C9094A002E2E14</string>
-											<string>B066316210C90B7D002E2E14</string>
 											<string>B066316310C90B7D002E2E14</string>
 											<string>B066319110C90D75002E2E14</string>
 											<string>B066319E10C90E3E002E2E14</string>
 											<string>B066320110C91334002E2E14</string>
-											<string>B066320210C91334002E2E14</string>
-											<string>B066320810C913A0002E2E14</string>
 											<string>B066329210C91E2E002E2E14</string>
 											<string>B066329310C91E2E002E2E14</string>
-											<string>B06632A810C92496002E2E14</string>
 											<string>B06632AA10C92496002E2E14</string>
 											<string>B06632F010C9331E002E2E14</string>
 											<string>B06632FB10C933B2002E2E14</string>
 											<string>B06632FC10C933B2002E2E14</string>
 											<string>B066342F10C942CF002E2E14</string>
 											<string>B066343010C942CF002E2E14</string>
-											<string>B066344F10C946EF002E2E14</string>
 											<string>B066347B10C94B0B002E2E14</string>
 											<string>B06634A010C9BCDA002E2E14</string>
 											<string>B06634A510C9BD18002E2E14</string>
 											<string>B06634FA10CBA3D2002E2E14</string>
 											<string>B066352A10CCEEC2002E2E14</string>
-											<string>B066352B10CCEEC2002E2E14</string>
-											<string>B066354210CCF4C7002E2E14</string>
-											<string>B066356310CCF73E002E2E14</string>
-											<string>B066356910CCF7B9002E2E14</string>
-											<string>B066356A10CCF7B9002E2E14</string>
-											<string>B066359410CCFA81002E2E14</string>
 											<string>B066359610CCFA81002E2E14</string>
 											<string>B066359D10CCFB37002E2E14</string>
-											<string>B06635AC10CCFC12002E2E14</string>
 											<string>B06635AD10CCFC12002E2E14</string>
 											<string>B06635B410CCFC41002E2E14</string>
-											<string>B06635BC10CCFCC6002E2E14</string>
-											<string>B06635BE10CCFCC6002E2E14</string>
 											<string>B06635C310CCFD7E002E2E14</string>
 											<string>B06635C410CCFD7E002E2E14</string>
-											<string>B06635D310CD0095002E2E14</string>
+											<string>B066362110CF9552002E2E14</string>
+											<string>B066367410CFA2E2002E2E14</string>
+											<string>B06636A010CFAA56002E2E14</string>
+											<string>B06636A110CFAA56002E2E14</string>
+											<string>B06636A210CFAA56002E2E14</string>
+											<string>B06636A310CFAA56002E2E14</string>
+											<string>B06636A410CFAA56002E2E14</string>
+											<string>B06636CA10CFAD02002E2E14</string>
+											<string>B06636F010CFB093002E2E14</string>
+											<string>B06636F110CFB093002E2E14</string>
+											<string>B06636F210CFB093002E2E14</string>
+											<string>B06636F310CFB093002E2E14</string>
+											<string>B06636F410CFB093002E2E14</string>
+											<string>B06636F510CFB093002E2E14</string>
+											<string>B06636F610CFB093002E2E14</string>
+											<string>B06636F710CFB093002E2E14</string>
+											<string>B06636F810CFB093002E2E14</string>
+											<string>B06636F910CFB093002E2E14</string>
+											<string>B06636FA10CFB093002E2E14</string>
+											<string>B06636FB10CFB093002E2E14</string>
+											<string>B066370610CFB0FF002E2E14</string>
+											<string>B066370010CFB0D1002E2E14</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -405,8 +413,6 @@
 							<string>253pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -583,13 +589,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B066360E10CDDE33002E2E14</string>
 		<string>B066360F10CDDE33002E2E14</string>
 		<string>B066361010CDDE33002E2E14</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>B0E7503010BB9232003CA104</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/dremelofdeath/Documents/Nebula Horizon/Nebula Horizon.xcodeproj</string>
+		<string>B0E7503010BB9232003CA104</string>
 	</array>
 	<key>WindowString</key>
 	<string>801 216 788 504 0 0 1920 1178 </string>
@@ -613,7 +618,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>Skycube.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -630,6 +635,8 @@
 							<string>186pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -682,7 +689,7 @@
 			<key>WindowToolGUID</key>
 			<string>B0E7503010BB9232003CA104</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
