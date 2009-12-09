@@ -30,6 +30,9 @@
 		B0662FF210C8DD3E002E2E14 /* Rotatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662FF110C8DD3E002E2E14 /* Rotatable.cpp */; };
 		B0662FFE10C8F16A002E2E14 /* Positionable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0662FFD10C8F16A002E2E14 /* Positionable.cpp */; };
 		B066311610C903A4002E2E14 /* EnemySpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B066311510C903A4002E2E14 /* EnemySpawner.cpp */; };
+		B066328F10C91DFE002E2E14 /* ParticleFountain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B066328E10C91DFE002E2E14 /* ParticleFountain.cpp */; };
+		B06632A310C92135002E2E14 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B06632A210C92135002E2E14 /* Particle.cpp */; };
+		B066344C10C946E8002E2E14 /* raygun.wav in Resources */ = {isa = PBXBuildFile; fileRef = B066344B10C946E8002E2E14 /* raygun.wav */; };
 		B0E7507210BB94E7003CA104 /* GLDisplayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */; };
 		B0E7507310BB94E7003CA104 /* GLMeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */; };
 		B0E7507510BB94E7003CA104 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0E7506710BB94E7003CA104 /* MeshLoader.cpp */; };
@@ -49,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = ../../../System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* Nebula_HorizonAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nebula_HorizonAppDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +91,11 @@
 		B0662FFD10C8F16A002E2E14 /* Positionable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Positionable.cpp; sourceTree = "<group>"; };
 		B066311410C903A4002E2E14 /* EnemySpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemySpawner.h; sourceTree = "<group>"; };
 		B066311510C903A4002E2E14 /* EnemySpawner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemySpawner.cpp; sourceTree = "<group>"; };
+		B066328D10C91DFE002E2E14 /* ParticleFountain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleFountain.h; sourceTree = "<group>"; };
+		B066328E10C91DFE002E2E14 /* ParticleFountain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleFountain.cpp; sourceTree = "<group>"; };
+		B06632A110C92135002E2E14 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		B06632A210C92135002E2E14 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
+		B066344B10C946E8002E2E14 /* raygun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = raygun.wav; sourceTree = "<group>"; };
 		B0E7506210BB94E7003CA104 /* GLDisplayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDisplayList.cpp; sourceTree = "<group>"; };
 		B0E7506310BB94E7003CA104 /* GLDisplayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDisplayList.h; sourceTree = "<group>"; };
 		B0E7506410BB94E7003CA104 /* GLMeshLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMeshLoader.cpp; sourceTree = "<group>"; };
@@ -197,6 +205,7 @@
 			children = (
 				B0E7514A10BBB3FF003CA104 /* meshes */,
 				B0662DF910C8AF5B002E2E14 /* textures */,
+				B066344B10C946E8002E2E14 /* raygun.wav */,
 				B0E7514010BBB3C3003CA104 /* Nebula Horizon.icns */,
 				8D1107310486CEB800E47090 /* Nebula_Horizon-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -254,6 +263,10 @@
 				B0E7506810BB94E7003CA104 /* MeshLoader.h */,
 				B0662F0110C8C9E6002E2E14 /* Movable.cpp */,
 				B0662F0010C8C9E6002E2E14 /* Movable.h */,
+				B06632A210C92135002E2E14 /* Particle.cpp */,
+				B06632A110C92135002E2E14 /* Particle.h */,
+				B066328E10C91DFE002E2E14 /* ParticleFountain.cpp */,
+				B066328D10C91DFE002E2E14 /* ParticleFountain.h */,
 				B0E7519210BBBCAE003CA104 /* Player.cpp */,
 				B0E7519110BBBCAE003CA104 /* Player.h */,
 				B0662FFD10C8F16A002E2E14 /* Positionable.cpp */,
@@ -351,6 +364,7 @@
 				B0662E0410C8AF5B002E2E14 /* south.raw in Resources */,
 				B0662E0510C8AF5B002E2E14 /* up.raw in Resources */,
 				B0662E0610C8AF5B002E2E14 /* west.raw in Resources */,
+				B066344C10C946E8002E2E14 /* raygun.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +396,8 @@
 				B0662FF210C8DD3E002E2E14 /* Rotatable.cpp in Sources */,
 				B0662FFE10C8F16A002E2E14 /* Positionable.cpp in Sources */,
 				B066311610C903A4002E2E14 /* EnemySpawner.cpp in Sources */,
+				B066328F10C91DFE002E2E14 /* ParticleFountain.cpp in Sources */,
+				B06632A310C92135002E2E14 /* Particle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +464,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
@@ -460,7 +476,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
