@@ -7,7 +7,13 @@
  */
 
 #include <cctype>
+
+#ifdef __APPLE__
 #include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
 #include "KeyboardManager.h"
 
 KeyboardManager* KeyboardManager::_singleton = 0;

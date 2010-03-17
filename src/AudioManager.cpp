@@ -18,8 +18,10 @@ AudioManager* const AudioManager::getInstance() {
     if(_singleton == 0) {
 #ifdef __APPLE__
         _singleton = new AppleAudioManager();
-#else
-#warning "Audio support is yet supported on this platform."
+#elif WIN32
+#pragma message ("WARNING: Audio is not yet supported on this platform.")
+#elif
+#warning "Audio is not yet supported on this platform."
 #endif
     }
     return _singleton;

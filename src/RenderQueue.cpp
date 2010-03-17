@@ -6,6 +6,10 @@
  *
  */
 
+#ifdef WIN32
+#include <windows.h>
+#endif
+
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
 #else
@@ -56,7 +60,7 @@ void RenderQueue::render() const {
     }
 }
 
-void RenderQueue::idle(int elapsed) {
+void RenderQueue::idle(const int elapsed) {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->idle(elapsed);
