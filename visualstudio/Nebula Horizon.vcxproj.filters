@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Application Core">
+      <UniqueIdentifier>{68cae21c-1221-4c73-8c76-a1916cf61413}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Core Headers">
+      <UniqueIdentifier>{e4f58a8e-0ef6-46a8-8b37-fe7c41d1c7e8}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Nebula Horizon.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Nebula Horizon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AppleAudioManager.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AudioManager.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Enemy.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EnemySpawner.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GLDisplayList.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GLMeshLoader.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\handlers.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\KeyboardManager.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Material.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MeshLoader.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Movable.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Particle.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ParticleFountain.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Player.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Positionable.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ProcessorEntity.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Quadruple.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RawTextureLoader.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Renderable.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RenderQueue.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Rotatable.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Skycube.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TextureLoader.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Triple.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tuple.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WavefrontGLMeshLoader.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Nebula Horizon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AppleAudioManager.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AudioManager.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Enemy.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EnemySpawner.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GLDisplayList.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GLMeshLoader.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\handlers.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\KeyboardManager.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Material.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MeshLoader.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Movable.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Particle.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ParticleFountain.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Player.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Positionable.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ProcessorEntity.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RawTextureLoader.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Renderable.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RenderQueue.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Rotatable.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Skycube.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TextureLoader.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WavefrontGLMeshLoader.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Nebula Horizon.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

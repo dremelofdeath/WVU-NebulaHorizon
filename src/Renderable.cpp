@@ -12,7 +12,7 @@ void Renderable::render() const {
     // default implementation does nothing
 }
 
-void Renderable::idle(int elapsed) {
+void Renderable::idle(const int elapsed) {
     // default implementation does nothing
 }
 
