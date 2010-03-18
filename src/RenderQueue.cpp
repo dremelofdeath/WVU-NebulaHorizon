@@ -64,10 +64,11 @@ void RenderQueue::idle(const int elapsed) {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->idle(elapsed);
-        vector_it++;
         if(_isClobbered) {
             _isClobbered = false;
             break;
+        } else {
+          vector_it++;
         }
     }
 }
@@ -76,10 +77,11 @@ void RenderQueue::handleMouseEvent(int button, int state, int x, int y) {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->handleMouseEvent(button, state, x, y);
-        vector_it++;
         if(_isClobbered) {
             _isClobbered = false;
             break;
+        } else {
+          vector_it++;
         }
     }
 }
@@ -88,10 +90,11 @@ void RenderQueue::handleMouseDrag(int x, int y) {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->handleMouseDrag(x, y);
-        vector_it++;
         if(_isClobbered) {
             _isClobbered = false;
             break;
+        } else {
+          vector_it++;
         }
     }
 }
@@ -100,10 +103,11 @@ void RenderQueue::handleMouseMotion(int x, int y) {
     std::vector<Renderable*>::iterator vector_it = _sprites.begin();
     while(vector_it != _sprites.end()) {
         (*vector_it)->handleMouseMotion(x, y);
-        vector_it++;
         if(_isClobbered) {
             _isClobbered = false;
             break;
+        } else {
+          vector_it++;
         }
     }
 }
