@@ -24,6 +24,11 @@ extern "C" {
 #endif
 
 void display();
+#ifdef WIN32
+void win32_set_hInstance(HINSTANCE inst);
+HINSTANCE win32_get_hInstance();
+void win32_idle_handle_messages();
+#endif
 void idle();
 void handle_keyboard(unsigned char key, int x, int y);
 void handle_special_key(int key, int x, int y);
@@ -37,6 +42,7 @@ void exit_callback();
 int create_window(const char *title, int xpos, int ypos, int ww, int wh);
 void init_opengl();
 void set_window_id(int id);
+void main_springload();
 
 #ifdef __cplusplus
 }
