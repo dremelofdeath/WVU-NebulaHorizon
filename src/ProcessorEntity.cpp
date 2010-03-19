@@ -12,7 +12,7 @@ void ProcessorEntity::render() const {
   // never does anything -- only processes time and events
 }
 
-void ProcessorEntity::idle(int elapsed) {
+void ProcessorEntity::idle(const int elapsed) {
   // default implementation does nothing but call the superclass version
   Renderable::idle(elapsed);
 }

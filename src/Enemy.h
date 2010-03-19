@@ -18,7 +18,7 @@ class Enemy : public Renderable, public Material, public Positionable {
     Enemy();
     Enemy(Movable* const target);
     void render() const;
-    void idle(int elapsed);
+    void idle(const int elapsed);
     void setTarget(Movable* const target);
   protected:
     static Renderable& getMesh();

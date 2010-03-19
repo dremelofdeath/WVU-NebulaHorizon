@@ -176,10 +176,10 @@ void exit_callback() {
 }
 
 int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
-  static const GLfloat light0_pos[4] = {-1.0, 0.0, 0.0, 1.0};
-  static const GLfloat ambient0[4] = {0.85, 0.85, 0.95, 1.0};
-  static const GLfloat diffuse0[4] = {0.9, 0.9, 0.9, 1.0};
-  static const GLfloat specular0[4] = {1.0, 1.0, 1.0, 1.0};
+  static const GLfloat light0_pos[4] = {-1.0f, 0.0f, 0.0f, 1.0f};
+  static const GLfloat ambient0[4] = {0.85f, 0.85f, 0.95f, 1.0f};
+  static const GLfloat diffuse0[4] = {0.9f, 0.9f, 0.9f, 1.0f};
+  static const GLfloat specular0[4] = {1.0f, 1.0f, 1.0f, 1.0f};
   int ret = 0;
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
   glutInitWindowPosition(xpos, ypos);

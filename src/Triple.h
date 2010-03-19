@@ -21,7 +21,7 @@ class Triple : public Tuple<T> {
     T getThird() {
       return _third;
     }
-    virtual T operator[](int i) {
+    virtual T operator[](const int i) {
       if(i == 2) {
         return getThird();
       }

@@ -21,7 +21,7 @@ Particle::~Particle() {
 }
 
 void Particle::render() const {
-  float scaleFactor = 0.04*(_life+0.2);
+  float scaleFactor = 0.04f*(_life+0.2f);
   glColor4f(_r, _g, _b, _life);
   doTranslation();
   glScalef(scaleFactor, scaleFactor, scaleFactor);
