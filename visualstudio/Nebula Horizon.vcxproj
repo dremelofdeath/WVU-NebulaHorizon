@@ -79,7 +79,8 @@ COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)\textures\*.* $(OutDir)\</Command>
+      <Command>IF NOT EXIST "$(OutDir)\textures" MKDIR "$(OutDir)\textures"
+COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -123,6 +124,7 @@ COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
     <ClInclude Include="..\src\Material.h" />
     <ClInclude Include="..\src\MeshLoader.h" />
     <ClInclude Include="..\src\Movable.h" />
+    <ClInclude Include="..\src\nhzres.h" />
     <ClInclude Include="..\src\Particle.h" />
     <ClInclude Include="..\src\ParticleFountain.h" />
     <ClInclude Include="..\src\Player.h" />

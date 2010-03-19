@@ -140,6 +140,9 @@
     <ClInclude Include="..\src\WavefrontGLMeshLoader.h">
       <Filter>Core Headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\nhzres.h">
+      <Filter>Core Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nebula Horizon.cpp">
