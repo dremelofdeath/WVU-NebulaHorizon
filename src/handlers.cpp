@@ -27,6 +27,7 @@
 #include "Player.h"
 #include "EnemySpawner.h"
 #include "Skycube.h"
+#include "nhzres.h"
 
 static GLsizei winWidth = 800, winHeight = 600;
 static int window_id_main = 0;
@@ -233,8 +234,12 @@ void main_springload() {
   EnemySpawner spawner(&player);
   RenderQueue::getInstance()->enqueue(player);
   RenderQueue::getInstance()->enqueue(spawner);
-  Skycube skycube("north.raw", "south.raw", "east.raw",
-                  "west.raw", "up.raw", "down.raw");
+  Skycube skycube(NHZ_RES_T("textures", "north.raw"),
+                  NHZ_RES_T("textures", "south.raw"),
+                  NHZ_RES_T("textures", "east.raw"),
+                  NHZ_RES_T("textures", "west.raw"),
+                  NHZ_RES_T("textures", "up.raw"),
+                  NHZ_RES_T("textures", "down.raw"));
   RenderQueue::getInstance()->enqueue(skycube);
   glutMainLoop();
 }
