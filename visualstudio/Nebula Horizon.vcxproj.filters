@@ -21,6 +21,9 @@
       <UniqueIdentifier>{e4f58a8e-0ef6-46a8-8b37-fe7c41d1c7e8}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Textures">
+      <UniqueIdentifier>{4ad61f9c-667e-4269-a755-131df895fe47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="small.ico">
@@ -30,6 +33,24 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ReadMe.txt" />
+    <None Include="..\textures\skycube\west.raw">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="..\textures\skycube\down.raw">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="..\textures\skycube\east.raw">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="..\textures\skycube\north.raw">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="..\textures\skycube\south.raw">
+      <Filter>Textures</Filter>
+    </None>
+    <None Include="..\textures\skycube\up.raw">
+      <Filter>Textures</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -123,9 +144,6 @@
   <ItemGroup>
     <ClCompile Include="Nebula Horizon.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\AppleAudioManager.cpp">
-      <Filter>Application Core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\AudioManager.cpp">
       <Filter>Application Core</Filter>
