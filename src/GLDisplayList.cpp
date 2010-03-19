@@ -9,29 +9,29 @@
 #include "GLDisplayList.h"
 
 GLDisplayList::GLDisplayList() {
-    initialize();
+  initialize();
 }
 
 GLDisplayList::GLDisplayList(GLuint list) {
-    initialize(list);
+  initialize(list);
 }
 
 GLDisplayList::~GLDisplayList() {
-    glDeleteLists(_list, 1);
+  glDeleteLists(_list, 1);
 }
 
 void GLDisplayList::render() const {
-    glCallList(_list);
+  glCallList(_list);
 }
 
 GLuint GLDisplayList::getList() {
-    return _list;
+  return _list;
 }
 
 void GLDisplayList::initialize() {
-    initialize(glGenLists(1));
+  initialize(glGenLists(1));
 }
 
 void GLDisplayList::initialize(GLuint list) {
-    _list = list;
+  _list = list;
 }

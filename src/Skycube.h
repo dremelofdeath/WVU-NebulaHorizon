@@ -26,41 +26,41 @@
 #include "RawTextureLoader.h"
 
 class Skycube : public Renderable {
-    public:
-        Skycube(const char* north, const char* south, const char* east,
-                const char* west, const char* up, const char* down);
-        Skycube(const char* north, const char* south, const char* east,
-                const char* west, const char* up, const char* down,
-                TextureLoader* loader);
-        Skycube(std::istream& north, std::istream& south, std::istream& east,
-                std::istream& west, std::istream& up, std::istream& down);
-        Skycube(std::istream& north, std::istream& south, std::istream& east,
-                std::istream& west, std::istream& up, std::istream& down,
-                TextureLoader* loader);
-        ~Skycube();
-        void setSize(double size);
-        void render() const;
-    protected:
-        void initialize(const char* north, const char* south, const char* east,
-                        const char* west, const char* up, const char* down);
-        void initialize(const char* north, const char* south, const char* east,
-                        const char* west, const char* up, const char* down,
-                        TextureLoader* loader);
-        void initialize(std::istream& north, std::istream& south,
-                        std::istream& east, std::istream& west,
-                        std::istream& up, std::istream& down);
-        void initialize(std::istream& north, std::istream& south,
-                        std::istream& east, std::istream& west,
-                        std::istream& up, std::istream& down,
-                        TextureLoader* loader);
-        TextureLoader* getDefaultTextureLoader();
-    private:
-        GLuint _northTexture, _southTexture;
-        GLuint _eastTexture, _westTexture;
-        GLuint _upTexture, _downTexture;
-        double _size;
-        void renderOneSide(GLuint texture) const;
-        void renderOneFace() const;
+  public:
+    Skycube(const char* north, const char* south, const char* east,
+            const char* west, const char* up, const char* down);
+    Skycube(const char* north, const char* south, const char* east,
+            const char* west, const char* up, const char* down,
+            TextureLoader* loader);
+    Skycube(std::istream& north, std::istream& south, std::istream& east,
+            std::istream& west, std::istream& up, std::istream& down);
+    Skycube(std::istream& north, std::istream& south, std::istream& east,
+            std::istream& west, std::istream& up, std::istream& down,
+            TextureLoader* loader);
+    ~Skycube();
+    void setSize(double size);
+    void render() const;
+  protected:
+    void initialize(const char* north, const char* south, const char* east,
+                    const char* west, const char* up, const char* down);
+    void initialize(const char* north, const char* south, const char* east,
+                    const char* west, const char* up, const char* down,
+                    TextureLoader* loader);
+    void initialize(std::istream& north, std::istream& south,
+                    std::istream& east, std::istream& west,
+                    std::istream& up, std::istream& down);
+    void initialize(std::istream& north, std::istream& south,
+                    std::istream& east, std::istream& west,
+                    std::istream& up, std::istream& down,
+                    TextureLoader* loader);
+    TextureLoader* getDefaultTextureLoader();
+  private:
+    GLuint _northTexture, _southTexture;
+    GLuint _eastTexture, _westTexture;
+    GLuint _upTexture, _downTexture;
+    double _size;
+    void renderOneSide(GLuint texture) const;
+    void renderOneFace() const;
 };
 
 #endif

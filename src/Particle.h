@@ -21,21 +21,21 @@
 class ParticleFountain;
 
 class Particle : public Renderable, public Movable {
-    public:
-        Particle(ParticleFountain* const parent);
-        ~Particle();
-        void render() const;
-        void idle(const int elapsed);
-    protected:
-        void initialize(ParticleFountain* parent);
-        void renderParticle() const;
-    private:
-        static GLuint _particleID;
-        ParticleFountain* _parent;
-        float _life;
-        float _fade;
-        float _r, _g, _b;
-        float _xVelocity, _yVelocity, _zVelocity;
+  public:
+    Particle(ParticleFountain* const parent);
+    ~Particle();
+    void render() const;
+    void idle(const int elapsed);
+  protected:
+    void initialize(ParticleFountain* parent);
+    void renderParticle() const;
+  private:
+    static GLuint _particleID;
+    ParticleFountain* _parent;
+    float _life;
+    float _fade;
+    float _r, _g, _b;
+    float _xVelocity, _yVelocity, _zVelocity;
 };
 
 #include "ParticleFountain.h"

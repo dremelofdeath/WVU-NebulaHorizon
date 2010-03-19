@@ -225,10 +225,8 @@ void main_springload() {
   atexit(&exit_callback);
   create_callbacks();
 #ifdef WIN32
-  SetLastError(0);
   nextHook = SetWindowsHookEx(WH_CALLWNDPROC, CallWndProc,
                               GetModuleHandle(NULL), GetCurrentThreadId());
-  DWORD error = GetLastError();
 #endif
   init_opengl();
   Player player(5.0f, 5.0f);
