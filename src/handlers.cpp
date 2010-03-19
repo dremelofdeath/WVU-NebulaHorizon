@@ -1,6 +1,9 @@
 #ifdef WIN32
 #include <windows.h>
+#include <atlbase.h>
+#include <atlconv.h>
 #include "../visualstudio/Nebula Horizon.h"
+#define MAX_LOADSTRING 100
 #endif
 
 #include <stdlib.h>
@@ -50,6 +53,7 @@ void display() {
 
 #ifdef WIN32
 static HINSTANCE hInstance = NULL;
+static HHOOK nextHook;
 
 void win32_set_hInstance(HINSTANCE inst) {
   hInstance = inst;
@@ -67,13 +71,33 @@ void win32_idle_handle_messages() {
                                    MAKEINTRESOURCE(IDC_NEBULAHORIZON));
   }
   if(hAccelTable) {
-    if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+    while(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
       if(!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
       }
     }
   }
+}
+
+LRESULT CALLBACK CallWndProc(int code, WPARAM wParam, LPARAM lParam) {
+  if(code < 0) {
+    return CallNextHookEx(nextHook, code, wParam, lParam);
+  }
+  switch(code) {
+    case HC_ACTION:
+      PCWPSTRUCT cwp = (PCWPSTRUCT)lParam;
+      switch(cwp->message) {
+        case WM_MOVING:
+        case WM_GETICON:
+        case WM_MOVE:
+          idle();
+          RedrawWindow(cwp->hwnd, NULL, NULL, RDW_ERASE | RDW_INVALIDATE);
+          break;
+      }
+      break;
+  }
+  return CallNextHookEx(nextHook, code, wParam, lParam);
 }
 #endif
 
@@ -189,10 +213,23 @@ void set_window_id(int id) {
 }
 
 void main_springload() {
+#ifdef WIN32
+  TCHAR szTitle[MAX_LOADSTRING];
+  USES_CONVERSION;
+  LoadString(win32_get_hInstance(), IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+  const char *title = T2A(szTitle);
+#else
   const char *title = "Nebula Horizon";
+#endif
   set_window_id(create_window(title, 40, 40, 800, 600));
   atexit(&exit_callback);
   create_callbacks();
+#ifdef WIN32
+  SetLastError(0);
+  nextHook = SetWindowsHookEx(WH_CALLWNDPROC, CallWndProc,
+                              GetModuleHandle(NULL), GetCurrentThreadId());
+  DWORD error = GetLastError();
+#endif
   init_opengl();
   Player player(5.0f, 5.0f);
   EnemySpawner spawner(&player);
