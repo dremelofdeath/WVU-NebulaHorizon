@@ -30,13 +30,13 @@ void Enemy::render() const {
   getMesh().render();
 }
 
-void Enemy::idle(int elapsed) {
+void Enemy::idle(const int elapsed) {
   float time = (float)elapsed;
-  _x += _xVelocity*time/1000;
-  _y += _yVelocity*time/1000;
-  _z += _zVelocity*time/1000;
-  _xVelocity -= _x/9.0*time/1000;
-  _yVelocity -= _y/40.0*time/1000;
+  _x += _xVelocity*time/1000.0f;
+  _y += _yVelocity*time/1000.0f;
+  _z += _zVelocity*time/1000.0f;
+  _xVelocity -= (float)(_x/9.0f*time/1000.0f);
+  _yVelocity -= (float)(_y/40.0f*time/1000.0f);
   if(_target != 0 ) {
     lookAt(*_target);
   }
@@ -57,9 +57,9 @@ Renderable& Enemy::getMesh() {
 }
 
 void Enemy::initialize() {
-  static const float ambient[4] = {0.3, 0.5, 0.3, 1.0};
-  static const float diffuse[4] = {0.62, 0.9, 0.62, 1.0};
-  static const float specular[4] = {1.0, 1.0, 1.0, 1.0};
+  static const float ambient[4] = {0.3f, 0.5f, 0.3f, 1.0f};
+  static const float diffuse[4] = {0.62f, 0.9f, 0.62f, 1.0f};
+  static const float specular[4] = {1.0f, 1.0f, 1.0f, 1.0f};
   Material::initialize();
   Positionable::initialize();
   Movable::initialize(-16.0, 9.0, -150.0);

@@ -17,7 +17,7 @@ EnemySpawner::EnemySpawner(Movable* const target, const int period) {
   initialize(target, period);
 }
 
-void EnemySpawner::idle(int elapsed) {
+void EnemySpawner::idle(const int elapsed) {
   _counter += elapsed;
   if(_counter >= _period) {
     spawnEnemy();

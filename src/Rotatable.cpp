@@ -59,7 +59,7 @@ void Rotatable::initialize(const double x, const double y, const double z) {
 }
 
 void Rotatable::doRotation() const {
-  glRotatef(_xAngle, 1.0, 0.0, 0.0);
-  glRotatef(_yAngle, 0.0, 1.0, 0.0);
-  glRotatef(_zAngle, 0.0, 0.0, 1.0);
+  glRotatef((GLfloat)_xAngle, 1.0f, 0.0f, 0.0f);
+  glRotatef((GLfloat)_yAngle, 0.0f, 1.0f, 0.0f);
+  glRotatef((GLfloat)_zAngle, 0.0f, 0.0f, 1.0f);
 }

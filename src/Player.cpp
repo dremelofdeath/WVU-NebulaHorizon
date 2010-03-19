@@ -38,13 +38,13 @@ void Player::render() const {
   glPopMatrix();
   useMaterial();
   doTranslation();
-  glRotatef(_xAngle, 1.0, 0.0, 0.0);
-  glRotatef(_zAngle, 0.0, 0.0, 1.0);
+  glRotatef((GLfloat)_xAngle, 1.0f, 0.0f, 0.0f);
+  glRotatef((GLfloat)_zAngle, 0.0f, 0.0f, 1.0f);
   glScaled(0.35, 0.35, 0.35);
   getMesh().render();
 }
 
-void Player::idle(int elapsed) {
+void Player::idle(const int elapsed) {
   float time = (float)elapsed;
   _fountain->setX(getX());
   _fountain->setY(getY());
@@ -129,9 +129,9 @@ void Player::initialize() {
 }
 
 void Player::initialize(float xVelocity, float yVelocity) {
-  static const float ambient[4] = {0.4, 0.4, 0.45, 1.0};
-  static const float diffuse[4] = {0.8, 0.8, 1.0, 1.0};
-  static const float specular[4] = {1.0, 1.0, 1.0, 1.0};
+  static const float ambient[4] = {0.4f, 0.4f, 0.45f, 1.0f};
+  static const float diffuse[4] = {0.8f, 0.8f, 1.0f, 1.0f};
+  static const float specular[4] = {1.0f, 1.0f, 1.0f, 1.0f};
   Material::initialize();
   Movable::initialize(0.0, 0.0, -10.0);
   _lastX = 0.0f;

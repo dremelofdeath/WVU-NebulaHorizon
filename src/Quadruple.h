@@ -21,7 +21,7 @@ class Quadruple : public Triple<T> {
     T getFourth() {
       return _fourth;
     }
-    virtual T operator[](int i) {
+    virtual T operator[](const int i) {
       if(i == 3) {
         return getFourth();
       }

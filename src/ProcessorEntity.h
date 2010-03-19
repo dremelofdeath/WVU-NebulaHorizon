@@ -14,7 +14,7 @@
 class ProcessorEntity : public Renderable {
   public:
     void render() const;
-    virtual void idle(int elapsed) = 0;
+    virtual void idle(const int elapsed) = 0;
 };
 
 #endif
