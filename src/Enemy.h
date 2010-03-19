@@ -14,20 +14,20 @@
 #include "Positionable.h"
 
 class Enemy : public Renderable, public Material, public Positionable {
-    public:
-        Enemy();
-        Enemy(Movable* const target);
-        void render() const;
-        void idle(int elapsed);
-        void setTarget(Movable* const target);
-    protected:
-        static Renderable& getMesh();
-        void initialize();
-        void initialize(Movable* const target);
-    private:
-        static Renderable* _mesh;
-        float _xVelocity, _yVelocity, _zVelocity;
-        Movable* _target;
+  public:
+    Enemy();
+    Enemy(Movable* const target);
+    void render() const;
+    void idle(int elapsed);
+    void setTarget(Movable* const target);
+  protected:
+    static Renderable& getMesh();
+    void initialize();
+    void initialize(Movable* const target);
+  private:
+    static Renderable* _mesh;
+    float _xVelocity, _yVelocity, _zVelocity;
+    Movable* _target;
 };
 
 #endif

@@ -10,17 +10,17 @@
 #define NHZ_MATERIAL_H
 
 class Material {
-    public:
-        void setAmbientMaterial(const float (& material)[4]);
-        void setDiffuseMaterial(const float (& material)[4]);
-        void setSpecularMaterial(const float (& material)[4]);
-        void setShininess(const float shininess);
-    protected:
-        void initialize();
-        void useMaterial() const; // use in children when rendering materials
-    private:
-        float _ambient[4], _diffuse[4], _specular[4];
-        float _shininess;
+  public:
+    void setAmbientMaterial(const float (& material)[4]);
+    void setDiffuseMaterial(const float (& material)[4]);
+    void setSpecularMaterial(const float (& material)[4]);
+    void setShininess(const float shininess);
+  protected:
+    void initialize();
+    void useMaterial() const; // use in children when rendering materials
+  private:
+    float _ambient[4], _diffuse[4], _specular[4];
+    float _shininess;
 };
 
 #endif

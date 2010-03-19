@@ -11,39 +11,39 @@
 #include "AppleAudioManager.h"
 
 void AppleAudioManager::loadSFX(const char* sfxFilename) {
-    if(!isSFXLoaded(sfxFilename)) {
-        SystemSoundID ssid;
-        CFStringRef strref = CFStringCreateWithCString(
-            kCFAllocatorDefault,
-            sfxFilename,
-            kCFStringEncodingUTF8
+  if(!isSFXLoaded(sfxFilename)) {
+    SystemSoundID ssid;
+    CFStringRef strref = CFStringCreateWithCString(
+        kCFAllocatorDefault,
+        sfxFilename,
+        kCFStringEncodingUTF8
         );
-        CFURLRef ref = CFURLCreateWithFileSystemPath(
-            kCFAllocatorDefault,
-            strref,
-            kCFURLPOSIXPathStyle,
-            FALSE
+    CFURLRef ref = CFURLCreateWithFileSystemPath(
+        kCFAllocatorDefault,
+        strref,
+        kCFURLPOSIXPathStyle,
+        FALSE
         );
-        AudioServicesCreateSystemSoundID(ref, &ssid);
-        _loadedSounds[sfxFilename] = ssid;
-    }
+    AudioServicesCreateSystemSoundID(ref, &ssid);
+    _loadedSounds[sfxFilename] = ssid;
+  }
 }
 
 void AppleAudioManager::playSFX(const char* sfxFilename) {
-    loadSFX(sfxFilename);
-    AudioServicesPlaySystemSound(_loadedSounds[sfxFilename]);
+  loadSFX(sfxFilename);
+  AudioServicesPlaySystemSound(_loadedSounds[sfxFilename]);
 }
 
 bool AppleAudioManager::isSFXLoaded(const char* sfxFilename) {
-    return _loadedSounds[sfxFilename] != 0;
+  return _loadedSounds[sfxFilename] != 0;
 }
 
 void AppleAudioManager::playMusic(const char* musicFilename) {
-    // TODO: do nothing at the moment
+  // TODO: do nothing at the moment
 }
 
 void AppleAudioManager::stopMusic() {
-    // TODO: do nothing at the moment
+  // TODO: do nothing at the moment
 }
 
 #endif

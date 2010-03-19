@@ -19,45 +19,45 @@
 #include "Movable.h"
 
 void Movable::setX(const double value) {
-    _x = value;
+  _x = value;
 }
 
 void Movable::setY(const double value) {
-    _y = value;
+  _y = value;
 }
 
 void Movable::setZ(const double value) {
-    _z = value;
+  _z = value;
 }
 
 double Movable::getX() const {
-    return _x;
+  return _x;
 }
 
 double Movable::getY() const {
-    return _y;
+  return _y;
 }
 
 double Movable::getZ() const {
-    return _z;
+  return _z;
 }
 
 void Movable::copyCoordinatesFrom(const Movable& object) {
-    _x = object.getX();
-    _y = object.getY();
-    _z = object.getZ();
+  _x = object.getX();
+  _y = object.getY();
+  _z = object.getZ();
 }
 
 void Movable::initialize() {
-    initialize(0.0, 0.0, 0.0);
+  initialize(0.0, 0.0, 0.0);
 }
 
 void Movable::initialize(const double x, const double y, const double z) {
-    setX(x);
-    setY(y);
-    setZ(z);
+  setX(x);
+  setY(y);
+  setZ(z);
 }
 
 void Movable::doTranslation() const {
-    glTranslated(getX(), getY(), getZ());
+  glTranslated(getX(), getY(), getZ());
 }

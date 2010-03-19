@@ -11,12 +11,12 @@
 #define NHZ_RENDERABLE_H
 
 class Renderable {
-	public:
-        virtual void render() const = 0;
-        virtual void idle(const int elapsed);
-        virtual void handleMouseEvent(int button, int state, int x, int y);
-        virtual void handleMouseDrag(int x, int y);
-        virtual void handleMouseMotion(int x, int y);
+  public:
+    virtual void render() const = 0;
+    virtual void idle(const int elapsed);
+    virtual void handleMouseEvent(int button, int state, int x, int y);
+    virtual void handleMouseDrag(int x, int y);
+    virtual void handleMouseMotion(int x, int y);
 };
 
 #endif

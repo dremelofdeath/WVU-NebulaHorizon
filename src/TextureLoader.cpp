@@ -9,5 +9,5 @@
 #include "TextureLoader.h"
 
 GLuint TextureLoader::loadTexture(std::istream& input) {
-    return loadTexture(input, 0, 0);
+  return loadTexture(input, 0, 0);
 }

@@ -22,9 +22,9 @@
 #endif
 
 class TextureLoader {
-    public:
-        virtual GLuint loadTexture(std::istream& input) = 0;
-        virtual GLuint loadTexture(std::istream& input, int w, int h) = 0;
+  public:
+    virtual GLuint loadTexture(std::istream& input) = 0;
+    virtual GLuint loadTexture(std::istream& input, int w, int h) = 0;
 };
 
 #endif

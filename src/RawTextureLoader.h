@@ -12,10 +12,10 @@
 #include "TextureLoader.h"
 
 class RawTextureLoader : public TextureLoader {
-    public:
-        // invalid operation: must specify width and height
-        GLuint loadTexture(std::istream& input);
-        GLuint loadTexture(std::istream& input, int w, int h);
+  public:
+    // invalid operation: must specify width and height
+    GLuint loadTexture(std::istream& input);
+    GLuint loadTexture(std::istream& input, int w, int h);
 };
 
 #endif

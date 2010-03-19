@@ -25,25 +25,25 @@
 #define NHZ_GLMESHLOADER_H
 
 class GLMeshLoader : public MeshLoader {
-    public:
-        GLMeshLoader();
-        ~GLMeshLoader();
-        virtual Renderable* loadMesh(std::istream& input) = 0;
-    protected:
-        void processPoint(std::vector<int>* const vertices);
-        void processLine(std::vector<int>* const vertices);
-        void processLine(std::vector<int>* const v,
-                         std::vector<int>* const vt);
-        void processFace(std::vector<int>* const vertices);
-        void processFace(std::vector<int>* const v, std::vector<int>* const vt);
-        void processFace(std::vector<int>* const v,
-                         std::vector<int>* const vt,
-                         std::vector<int>* const vn);
-        void glPrimitivePreamble(GLenum mode);
-        void glPrimitiveEpilogue();
-        void initialize();
-    private:
-        GLenum _lastMode;
+  public:
+    GLMeshLoader();
+    ~GLMeshLoader();
+    virtual Renderable* loadMesh(std::istream& input) = 0;
+  protected:
+    void processPoint(std::vector<int>* const vertices);
+    void processLine(std::vector<int>* const vertices);
+    void processLine(std::vector<int>* const v,
+                     std::vector<int>* const vt);
+    void processFace(std::vector<int>* const vertices);
+    void processFace(std::vector<int>* const v, std::vector<int>* const vt);
+    void processFace(std::vector<int>* const v,
+                     std::vector<int>* const vt,
+                     std::vector<int>* const vn);
+    void glPrimitivePreamble(GLenum mode);
+    void glPrimitiveEpilogue();
+    void initialize();
+  private:
+    GLenum _lastMode;
 };
 
 #endif

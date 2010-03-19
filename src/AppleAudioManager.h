@@ -19,14 +19,14 @@
 #include "AudioManager.h"
 
 class AppleAudioManager : public AudioManager {
-    public:
-        void loadSFX(const char* sfxFilename);
-        void playSFX(const char* sfxFilename);
-        bool isSFXLoaded(const char* sfxFilename);
-        void playMusic(const char* musicFilename);
-        void stopMusic();
-    private:
-        std::map<const char*, SystemSoundID> _loadedSounds;
+  public:
+    void loadSFX(const char* sfxFilename);
+    void playSFX(const char* sfxFilename);
+    bool isSFXLoaded(const char* sfxFilename);
+    void playMusic(const char* musicFilename);
+    void stopMusic();
+  private:
+    std::map<const char*, SystemSoundID> _loadedSounds;
 };
 
 #endif

@@ -22,17 +22,17 @@
 #define NHZ_GLDISPLAYLIST_H
 
 class GLDisplayList : public Renderable {
-    public:
-        GLDisplayList();
-        GLDisplayList(GLuint list);
-        ~GLDisplayList();
-        void render() const;
-        GLuint getList();
-    protected:
-        void initialize();
-        void initialize(GLuint list);
-    private:
-        GLuint _list;
+  public:
+    GLDisplayList();
+    GLDisplayList(GLuint list);
+    ~GLDisplayList();
+    void render() const;
+    GLuint getList();
+  protected:
+    void initialize();
+    void initialize(GLuint list);
+  private:
+    GLuint _list;
 };
 
 #endif
