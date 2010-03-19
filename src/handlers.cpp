@@ -1,4 +1,7 @@
 #ifdef WIN32
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN 1
+#endif
 #include <windows.h>
 #include <atlbase.h>
 #include <atlconv.h>
@@ -12,11 +15,13 @@
 #include <fstream>
 
 #ifdef __APPLE__
-#include <GLUT/glut.h>
+#include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
+#include <GLUT/glut.h>
 #else
-#include <GL/glut.h>
+#include <GL/gl.h>
 #include <GL/glu.h>
+#include <GL/glut.h>
 #endif
 
 #include "handlers.h"

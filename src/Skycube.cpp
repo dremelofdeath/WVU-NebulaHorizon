@@ -9,6 +9,12 @@
 #include <fstream>
 #include "Skycube.h"
 
+#ifdef __APPLE__
+#include <OpenGL/glext.h>
+#else
+#include <GL/glext.h>
+#endif
+
 Skycube::Skycube(const char* north, const char* south, const char* east,
                  const char* west, const char* up, const char* down) {
   initialize(north, south, east, west, up, down);
@@ -83,7 +89,7 @@ void Skycube::initialize(std::istream& north, std::istream& south,
 void Skycube::initialize(std::istream& north, std::istream& south,
                          std::istream& east, std::istream& west,
                          std::istream& up, std::istream& down,
-    TextureLoader* loader) {
+                         TextureLoader* loader) {
   setSize(500.0);
   _northTexture = loader->loadTexture(north, 2048, 2048);
   _southTexture = loader->loadTexture(south, 2048, 2048);
@@ -108,6 +114,8 @@ TextureLoader* Skycube::getDefaultTextureLoader() {
 
 void Skycube::renderOneSide(GLuint texture) const {
   glBindTexture(GL_TEXTURE_2D, texture);
+  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
   renderOneFace();
 }
 
