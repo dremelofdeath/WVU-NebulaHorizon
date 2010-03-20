@@ -51,6 +51,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../visualstudio/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -71,6 +72,7 @@ COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../visualstudio/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -124,7 +126,7 @@ COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
     <ClInclude Include="..\src\Material.h" />
     <ClInclude Include="..\src\MeshLoader.h" />
     <ClInclude Include="..\src\Movable.h" />
-    <ClInclude Include="..\src\nhzres.h" />
+    <ClInclude Include="..\src\nhz_common.h" />
     <ClInclude Include="..\src\Particle.h" />
     <ClInclude Include="..\src\ParticleFountain.h" />
     <ClInclude Include="..\src\Player.h" />
@@ -155,6 +157,7 @@ COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
     <ClCompile Include="..\src\Material.cpp" />
     <ClCompile Include="..\src\MeshLoader.cpp" />
     <ClCompile Include="..\src\Movable.cpp" />
+    <ClCompile Include="..\src\nhz_common.cpp" />
     <ClCompile Include="..\src\Particle.cpp" />
     <ClCompile Include="..\src\ParticleFountain.cpp" />
     <ClCompile Include="..\src\Player.cpp" />
