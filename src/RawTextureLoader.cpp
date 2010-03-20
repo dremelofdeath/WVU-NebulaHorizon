@@ -20,6 +20,7 @@
 #endif
 
 #include "RawTextureLoader.h"
+#include "nhz_common.h"
 
 GLuint RawTextureLoader::loadTexture(std::istream& input) {
   throw std::logic_error("must specify width and height for RAW format");
@@ -32,13 +33,13 @@ GLuint RawTextureLoader::loadTexture(std::istream& input, int w, int h) {
   char *data = (char *)malloc(sizeof(char)*w*h*3);
   ++x;
   if(input.bad()) {
-    std::cerr << "bad input" << std::endl;
+    NHZ_ERR("bad input\n");
   };
   if(input.fail()) {
-    std::cerr << "fail input: " << x << std::endl;
+    NHZ_ERR("fail input: %d\n", x);
   };
   if(input.eof()) {
-    std::cerr << "eof input" << std::endl;
+    NHZ_ERR("eof input\n");
   };
   input.read(data, w*h*3);
   glGenTextures(1, &texture);

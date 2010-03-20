@@ -6,6 +6,13 @@
 #include <GL/glut.h>
 
 #include "../src/handlers.h"
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <io.h>
+#include <iostream>
+#include <fstream>
+
 int main(int, char **);
 #define MAX_LOADSTRING 100
 
@@ -23,13 +30,13 @@ INT_PTR CALLBACK  About(HWND, UINT, WPARAM, LPARAM);
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
                      LPTSTR    lpCmdLine,
-                     int       nCmdShow)
-{
+                     int       nCmdShow) {
   UNREFERENCED_PARAMETER(hPrevInstance);
   UNREFERENCED_PARAMETER(lpCmdLine);
   int argc_hack = 0;
 
   // TODO: Place code here.
+
   /* I think we're going to try to do this using GLUT, in the idle callback
   MSG msg;
   HACCEL hAccelTable;
@@ -41,8 +48,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
   MyRegisterClass(hInstance);
 
   // Perform application initialization:
-  if (!InitInstance (hInstance, nCmdShow))
-  {
+  if (!InitInstance (hInstance, nCmdShow)) {
     return FALSE;
   }
 
@@ -151,54 +157,48 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
   PAINTSTRUCT ps;
   HDC hdc;
 
-  switch (message)
-  {
-  case WM_COMMAND:
-    wmId    = LOWORD(wParam);
-    wmEvent = HIWORD(wParam);
-    // Parse the menu selections:
-    switch (wmId)
-    {
-    case IDM_ABOUT:
-      DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+  switch (message) {
+    case WM_COMMAND:
+      wmId    = LOWORD(wParam);
+      wmEvent = HIWORD(wParam);
+      // Parse the menu selections:
+      switch (wmId) {
+        case IDM_ABOUT:
+          DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+          break;
+        case IDM_EXIT:
+          DestroyWindow(hWnd);
+          break;
+        default:
+          return DefWindowProc(hWnd, message, wParam, lParam);
+      }
       break;
-    case IDM_EXIT:
-      DestroyWindow(hWnd);
+    case WM_PAINT:
+      hdc = BeginPaint(hWnd, &ps);
+      // TODO: Add any drawing code here...
+      EndPaint(hWnd, &ps);
+      break;
+    case WM_DESTROY:
+      PostQuitMessage(0);
       break;
     default:
       return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    break;
-  case WM_PAINT:
-    hdc = BeginPaint(hWnd, &ps);
-    // TODO: Add any drawing code here...
-    EndPaint(hWnd, &ps);
-    break;
-  case WM_DESTROY:
-    PostQuitMessage(0);
-    break;
-  default:
-    return DefWindowProc(hWnd, message, wParam, lParam);
   }
   return 0;
 }
 
 // Message handler for about box.
-INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
-{
+INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam) {
   UNREFERENCED_PARAMETER(lParam);
-  switch (message)
-  {
-  case WM_INITDIALOG:
-    return (INT_PTR)TRUE;
-
-  case WM_COMMAND:
-    if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-    {
-      EndDialog(hDlg, LOWORD(wParam));
+  switch (message) {
+    case WM_INITDIALOG:
       return (INT_PTR)TRUE;
-    }
-    break;
+    case WM_COMMAND:
+      if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL) {
+        EndDialog(hDlg, LOWORD(wParam));
+        return (INT_PTR)TRUE;
+      }
+      break;
   }
   return (INT_PTR)FALSE;
 }

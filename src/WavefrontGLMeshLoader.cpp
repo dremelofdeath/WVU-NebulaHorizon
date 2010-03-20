@@ -9,6 +9,7 @@
 #include <vector>
 #include "WavefrontGLMeshLoader.h"
 #include "GLDisplayList.h"
+#include "nhz_common.h"
 
 WavefrontGLMeshLoader::~WavefrontGLMeshLoader() {
   cleanup();
@@ -60,7 +61,7 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
             processVertex(x[0], x[1], x[2], x[3]);
             break;
           default:
-            std::cerr << "invalid vertex; ignoring" << std::endl;
+            NHZ_ERR("invalid vertex; ignoring\n");
             break;
         }
       }
@@ -76,8 +77,7 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
             processTextureVertex(x[0], x[1], x[2]);
             break;
           default:
-            std::cerr << "invalid texture vertex; ignoring";
-            std::cerr << std::endl;
+            NHZ_ERR("invalid texture vertex; ignoring\n");
             break;
         }
       }
@@ -87,8 +87,7 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
             processVertexNormal(x[0], x[1], x[2]);
             break;
           default:
-            std::cerr << "invalid vertex normal; ignoring";
-            std::cerr << std::endl;
+            NHZ_ERR("invalid vertex normal; ignoring\n");
             break;
         }
       }
@@ -178,8 +177,10 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
     }
   }
   if(input.bad()) {
-    std::cerr << "stream went bad during mesh processing (";
-    std::cerr << __FILE__ << ", line " << __LINE__ << ")" << std::endl;
+    NHZ_ERR("stream went bad during mesh processing\n");
+  }
+  if(input.fail()) {
+    NHZ_ERR("stream failed, probably means file not found\n");
   }
 }
 
@@ -200,12 +201,10 @@ void WavefrontGLMeshLoader::parseParam(std::istringstream& param,
     param >> sep;
   }
   if(!param.fail() && sep != '/') {
-    std::cerr << "invalid separator; ignoring remaining attributes";
-    std::cerr << std::endl;
+    NHZ_ERR("invalid separator; ignoring remaining attributes\n");
   }
   if(param.bad()) {
-    std::cerr << "failed to parse param (bad stream); dropping ";
-    std::cerr << "(" << __FILE__ << ", line " << __LINE__ << std::endl;
+    NHZ_ERR("failed to parse param (bad stream); dropping\n");
   } else {
     switch(n) {
       case 2:
@@ -214,8 +213,7 @@ void WavefrontGLMeshLoader::parseParam(std::istringstream& param,
         v.push_back(x[0]);
         break;
       default:
-        std::cerr << "invalid parameter; ignoring (" << __FILE__;
-        std::cerr << ", line " << __LINE__ << ")" << std::endl;
+        NHZ_ERR("invalid parameter; ignoring\n");
         break;
     }
   }
@@ -231,8 +229,7 @@ void WavefrontGLMeshLoader::parseParam(std::istringstream& param,
     param >> x;
     x--;
     if(param.bad()) {
-      std::cerr << "stream went bad; dropping final attribute";
-      std::cerr << std::endl;
+      NHZ_ERR("stream went bad; dropping final attribute\n");
     } else if(param.fail()) {
       param.clear();
     } else {
@@ -249,13 +246,11 @@ void WavefrontGLMeshLoader::processFileComment(std::istream& input) {
       input.clear();
       input.get();
       if(input.fail()) {
-        std::cerr << "unstoppable failure in processFileComment()";
-        std::cerr << std::endl;
+        NHZ_ERR("unstoppable failure in processFileComment()\n");
       }
     }
   }
   if(input.bad()) {
-    std::cerr << "getline() caused bad stream in processFileComment()";
-    std::cerr << std::endl;
+    NHZ_ERR("getline() caused bad stream in processFileComment()\n");
   }
 }

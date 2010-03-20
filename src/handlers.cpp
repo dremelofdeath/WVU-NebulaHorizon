@@ -32,7 +32,7 @@
 #include "Player.h"
 #include "EnemySpawner.h"
 #include "Skycube.h"
-#include "nhzres.h"
+#include "nhz_common.h"
 
 static GLsizei winWidth = 800, winHeight = 600;
 static int window_id_main = 0;
