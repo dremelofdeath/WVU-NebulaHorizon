@@ -12,11 +12,11 @@
 class AudioManager {
   public:
     static AudioManager* const getInstance();
-    virtual void loadSFX(const char* sfxFilename) = 0;
-    virtual void playSFX(const char* sfxFilename) = 0;
-    virtual bool isSFXLoaded(const char* sfxFilename) = 0;
-    virtual void playMusic(const char* musicFilename) = 0;
-    virtual void stopMusic() = 0;
+    virtual void loadSFX(const char* sfxFilename);
+    virtual void playSFX(const char* sfxFilename);
+    virtual bool isSFXLoaded(const char* sfxFilename);
+    virtual void playMusic(const char* musicFilename);
+    virtual void stopMusic();
   private:
     static AudioManager* _singleton;
 };
