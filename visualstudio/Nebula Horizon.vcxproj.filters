@@ -24,6 +24,9 @@
     <Filter Include="Textures">
       <UniqueIdentifier>{4ad61f9c-667e-4269-a755-131df895fe47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Meshes">
+      <UniqueIdentifier>{1f6b9982-3fcb-4387-8c5c-4c3bd3648c9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="small.ico">
@@ -50,6 +53,12 @@
     </None>
     <None Include="..\textures\skycube\up.raw">
       <Filter>Textures</Filter>
+    </None>
+    <None Include="..\meshes\viper.obj">
+      <Filter>Meshes</Filter>
+    </None>
+    <None Include="..\meshes\drone.obj">
+      <Filter>Meshes</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +149,7 @@
     <ClInclude Include="..\src\WavefrontGLMeshLoader.h">
       <Filter>Core Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\nhzres.h">
+    <ClInclude Include="..\src\nhz_common.h">
       <Filter>Core Headers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -212,6 +221,9 @@
       <Filter>Application Core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\WavefrontGLMeshLoader.cpp">
+      <Filter>Application Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\nhz_common.cpp">
       <Filter>Application Core</Filter>
     </ClCompile>
   </ItemGroup>

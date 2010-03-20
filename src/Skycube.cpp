@@ -26,13 +26,13 @@ Skycube::Skycube(const char* north, const char* south, const char* east,
   initialize(north, south, east, west, up, down, loader);
 }
 
-Skycube::Skycube(std::istream& north, std::istream& south, std::istream& east,
-                 std::istream& west, std::istream& up, std::istream& down) {
+Skycube::Skycube(std::ifstream& north, std::ifstream& south, std::ifstream& east,
+                 std::ifstream& west, std::ifstream& up, std::ifstream& down) {
   initialize(north, south, east, west, up, down);
 }
 
-Skycube::Skycube(std::istream& north, std::istream& south, std::istream& east,
-                 std::istream& west, std::istream& up, std::istream& down,
+Skycube::Skycube(std::ifstream& north, std::ifstream& south, std::ifstream& east,
+                 std::ifstream& west, std::ifstream& up, std::ifstream& down,
                  TextureLoader* loader) {
   initialize(north, south, east, west, up, down, loader);
 }
@@ -69,34 +69,41 @@ void Skycube::initialize(const char* north, const char* south, const char* east,
 void Skycube::initialize(const char* north, const char* south, const char* east,
                          const char* west, const char* up, const char* down,
                          TextureLoader* loader) {
-  std::ifstream northstr(north);
-  std::ifstream southstr(south);
-  std::ifstream eaststr(east);
-  std::ifstream weststr(west);
-  std::ifstream upstr(up);
-  std::ifstream downstr(down);
+  std::ifstream northstr(north, std::ios::in | std::ios::binary);
+  std::ifstream southstr(south, std::ios::in | std::ios::binary);
+  std::ifstream eaststr(east, std::ios::in | std::ios::binary);
+  std::ifstream weststr(west, std::ios::in | std::ios::binary);
+  std::ifstream upstr(up, std::ios::in | std::ios::binary);
+  std::ifstream downstr(down, std::ios::in | std::ios::binary);
+
   initialize(northstr, southstr, eaststr, weststr, upstr, downstr, loader);
 }
 
-void Skycube::initialize(std::istream& north, std::istream& south,
-                         std::istream& east, std::istream& west,
-                         std::istream& up, std::istream& down) {
+void Skycube::initialize(std::ifstream& north, std::ifstream& south,
+                         std::ifstream& east, std::ifstream& west,
+                         std::ifstream& up, std::ifstream& down) {
   TextureLoader* loader = getDefaultTextureLoader();
   initialize(north, south, east, west, up, down, loader);
   delete loader;
 }
 
-void Skycube::initialize(std::istream& north, std::istream& south,
-                         std::istream& east, std::istream& west,
-                         std::istream& up, std::istream& down,
+void Skycube::initialize(std::ifstream& north, std::ifstream& south,
+                         std::ifstream& east, std::ifstream& west,
+                         std::ifstream& up, std::ifstream& down,
                          TextureLoader* loader) {
   setSize(500.0);
   _northTexture = loader->loadTexture(north, 2048, 2048);
+  north.close();
   _southTexture = loader->loadTexture(south, 2048, 2048);
+  south.close();
   _eastTexture = loader->loadTexture(east, 2048, 2048);
+  east.close();
   _westTexture = loader->loadTexture(west, 2048, 2048);
+  west.close();
   _upTexture = loader->loadTexture(up, 2048, 2048);
+  up.close();
   _downTexture = loader->loadTexture(down, 2048, 2048);
+  down.close();
 }
 
 Skycube::~Skycube() {

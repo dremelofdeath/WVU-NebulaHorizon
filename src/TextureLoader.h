@@ -24,7 +24,8 @@
 class TextureLoader {
   public:
     virtual GLuint loadTexture(std::istream& input) = 0;
-    virtual GLuint loadTexture(std::istream& input, int w, int h) = 0;
+    virtual GLuint loadTexture(std::istream& input,
+                               unsigned int w, unsigned int h) = 0;
 };
 
 #endif

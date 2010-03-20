@@ -11,6 +11,7 @@
 #include "WavefrontGLMeshLoader.h"
 #include "KeyboardManager.h"
 #include "Player.h"
+#include "nhz_common.h"
 
 // TODO: I don't think this should not be here
 #include "AudioManager.h"
@@ -116,10 +117,11 @@ void Player::handleMouseEvent(int button, int state, int x, int y) {
 
 Renderable& Player::getMesh() {
   if(_mesh == 0) {
-    std::ifstream viper_file("viper.obj");
+    std::ifstream viper_file(NHZ_RES_T("meshes", "viper.obj"));
     MeshLoader* loader = new WavefrontGLMeshLoader;
     _mesh = loader->loadMesh(viper_file);
     delete loader;
+    viper_file.close();
   }
   return *_mesh;
 }
