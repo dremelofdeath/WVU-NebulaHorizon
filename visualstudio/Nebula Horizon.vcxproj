@@ -60,7 +60,9 @@
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "$(OutDir)\textures" MKDIR "$(OutDir)\textures"
-COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
+COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"
+IF NOT EXIST "$(OutDir)\meshes" MKDIR "$(OutDir)\meshes"
+COPY "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -174,6 +176,16 @@ COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Nebula Horizon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\meshes\drone.obj">
+      <FileType>Document</FileType>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\meshes\viper.obj">
+      <FileType>Document</FileType>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

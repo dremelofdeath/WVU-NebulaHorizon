@@ -32,10 +32,10 @@ class Skycube : public Renderable {
     Skycube(const char* north, const char* south, const char* east,
             const char* west, const char* up, const char* down,
             TextureLoader* loader);
-    Skycube(std::istream& north, std::istream& south, std::istream& east,
-            std::istream& west, std::istream& up, std::istream& down);
-    Skycube(std::istream& north, std::istream& south, std::istream& east,
-            std::istream& west, std::istream& up, std::istream& down,
+    Skycube(std::ifstream& north, std::ifstream& south, std::ifstream& east,
+            std::ifstream& west, std::ifstream& up, std::ifstream& down);
+    Skycube(std::ifstream& north, std::ifstream& south, std::ifstream& east,
+            std::ifstream& west, std::ifstream& up, std::ifstream& down,
             TextureLoader* loader);
     ~Skycube();
     void setSize(double size);
@@ -46,12 +46,12 @@ class Skycube : public Renderable {
     void initialize(const char* north, const char* south, const char* east,
                     const char* west, const char* up, const char* down,
                     TextureLoader* loader);
-    void initialize(std::istream& north, std::istream& south,
-                    std::istream& east, std::istream& west,
-                    std::istream& up, std::istream& down);
-    void initialize(std::istream& north, std::istream& south,
-                    std::istream& east, std::istream& west,
-                    std::istream& up, std::istream& down,
+    void initialize(std::ifstream& north, std::ifstream& south,
+                    std::ifstream& east, std::ifstream& west,
+                    std::ifstream& up, std::ifstream& down);
+    void initialize(std::ifstream& north, std::ifstream& south,
+                    std::ifstream& east, std::ifstream& west,
+                    std::ifstream& up, std::ifstream& down,
                     TextureLoader* loader);
     TextureLoader* getDefaultTextureLoader();
   private:

@@ -179,7 +179,7 @@ void WavefrontGLMeshLoader::parseFile(std::istream& input) {
   if(input.bad()) {
     NHZ_ERR("stream went bad during mesh processing\n");
   }
-  if(input.fail()) {
+  if(input.fail() && !input.eof()) {
     NHZ_ERR("stream failed, probably means file not found\n");
   }
 }

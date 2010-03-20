@@ -15,7 +15,7 @@ class RawTextureLoader : public TextureLoader {
   public:
     // invalid operation: must specify width and height
     GLuint loadTexture(std::istream& input);
-    GLuint loadTexture(std::istream& input, int w, int h);
+    GLuint loadTexture(std::istream& input, unsigned int w, unsigned int h);
 };
 
 #endif

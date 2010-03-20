@@ -9,6 +9,7 @@
 #include <fstream>
 #include "Enemy.h"
 #include "WavefrontGLMeshLoader.h"
+#include "nhz_common.h"
 
 Renderable* Enemy::_mesh = 0;
 
@@ -48,10 +49,11 @@ void Enemy::setTarget(Movable* const target) {
 
 Renderable& Enemy::getMesh() {
   if(_mesh == 0) {
-    std::ifstream drone_file("drone.obj");
+    std::ifstream drone_file(NHZ_RES_T("meshes", "drone.obj"));
     MeshLoader* loader = new WavefrontGLMeshLoader;
     _mesh = loader->loadMesh(drone_file);
     delete loader;
+    drone_file.close();
   }
   return *_mesh;
 }
