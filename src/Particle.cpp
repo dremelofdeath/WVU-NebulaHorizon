@@ -8,6 +8,12 @@
 
 #include "Particle.h"
 
+#ifdef __APPLE__
+#include <OpenGL/glext.h>
+#else
+#include <GL/glext.h>
+#endif
+
 GLuint Particle::_particleID = 0;
 
 Particle::Particle(ParticleFountain* const parent) {
@@ -25,6 +31,7 @@ void Particle::render() const {
   glColor4f(_r, _g, _b, _life);
   doTranslation();
   glScalef(scaleFactor, scaleFactor, scaleFactor);
+  glPointSize(8.0*_life);
   renderParticle();
 }
 
@@ -43,7 +50,12 @@ void Particle::idle(const int elapsed) {
   if(_particleID == 0) {
     _particleID = glGenLists(1);
     glNewList(_particleID, GL_COMPILE);
-    glutSolidSphere(1.0, 8, 8);
+    //glutSolidSphere(1.0, 8, 8);
+    glEnable(GL_POINT_SPRITE);
+    glBegin(GL_POINTS);
+    glVertex3i(0, 0, 0);
+    glEnd();
+    glDisable(GL_POINT_SPRITE);
     glEndList();
   }
 }
