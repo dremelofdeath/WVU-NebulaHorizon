@@ -150,4 +150,12 @@ void Player::initialize(float xVelocity, float yVelocity) {
   setSpecularMaterial(specular);
   setShininess(27.8f);
   _fountain = new ParticleFountain(750);
+  /* a pretty awesome red flame
+  _fountain->setRed(1.0f);
+  _fountain->setGreen(0.2f);
+  _fountain->setBlue(0.01f);
+  */
+  _fountain->setRed(0.01f);
+  _fountain->setGreen(0.4f);
+  _fountain->setBlue(1.0f);
 }
