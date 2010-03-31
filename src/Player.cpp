@@ -32,24 +32,24 @@ Player::~Player() {
 
 void Player::render() const {
   Renderable::render();
+  useMaterial();
+  doTranslation();
+  glRotatef((GLfloat)_xAngle, 1.0f, 0.0f, 0.0f);
+  glRotatef((GLfloat)_zAngle, 0.0f, 0.0f, 1.0f);
   glPushMatrix();
   glPushAttrib(GL_ALL_ATTRIB_BITS);
   _fountain->render();
   glPopAttrib();
   glPopMatrix();
-  useMaterial();
-  doTranslation();
-  glRotatef((GLfloat)_xAngle, 1.0f, 0.0f, 0.0f);
-  glRotatef((GLfloat)_zAngle, 0.0f, 0.0f, 1.0f);
   glScaled(0.35, 0.35, 0.35);
   getMesh().render();
 }
 
 void Player::idle(const int elapsed) {
   float time = (float)elapsed;
-  _fountain->setX(getX());
-  _fountain->setY(getY());
-  _fountain->setZ(getZ()+_fountainDistance);
+  //_fountain->setX(getX());
+  //_fountain->setY(getY());
+  _fountain->setZ(_fountainDistance);
   _fountain->idle(elapsed);
   if(elapsed != 0) {
     _lastX = _x;
@@ -155,7 +155,7 @@ void Player::initialize(float xVelocity, float yVelocity) {
   _fountain->setGreen(0.2f);
   _fountain->setBlue(0.01f);
   */
-  _fountain->setRed(0.01f);
+  _fountain->setRed(0.04f);
   _fountain->setGreen(0.4f);
   _fountain->setBlue(1.0f);
 }

@@ -8,6 +8,15 @@
 
 #include "ParticleFountain.h"
 
+#ifdef __APPLE__
+#include <OpenGL/glext.h>
+#else
+#include <GL/glext.h>
+#include <GL/wglext.h>
+#endif
+
+#include "nhz_common.h"
+
 ParticleFountain::ParticleFountain(int particles) {
   initialize(particles);
 }
@@ -17,8 +26,16 @@ ParticleFountain::~ParticleFountain() {
 }
 
 void ParticleFountain::render() const {
+  static const GLfloat attenuation[3] = {0.0f, 1.0f, 0.0f};
   glDisable(GL_LIGHTING);
+  //glDepthMask(GL_FALSE);
+  glDepthFunc(GL_ALWAYS);
+  glTexEnvi(GL_POINT_SPRITE, GL_COORD_REPLACE, GL_TRUE);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+  glEnable(GL_POINT_SPRITE);
+  if(gl_has_extension("GL_ARB_point_parameters")) {
+    glPointParameterfvARB(GL_POINT_DISTANCE_ATTENUATION, attenuation);
+  }
   //glBindTexture(GL_TEXTURE_2D, _textureID);
   std::vector<Particle>::const_iterator particle_itr = _particles->begin();
   while(particle_itr != _particles->end()) {
@@ -27,6 +44,7 @@ void ParticleFountain::render() const {
     glPopMatrix();
     particle_itr++;
   }
+  glDisable(GL_POINT_SPRITE);
 }
 
 void ParticleFountain::idle(const int elapsed) {
