@@ -233,6 +233,7 @@ void main_springload() {
 #ifdef WIN32
   nextHook = SetWindowsHookEx(WH_CALLWNDPROC, CallWndProc,
                               GetModuleHandle(NULL), GetCurrentThreadId());
+  nhz_load_all_gl_procs();
 #endif
   init_opengl();
   Player player(5.0f, 5.0f);
