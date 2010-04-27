@@ -6,9 +6,9 @@
 #ifdef WIN32
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN 1
-#endif
+#endif // #ifndef WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#endif
+#endif // #ifdef WIN32
 
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
@@ -18,12 +18,12 @@
 #include <GL/glext.h>
 #ifdef WIN32
 #include <GL/wglext.h>
-#endif
-#endif
+#endif // #ifdef WIN32
+#endif // #ifdef __APPLE__
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif // #ifdef __cplusplus
 
 #define NHZ_ERR_BUF_MAX 256
 
@@ -33,27 +33,31 @@ char *_nhzgeterr();
 #ifdef WIN32
 wchar_t *_nhzgetwerr();
 void nhz_load_all_gl_procs();
-#endif
+#endif // #ifdef WIN32
 
 // below contains the error and resource macros
 #define _NHZERRFMT "" __FILE__ ", line %d: ", __LINE__
 
 #ifdef WIN32
 #define NHZ_RES_T(base, file) "" base "\\" file
-#define NHZ_ERR(...) sprintf_s(_nhzgeterr(), NHZ_ERR_BUF_MAX, _NHZERRFMT);\
-  OutputDebugString(_nhzgetwerr()); \
-  sprintf_s(_nhzgeterr(), NHZ_ERR_BUF_MAX, __VA_ARGS__); \
-  OutputDebugString(_nhzgetwerr())
+#define NHZ_ERR(...) { \
+    sprintf_s(_nhzgeterr(), NHZ_ERR_BUF_MAX, _NHZERRFMT ); \
+    OutputDebugString(_nhzgetwerr()); \
+    sprintf_s(_nhzgeterr(), NHZ_ERR_BUF_MAX, __VA_ARGS__ ); \
+    OutputDebugString(_nhzgetwerr()); \
+  }
 #else
 #define NHZ_RES_T(base, file) file
-#define NHZ_ERR(...) fprintf(stderr, _NHZERRFMT); \
-  sprintf(_nhzgeterr(), __VA_ARGS__); \
-  fprintf(stderr, _nhzgeterr());
-#endif
+#define NHZ_ERR(...) { \
+    fprintf(stderr, _NHZERRFMT ); \
+    sprintf(_nhzgeterr(), __VA_ARGS__ ); \
+    fprintf(stderr, _nhzgeterr()); \
+  }
+#endif // #ifdef WIN32
 
 #ifdef __cplusplus
 }
-#endif
+#endif // #ifdef __cplusplus
 
 // extensions loading for Windows because it's not done for you
 #ifdef WIN32
@@ -61,16 +65,23 @@ void nhz_load_all_gl_procs();
 #define _NHZPROCCOMPLAIN(glfunc) \
   NHZ_ERR("trapped a stray call to " #glfunc " while it was NULL\n");
 
+// only check if we're targeting a debug build
+#ifdef _DEBUG
 #define _NHZCHECKANDCALL(glfunc, ...) \
   if ( NHZ_##glfunc == NULL ) { \
     _NHZPROCCOMPLAIN(glfunc); \
-  } else NHZ_##glfunc##( __VA_ARGS__ ); \
+  } else NHZ_##glfunc##( __VA_ARGS__ )
+#else
+// save a little time by not checking nullness for every glext call
+#define _NHZCHECKANDCALL(glfunc, ...) \
+  NHZ_##glfunc##( __VA_ARGS__ )
+#endif // #ifdef _DEBUG
 
 // windows gl extension prototypes go here (follow the pattern)
 extern PFNGLPOINTPARAMETERFVARBPROC NHZ_glPointParameterfvARB;
 #define glPointParameterfvARB(...) \
   _NHZCHECKANDCALL(glPointParameterfvARB, __VA_ARGS__ );
 
-#endif
+#endif // #ifdef WIN32
 
-#endif
+#endif // #ifndef NHZ_NHZ_COMMON_H

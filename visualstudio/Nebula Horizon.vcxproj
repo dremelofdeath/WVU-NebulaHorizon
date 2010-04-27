@@ -60,9 +60,10 @@
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "$(OutDir)\textures" MKDIR "$(OutDir)\textures"
-COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"
+XCOPY /D /V "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"
 IF NOT EXIST "$(OutDir)\meshes" MKDIR "$(OutDir)\meshes"
-COPY "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"</Command>
+XCOPY /D /V "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
+XCOPY /D /V /I "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,7 +85,10 @@ COPY "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"</Command>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "$(OutDir)\textures" MKDIR "$(OutDir)\textures"
-COPY "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"</Command>
+XCOPY /D /V "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"
+IF NOT EXIST "$(OutDir)\meshes" MKDIR "$(OutDir)\meshes"
+XCOPY /D /V "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
+XCOPY /D /V /I "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

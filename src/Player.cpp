@@ -38,6 +38,7 @@ void Player::render() const {
   glRotatef((GLfloat)_zAngle, 0.0f, 0.0f, 1.0f);
   glPushMatrix();
   glPushAttrib(GL_ALL_ATTRIB_BITS);
+  glTranslatef(0.0f, 0.0f, _fountainDistance);
   _fountain->render();
   glPopAttrib();
   glPopMatrix();
@@ -49,7 +50,6 @@ void Player::idle(const int elapsed) {
   float time = (float)elapsed;
   //_fountain->setX(getX());
   //_fountain->setY(getY());
-  _fountain->setZ(_fountainDistance);
   _fountain->idle(elapsed);
   if(elapsed != 0) {
     _lastX = _x;
@@ -105,6 +105,8 @@ void Player::idle(const int elapsed) {
         _xAngle = 0.0;
       }
     }
+    // FIXME: don't send the ship into a spin
+    _zAngle += 1.0*time;
   }
 }
 
@@ -131,9 +133,12 @@ void Player::initialize() {
 }
 
 void Player::initialize(float xVelocity, float yVelocity) {
-  static const float ambient[4] = {0.4f, 0.4f, 0.45f, 1.0f};
+  /*static const float ambient[4] = {0.4f, 0.4f, 0.45f, 1.0f};
   static const float diffuse[4] = {0.8f, 0.8f, 1.0f, 1.0f};
-  static const float specular[4] = {1.0f, 1.0f, 1.0f, 1.0f};
+  static const float specular[4] = {1.0f, 1.0f, 1.0f, 1.0f};*/
+  static const float ambient[4] = {0.25f, 0.25f, 0.25f, 1.0f};
+  static const float diffuse[4] = {0.4f, 0.4f, 0.4f, 1.0f};
+  static const float specular[4] = {0.774597, 0.774597, 0.774597, 1.0};
   Material::initialize();
   Movable::initialize(0.0, 0.0, -10.0);
   _lastX = 0.0f;
@@ -148,7 +153,8 @@ void Player::initialize(float xVelocity, float yVelocity) {
   setAmbientMaterial(ambient);
   setDiffuseMaterial(diffuse);
   setSpecularMaterial(specular);
-  setShininess(27.8f);
+  setShininess(76.8);
+  //setShininess(27.8f);
   _fountain = new ParticleFountain(750);
   /* a pretty awesome red flame
   _fountain->setRed(1.0f);
