@@ -51,11 +51,7 @@ void RenderQueue::dequeue(Renderable& spr) {
 void RenderQueue::render() const {
   std::vector<Renderable*>::const_iterator vector_it = _sprites.begin();
   while(vector_it != _sprites.end()) {
-    glPushMatrix();
-    glPushAttrib(GL_ALL_ATTRIB_BITS);
     (*vector_it)->render();
-    glPopAttrib();
-    glPopMatrix();
     vector_it++;
   }
 }

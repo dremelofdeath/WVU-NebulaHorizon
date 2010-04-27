@@ -34,26 +34,34 @@
 #include "Skycube.h"
 #include "nhz_common.h"
 
+static GLfloat light0_pos[4] = {-5.0f, 1.0f, 2.0f, 1.0f};
+
 static GLsizei winWidth = 800, winHeight = 600;
 static int window_id_main = 0;
 
 void display() {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  //glTranslated(0.0, 0.0, -10.0);
+  if(KeyboardManager::getInstance().isSpecialKeyDown(GLUT_KEY_UP)) {
+    glTranslated(0.0, 0.0, 0.1);
+  }
+  if(KeyboardManager::getInstance().isSpecialKeyDown(GLUT_KEY_DOWN)) {
+    glTranslated(0.0, 0.0, -0.1);
+  }
   if(KeyboardManager::getInstance().isKeyDown('j')) {
-    glRotated(0.05, 0.0, 1.0, 0.0);
+    glRotated(0.3, 0.0, 1.0, 0.0);
   }
   if(KeyboardManager::getInstance().isKeyDown('l')) {
-    glRotated(-0.05, 0.0, 1.0, 0.0);
+    glRotated(-0.3, 0.0, 1.0, 0.0);
   }
   if(KeyboardManager::getInstance().isKeyDown('i')) {
-    glRotated(0.05, 1.0, 0.0, 0.0);
+    glRotated(0.3, 1.0, 0.0, 0.0);
   }
   if(KeyboardManager::getInstance().isKeyDown('k')) {
-    glRotated(-0.05, 1.0, 0.0, 0.0);
+    glRotated(-0.3, 1.0, 0.0, 0.0);
   }
-  glPushMatrix();
+  //glTranslated(0.0, 0.0, 10.0);
   RenderQueue::getInstance()->render();
-  glPopMatrix();
   glutSwapBuffers();
 }
 
@@ -170,7 +178,7 @@ void create_callbacks() {
   glutKeyboardFunc(&handle_keyboard);
   glutKeyboardUpFunc(&handle_keyboard_up);
   glutSpecialFunc(&handle_special_key);
-  glutSpecialFunc(&handle_special_key_up);
+  glutSpecialUpFunc(&handle_special_key_up);
   glutMouseFunc(&handle_mouse_event);
   glutMotionFunc(&handle_mouse_drag);
   glutPassiveMotionFunc(&handle_mouse_motion);
@@ -182,7 +190,6 @@ void exit_callback() {
 }
 
 int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
-  static const GLfloat light0_pos[4] = {-1.0f, 0.0f, 0.0f, 1.0f};
   static const GLfloat ambient0[4] = {0.85f, 0.85f, 0.95f, 1.0f};
   static const GLfloat diffuse0[4] = {0.9f, 0.9f, 0.9f, 1.0f};
   static const GLfloat specular0[4] = {1.0f, 1.0f, 1.0f, 1.0f};
@@ -192,14 +199,10 @@ int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
   glutInitWindowSize(ww, wh);
   ret = glutCreateWindow(title);
   glEnable(GL_DEPTH_TEST);
-  glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
   glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
-  glEnable(GL_NORMALIZE);
   glEnable(GL_LIGHTING);
   glEnable(GL_LIGHT0);
-  glLightfv(GL_LIGHT0, GL_POSITION, light0_pos);
   glLightfv(GL_LIGHT0, GL_AMBIENT, ambient0);
   glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse0);
   glLightfv(GL_LIGHT0, GL_SPECULAR, specular0);
@@ -211,7 +214,8 @@ void init_opengl() {
   update_projection(winWidth, winHeight);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-  gluLookAt(0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+  //glLightfv(GL_LIGHT0, GL_POSITION, light0_pos);
+  //gluLookAt(0.0, 0.0, -2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 }
 
 void set_window_id(int id) {
@@ -236,10 +240,10 @@ void main_springload() {
   nhz_load_all_gl_procs();
 #endif
   init_opengl();
-  Player player(5.0f, 5.0f);
-  EnemySpawner spawner(&player);
-  RenderQueue::getInstance()->enqueue(player);
-  RenderQueue::getInstance()->enqueue(spawner);
+  //Player player(5.0f, 5.0f);
+  //EnemySpawner spawner(&player);
+  //RenderQueue::getInstance()->enqueue(player);
+  //RenderQueue::getInstance()->enqueue(spawner);
   Skycube skycube(NHZ_RES_T("textures", "north.raw"),
                   NHZ_RES_T("textures", "south.raw"),
                   NHZ_RES_T("textures", "east.raw"),
@@ -247,5 +251,6 @@ void main_springload() {
                   NHZ_RES_T("textures", "up.raw"),
                   NHZ_RES_T("textures", "down.raw"));
   RenderQueue::getInstance()->enqueue(skycube);
+  //glTranslatef(0.0f, 0.0f, 1.0f);
   glutMainLoop();
 }
