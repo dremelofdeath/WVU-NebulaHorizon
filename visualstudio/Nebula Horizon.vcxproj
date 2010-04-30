@@ -56,14 +56,14 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;freeglut.lib;DevIL.lib;ILU.lib;ILUT.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "$(OutDir)\textures" MKDIR "$(OutDir)\textures"
-XCOPY /D /V "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"
+XCOPY /D /V /Y "$(SolutionDir)textures\skycube\*.png" "$(OutDir)\textures"
 IF NOT EXIST "$(OutDir)\meshes" MKDIR "$(OutDir)\meshes"
-XCOPY /D /V "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
-XCOPY /D /V /I "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
+XCOPY /D /V /Y "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
+XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -82,13 +82,14 @@ XCOPY /D /V /I "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;freeglut.lib;DevIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "$(OutDir)\textures" MKDIR "$(OutDir)\textures"
-XCOPY /D /V "$(SolutionDir)textures\skycube\*.raw" "$(OutDir)\textures"
+XCOPY /D /V /Y "$(SolutionDir)textures\skycube\*.png" "$(OutDir)\textures"
 IF NOT EXIST "$(OutDir)\meshes" MKDIR "$(OutDir)\meshes"
-XCOPY /D /V "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
-XCOPY /D /V /I "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
+XCOPY /D /V /Y "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
+XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
