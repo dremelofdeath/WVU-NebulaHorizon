@@ -22,43 +22,24 @@
 #endif
 
 #include "Renderable.h"
-#include "TextureLoader.h"
-#include "RawTextureLoader.h"
 
 class Skycube : public Renderable {
   public:
     Skycube(const char* north, const char* south, const char* east,
             const char* west, const char* up, const char* down);
-    Skycube(const char* north, const char* south, const char* east,
-            const char* west, const char* up, const char* down,
-            TextureLoader* loader);
-    Skycube(std::ifstream& north, std::ifstream& south, std::ifstream& east,
-            std::ifstream& west, std::ifstream& up, std::ifstream& down);
-    Skycube(std::ifstream& north, std::ifstream& south, std::ifstream& east,
-            std::ifstream& west, std::ifstream& up, std::ifstream& down,
-            TextureLoader* loader);
     ~Skycube();
-    void setSize(double size);
     void render() const;
   protected:
     void initialize(const char* north, const char* south, const char* east,
                     const char* west, const char* up, const char* down);
-    void initialize(const char* north, const char* south, const char* east,
-                    const char* west, const char* up, const char* down,
-                    TextureLoader* loader);
-    void initialize(std::ifstream& north, std::ifstream& south,
-                    std::ifstream& east, std::ifstream& west,
-                    std::ifstream& up, std::ifstream& down);
-    void initialize(std::ifstream& north, std::ifstream& south,
-                    std::ifstream& east, std::ifstream& west,
-                    std::ifstream& up, std::ifstream& down,
-                    TextureLoader* loader);
-    TextureLoader* getDefaultTextureLoader();
   private:
-    GLuint _northTexture, _southTexture;
-    GLuint _eastTexture, _westTexture;
-    GLuint _upTexture, _downTexture;
-    double _size;
+    static const int NORTH = 0;
+    static const int SOUTH = 1;
+    static const int EAST  = 2;
+    static const int WEST  = 3;
+    static const int UP    = 4;
+    static const int DOWN  = 5;
+    GLuint _textures[6];
     void renderOneSide(GLuint texture) const;
     void renderOneFace() const;
 };
