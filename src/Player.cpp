@@ -32,6 +32,10 @@ Player::~Player() {
 
 void Player::render() const {
   Renderable::render();
+  glPushMatrix();
+  glEnable(GL_LIGHTING);
+  glEnable(GL_LIGHT0);
+  glDisable(GL_TEXTURE_2D);
   useMaterial();
   doTranslation();
   glRotatef((GLfloat)_xAngle, 1.0f, 0.0f, 0.0f);
@@ -39,11 +43,12 @@ void Player::render() const {
   glPushMatrix();
   glPushAttrib(GL_ALL_ATTRIB_BITS);
   glTranslatef(0.0f, 0.0f, _fountainDistance);
-  _fountain->render();
+  //_fountain->render();
   glPopAttrib();
   glPopMatrix();
   glScaled(0.35, 0.35, 0.35);
   getMesh().render();
+  glPopMatrix();
 }
 
 void Player::idle(const int elapsed) {
@@ -105,8 +110,6 @@ void Player::idle(const int elapsed) {
         _xAngle = 0.0;
       }
     }
-    // FIXME: don't send the ship into a spin
-    _zAngle += 1.0*time;
   }
 }
 

@@ -191,9 +191,8 @@ void WavefrontGLMeshLoader::parseParam(std::istringstream& param,
   int n = 0;
   char sep = '/';
   while(param.good() && n < 2 && sep == '/') {
-    char temp[128];
-    param >> temp;
-    x[n] = atoi(temp)-1;
+    param >> x[n];
+    x[n]--;
     if(param.bad() || param.fail()) {
       break;
     }
