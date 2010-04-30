@@ -24,6 +24,10 @@
 #include <GL/glut.h>
 #endif
 
+#include <IL/il.h>
+#include <IL/ilu.h>
+#include <IL/ilut.h>
+
 #include "handlers.h"
 #include "RenderQueue.h"
 #include "KeyboardManager.h"
@@ -34,13 +38,20 @@
 #include "Skycube.h"
 #include "nhz_common.h"
 
-static GLfloat light0_pos[4] = {-5.0f, 1.0f, 2.0f, 1.0f};
+//static GLfloat light0_pos[4] = {-100.0f, -20.875f, 41.359375f, 0.0f};
+static GLfloat light0_pos[4] = {0.0f, 0.0f, 0.0f, 1.0f};
 
 static GLsizei winWidth = 800, winHeight = 600;
 static int window_id_main = 0;
 
+static double yangle = 0.0;
+
 void display() {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+  glEnable(GL_LIGHTING);
+  glEnable(GL_LIGHT0);
   //glTranslated(0.0, 0.0, -10.0);
   if(KeyboardManager::getInstance().isSpecialKeyDown(GLUT_KEY_UP)) {
     glTranslated(0.0, 0.0, 0.1);
@@ -49,10 +60,10 @@ void display() {
     glTranslated(0.0, 0.0, -0.1);
   }
   if(KeyboardManager::getInstance().isKeyDown('j')) {
-    glRotated(0.3, 0.0, 1.0, 0.0);
+    yangle += 0.3;
   }
   if(KeyboardManager::getInstance().isKeyDown('l')) {
-    glRotated(-0.3, 0.0, 1.0, 0.0);
+    yangle -= 0.3;
   }
   if(KeyboardManager::getInstance().isKeyDown('i')) {
     glRotated(0.3, 1.0, 0.0, 0.0);
@@ -60,6 +71,33 @@ void display() {
   if(KeyboardManager::getInstance().isKeyDown('k')) {
     glRotated(-0.3, 1.0, 0.0, 0.0);
   }
+  if(KeyboardManager::getInstance().isKeyDown('5')) {
+    light0_pos[2] -= 0.05f;
+  }
+  if(KeyboardManager::getInstance().isKeyDown('8')) {
+    light0_pos[2] += 0.05f;
+  }
+  if(KeyboardManager::getInstance().isKeyDown('4')) {
+    light0_pos[0] -= 0.05f;
+  }
+  if(KeyboardManager::getInstance().isKeyDown('6')) {
+    light0_pos[0] += 0.05f;
+  }
+  if(KeyboardManager::getInstance().isKeyDown('p')) {
+    NHZ_ERR("%f, %f, %f\n", light0_pos[0], light0_pos[1], light0_pos[2]);
+  }
+  glRotated(yangle, 0.0, 1.0, 0.0);
+  glPushMatrix();
+  glTranslatef(-1.0f, 0.0f, 0.0f);
+  glLightfv(GL_LIGHT0, GL_POSITION, light0_pos);
+  glPopMatrix();
+  /*glPushMatrix();
+  glDisable(GL_TEXTURE_2D);
+  //glTranslated(10.00, 2.1875, -4.3359375);
+  glColor3f(1.0f, 0.0f, 0.0f);
+  glTranslatef(100.0f, 20.875, -41.359375f);
+  glutSolidTeapot(10.0);
+  glPopMatrix();(*/
   //glTranslated(0.0, 0.0, 10.0);
   RenderQueue::getInstance()->render();
   glutSwapBuffers();
@@ -190,9 +228,6 @@ void exit_callback() {
 }
 
 int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
-  static const GLfloat ambient0[4] = {0.85f, 0.85f, 0.95f, 1.0f};
-  static const GLfloat diffuse0[4] = {0.9f, 0.9f, 0.9f, 1.0f};
-  static const GLfloat specular0[4] = {1.0f, 1.0f, 1.0f, 1.0f};
   int ret = 0;
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
   glutInitWindowPosition(xpos, ypos);
@@ -203,18 +238,22 @@ int create_window(const char *title, int xpos, int ypos, int ww, int wh) {
   glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
   glEnable(GL_LIGHTING);
   glEnable(GL_LIGHT0);
-  glLightfv(GL_LIGHT0, GL_AMBIENT, ambient0);
-  glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse0);
-  glLightfv(GL_LIGHT0, GL_SPECULAR, specular0);
+  glEnable(GL_NORMALIZE);
   return ret;
 }
 
 void init_opengl() {
+  static const GLfloat ambient0[4] = {0.1f, 0.1f, 0.1f, 1.0f};
+  static const GLfloat diffuse0[4] = {0.7f, 0.7f, 0.69f, 1.0f};
+  static const GLfloat specular0[4] = {1.0f, 1.0f, 0.94f, 1.0f};
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
   update_projection(winWidth, winHeight);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-  //glLightfv(GL_LIGHT0, GL_POSITION, light0_pos);
+  glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
+  glLightfv(GL_LIGHT0, GL_AMBIENT, ambient0);
+  glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse0);
+  glLightfv(GL_LIGHT0, GL_SPECULAR, specular0);
   //gluLookAt(0.0, 0.0, -2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 }
 
@@ -240,17 +279,20 @@ void main_springload() {
   nhz_load_all_gl_procs();
 #endif
   init_opengl();
-  //Player player(5.0f, 5.0f);
+  ilInit();
+  iluInit();
+  ilutInit();
+  ilutRenderer(ILUT_OPENGL);
+  Player player(5.0f, 5.0f);
   //EnemySpawner spawner(&player);
-  //RenderQueue::getInstance()->enqueue(player);
+  RenderQueue::getInstance()->enqueue(player);
   //RenderQueue::getInstance()->enqueue(spawner);
-  Skycube skycube(NHZ_RES_T("textures", "north.raw"),
-                  NHZ_RES_T("textures", "south.raw"),
-                  NHZ_RES_T("textures", "east.raw"),
-                  NHZ_RES_T("textures", "west.raw"),
-                  NHZ_RES_T("textures", "up.raw"),
-                  NHZ_RES_T("textures", "down.raw"));
+  Skycube skycube(NHZ_RES_T("textures", "north.png"),
+                  NHZ_RES_T("textures", "south.png"),
+                  NHZ_RES_T("textures", "east.png"),
+                  NHZ_RES_T("textures", "west.png"),
+                  NHZ_RES_T("textures", "up.png"),
+                  NHZ_RES_T("textures", "down.png"));
   RenderQueue::getInstance()->enqueue(skycube);
-  //glTranslatef(0.0f, 0.0f, 1.0f);
   glutMainLoop();
 }
