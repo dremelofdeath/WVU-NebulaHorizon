@@ -51,7 +51,9 @@ void RenderQueue::dequeue(Renderable& spr) {
 void RenderQueue::render() const {
   std::vector<Renderable*>::const_iterator vector_it = _sprites.begin();
   while(vector_it != _sprites.end()) {
-    (*vector_it)->render();
+    if((*vector_it)->isRendering()) {
+      (*vector_it)->render();
+    }
     vector_it++;
   }
 }
