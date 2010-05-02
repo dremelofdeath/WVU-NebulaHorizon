@@ -17,6 +17,7 @@ class Renderable {
     virtual void handleMouseEvent(int button, int state, int x, int y);
     virtual void handleMouseDrag(int x, int y);
     virtual void handleMouseMotion(int x, int y);
+    virtual bool isRendering() const;
 };
 
 #endif

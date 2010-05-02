@@ -10,8 +10,8 @@
 #include <fstream>
 #include "WavefrontGLMeshLoader.h"
 #include "KeyboardManager.h"
+#include "TextFileReader.h"
 #include "Player.h"
-#include "nhz_common.h"
 
 // TODO: I don't think this should not be here
 #include "AudioManager.h"
@@ -28,14 +28,24 @@ Player::Player(float xVelocity, float yVelocity) {
 
 Player::~Player() {
   delete _fountain;
+  glDeleteProgram(_shaderProgram);
+  glDeleteShader(_fragmentShader);
+  glDeleteShader(_vertexShader);
 }
 
 void Player::render() const {
+  GLint refraction;
+  GLint slopes;
   Renderable::render();
   glPushMatrix();
   glEnable(GL_LIGHTING);
   glEnable(GL_LIGHT0);
   glDisable(GL_TEXTURE_2D);
+  glUseProgram(_shaderProgram);
+  refraction = glGetUniformLocation(_shaderProgram, "refraction");
+  slopes = glGetUniformLocation(_shaderProgram, "slopes");
+  glUniform1f(refraction, 40.0f);
+  glUniform1f(slopes, 0.30f);
   useMaterial();
   doTranslation();
   glRotatef((GLfloat)_xAngle, 1.0f, 0.0f, 0.0f);
@@ -48,6 +58,7 @@ void Player::render() const {
   glPopMatrix();
   glScaled(0.35, 0.35, 0.35);
   getMesh().render();
+  glUseProgram(0);
   glPopMatrix();
 }
 
@@ -158,6 +169,7 @@ void Player::initialize(float xVelocity, float yVelocity) {
   setSpecularMaterial(specular);
   setShininess(76.8);
   //setShininess(27.8f);
+
   _fountain = new ParticleFountain(750);
   /* a pretty awesome red flame
   _fountain->setRed(1.0f);
@@ -167,4 +179,22 @@ void Player::initialize(float xVelocity, float yVelocity) {
   _fountain->setRed(0.04f);
   _fountain->setGreen(0.4f);
   _fountain->setBlue(1.0f);
+
+  // load shaders
+  _vertexShader = glCreateShader(GL_VERTEX_SHADER);
+  _fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+  TextFileReader vertexFile(NHZ_RES_T("shaders", "v_cook_torrance.glsl"));
+  TextFileReader fragmentFile(NHZ_RES_T("shaders", "f_cook_torrance.glsl"));
+  const GLchar* vShaderCode = (const GLchar*)vertexFile.getFileContents();
+  glShaderSource(_vertexShader, 1, &vShaderCode, NULL);
+  glCompileShader(_vertexShader);
+  const GLchar* fShaderCode = (const GLchar*)fragmentFile.getFileContents();
+  glShaderSource(_fragmentShader, 1, &fShaderCode, NULL);
+  glCompileShader(_fragmentShader);
+
+  // link program
+  _shaderProgram = glCreateProgram();
+  glAttachShader(_shaderProgram, _vertexShader);
+  glAttachShader(_shaderProgram, _fragmentShader);
+  glLinkProgram(_shaderProgram);
 }

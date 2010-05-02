@@ -27,3 +27,8 @@ void Renderable::handleMouseDrag(int x, int y) {
 void Renderable::handleMouseMotion(int x, int y) {
   // default implementation does nothing
 }
+
+bool Renderable::isRendering() const {
+  // default implementation always returns true
+  return true;
+}

@@ -9,6 +9,7 @@
 #ifndef NHZ_PLAYER_H
 #define NHZ_PLAYER_H
 
+#include "nhz_common.h"
 #include "Renderable.h"
 #include "Material.h"
 #include "Positionable.h"
@@ -33,7 +34,7 @@ class Player : public Renderable, public Material, public Positionable {
     double _xVelocity, _yVelocity;
     double _lastXAngle, _lastZAngle;
     double _fountainDistance;
-
+    GLuint _vertexShader, _fragmentShader, _shaderProgram;
 };
 
 #endif

@@ -36,10 +36,12 @@
 #include "Player.h"
 #include "EnemySpawner.h"
 #include "Skycube.h"
+#include "OceanPlane.h"
 #include "nhz_common.h"
 
 //static GLfloat light0_pos[4] = {-100.0f, -20.875f, 41.359375f, 0.0f};
 static GLfloat light0_pos[4] = {0.0f, 0.0f, 0.0f, 1.0f};
+static GLfloat light1_pos[4] = {-100.0f, -20.875f, 41.359375f, 0.0f};
 
 static GLsizei winWidth = 800, winHeight = 600;
 static int window_id_main = 0;
@@ -52,6 +54,7 @@ void display() {
   glLoadIdentity();
   glEnable(GL_LIGHTING);
   glEnable(GL_LIGHT0);
+  glEnable(GL_LIGHT1);
   //glTranslated(0.0, 0.0, -10.0);
   if(KeyboardManager::getInstance().isSpecialKeyDown(GLUT_KEY_UP)) {
     glTranslated(0.0, 0.0, 0.1);
@@ -90,6 +93,7 @@ void display() {
   glPushMatrix();
   glTranslatef(-1.0f, 0.0f, 0.0f);
   glLightfv(GL_LIGHT0, GL_POSITION, light0_pos);
+  glLightfv(GL_LIGHT1, GL_POSITION, light1_pos);
   glPopMatrix();
   /*glPushMatrix();
   glDisable(GL_TEXTURE_2D);
@@ -99,6 +103,21 @@ void display() {
   glutSolidTeapot(10.0);
   glPopMatrix();(*/
   //glTranslated(0.0, 0.0, 10.0);
+  // FIXME: delete this garbage
+  glPushMatrix();
+  glPushAttrib(GL_ALL_ATTRIB_BITS);
+  glDisable(GL_TEXTURE_2D);
+  static GLfloat _ambient[4] = {0.1f, 0.1f, 0.1f, 1.0f};
+  static GLfloat _diffuse[4] = {0.8f, 0.0f, 0.0f, 1.0f};
+  static GLfloat _specular[4] = {1.0f, 1.0f, 1.0f, 1.0f};
+  glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, _ambient);
+  glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, _diffuse);
+  glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, _specular);
+  glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 48.9f);
+  glTranslatef(2.0f, 1.0f, -4.2f);
+  glutSolidTeapot(1.0);
+  glPopAttrib();
+  glPopMatrix();
   RenderQueue::getInstance()->render();
   glutSwapBuffers();
 }
@@ -254,6 +273,10 @@ void init_opengl() {
   glLightfv(GL_LIGHT0, GL_AMBIENT, ambient0);
   glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse0);
   glLightfv(GL_LIGHT0, GL_SPECULAR, specular0);
+  // FIXME: this light1 crap is crap
+  glLightfv(GL_LIGHT1, GL_AMBIENT, ambient0);
+  glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse0);
+  glLightfv(GL_LIGHT1, GL_SPECULAR, specular0);
   //gluLookAt(0.0, 0.0, -2.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 }
 
@@ -294,5 +317,7 @@ void main_springload() {
                   NHZ_RES_T("textures", "up.png"),
                   NHZ_RES_T("textures", "down.png"));
   RenderQueue::getInstance()->enqueue(skycube);
+  OceanPlane ocean;
+  RenderQueue::getInstance()->enqueue(ocean);
   glutMainLoop();
 }
