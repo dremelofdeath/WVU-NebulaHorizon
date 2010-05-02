@@ -63,7 +63,9 @@
 XCOPY /D /V /Y "$(SolutionDir)textures\skycube\*.png" "$(OutDir)\textures"
 IF NOT EXIST "$(OutDir)\meshes" MKDIR "$(OutDir)\meshes"
 XCOPY /D /V /Y "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
-XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
+XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"
+IF NOT EXIST "$(OutDir)\shaders" MKDIR "$(OutDir)\shaders"
+XCOPY /D /V /Y "$(SolutionDir)shaders\*.glsl" "$(OutDir)\shaders"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,10 +91,14 @@ XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
 XCOPY /D /V /Y "$(SolutionDir)textures\skycube\*.png" "$(OutDir)\textures"
 IF NOT EXIST "$(OutDir)\meshes" MKDIR "$(OutDir)\meshes"
 XCOPY /D /V /Y "$(SolutionDir)meshes\*.obj" "$(OutDir)\meshes"
-XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
+XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"
+IF NOT EXIST "$(OutDir)\shaders" MKDIR "$(OutDir)\shaders"
+XCOPY /D /V /Y "$(SolutionDir)shaders\*.glsl" "$(OutDir)\shaders"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\shaders\f_cook_torrance.glsl" />
+    <None Include="..\shaders\v_cook_torrance.glsl" />
     <None Include="..\textures\skycube\down.raw">
       <FileType>Document</FileType>
       <DeploymentContent>true</DeploymentContent>
@@ -134,6 +140,7 @@ XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     <ClInclude Include="..\src\MeshLoader.h" />
     <ClInclude Include="..\src\Movable.h" />
     <ClInclude Include="..\src\nhz_common.h" />
+    <ClInclude Include="..\src\OceanPlane.h" />
     <ClInclude Include="..\src\Particle.h" />
     <ClInclude Include="..\src\ParticleFountain.h" />
     <ClInclude Include="..\src\Player.h" />
@@ -145,6 +152,7 @@ XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     <ClInclude Include="..\src\RenderQueue.h" />
     <ClInclude Include="..\src\Rotatable.h" />
     <ClInclude Include="..\src\Skycube.h" />
+    <ClInclude Include="..\src\TextFileReader.h" />
     <ClInclude Include="..\src\TextureLoader.h" />
     <ClInclude Include="..\src\Triple.h" />
     <ClInclude Include="..\src\Tuple.h" />
@@ -165,6 +173,7 @@ XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     <ClCompile Include="..\src\MeshLoader.cpp" />
     <ClCompile Include="..\src\Movable.cpp" />
     <ClCompile Include="..\src\nhz_common.cpp" />
+    <ClCompile Include="..\src\OceanPlane.cpp" />
     <ClCompile Include="..\src\Particle.cpp" />
     <ClCompile Include="..\src\ParticleFountain.cpp" />
     <ClCompile Include="..\src\Player.cpp" />
@@ -175,6 +184,7 @@ XCOPY /D /V /I /Y "$(SolutionDir)dlls\*.dll" "$(OutDir)"</Command>
     <ClCompile Include="..\src\RenderQueue.cpp" />
     <ClCompile Include="..\src\Rotatable.cpp" />
     <ClCompile Include="..\src\Skycube.cpp" />
+    <ClCompile Include="..\src\TextFileReader.cpp" />
     <ClCompile Include="..\src\TextureLoader.cpp" />
     <ClCompile Include="..\src\WavefrontGLMeshLoader.cpp" />
     <ClCompile Include="Nebula Horizon.cpp" />
